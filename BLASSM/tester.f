@@ -5,7 +5,7 @@ c-----------------------------------------------------------------------
 c      Last update: May 2, 1994
 c----------------------------------------------------------------------- 
        implicit real*8 (a-h,o-z)
-       parameter (nxmax = 30,nmx = nxmax*nxmax,nzmax=7*nmx)
+       parameter (nxmax = 30,nmx = nxmax*nxmax, nzmax = 7*nmx)
        integer ia(nmx+1),ib(nmx+1),ic(nzmax),
      *      ja(nzmax),jb(nzmax),jc(nzmax),iw(nmx)
 c-----------------------------------------------------------------------

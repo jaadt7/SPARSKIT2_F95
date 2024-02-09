@@ -23,12 +23,12 @@ c--------------
       job = 2
       nrhs = 0
       call readmt (nmax,nzmax,job,iin,a,ja,ia, rhs, nrhs,
-     *     guesol,nrow,ncol,nnz,title,key,type,ierr)
+     +     guesol,nrow,ncol,nnz,title,key,type,ierr)
 c---- if not readable return 
       if (ierr .ne. 0) then
          write (iout,100) ierr
  100     format(' **ERROR: Unable to read matrix',/,
-     *        ' Message returned fom readmt was ierr =',i3)
+     +        ' Message returned fom readmt was ierr =',i3)
          stop
       endif
       valued = (job .ge. 2)

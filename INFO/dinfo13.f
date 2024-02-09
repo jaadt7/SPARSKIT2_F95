@@ -1,5 +1,5 @@
         subroutine dinfo1(n,iout,a,ja,ia,valued,
-     *		          title,key,type,ao,jao,iao)
+     +		          title,key,type,ao,jao,iao)
 	implicit real*8 (a-h,o-z)
         real*8 a(*),ao(*)
         integer ja(*),ia(n+1),jao(*),iao(n+1),nzdiag 
@@ -167,14 +167,14 @@ c-----------------------------------------------------------------------
 	write (iout,99) 
         write (iout,97) title(2:72), key, type
  97     format(2x,' * ',a71,' *'/,
-     *         2x,' *',20x,'Key = ',a8,' , Type = ',a3,25x,' *')
+     +         2x,' *',20x,'Key = ',a8,' , Type = ',a3,25x,' *')
 	if (.not. valued) write (iout,98)
  98    format(2x,' * No values provided - Information on pattern only',
-     *   23x,' *')
+     +   23x,' *')
 c---------------------------------------------------------------------
 	nnz = ia(n+1)-ia(1)
 	sym = ((type(2:2) .eq. 'S') .or. (type(2:2) .eq. 'Z')
-     *    .or. (type(2:2) .eq. 's') .or. (type(2:2) .eq. 'z')) 
+     +    .or. (type(2:2) .eq. 's') .or. (type(2:2) .eq. 'z')) 
 c
         write (iout, 99)
         write(iout, 100) n, nnz
@@ -203,7 +203,7 @@ c------ write out info ----------------------------------------------
           write(iout, 109) ndiag
 c
           call nonz(n,sym, ja, ia, iao, nzmaxc, nzminc,
-     *                  nzmaxr, nzminr, nzcol, nzrow)
+     +                  nzmaxr, nzminr, nzcol, nzrow)
           write(iout, 1020) nzmaxc, nzminc
 c
 	  if (.not. sym) write(iout, 1021) nzmaxr, nzminr
@@ -212,7 +212,7 @@ c
 	  if (nzrow .ne. 0) write(iout,115) nzrow
 c     
           call diag_domi(n,sym,valued,a, ja,ia,ao, jao, iao,
-     *                           ddomc, ddomr)
+     +                           ddomc, ddomr)
 c----------------------------------------------------------------------- 
 c symmetry and near symmetry - Frobenius  norms
 c-----------------------------------------------------------------------
@@ -293,102 +293,102 @@ c
  96    format (6x,' *',65(1h-),'*')
 c-----------------------------------------------------------------------
  100   format(
-     * 6x,' *  Dimension N                                      = ',
-     * i10,'  *'/
-     * 6x,' *  Number of nonzero elements                       = ',
-     * i10,'  *')
+     + 6x,' *  Dimension N                                      = ',
+     + i10,'  *'/
+     + 6x,' *  Number of nonzero elements                       = ',
+     + i10,'  *')
  101   format(
-     * 6x,' *  Average number of nonzero elements/Column        = ',
-     * f10.4,'  *'/
-     * 6x,' *  Standard deviation for above average             = ',
-     * f10.4,'  *')
+     + 6x,' *  Average number of nonzero elements/Column        = ',
+     + f10.4,'  *'/
+     + 6x,' *  Standard deviation for above average             = ',
+     + f10.4,'  *')
 c-----------------------------------------------------------------------
  1020       format(
-     * 6x,' *  Weight of longest column                         = ',
-     * i10,'  *'/
-     * 6x,' *  Weight of shortest column                        = ',
-     * i10,'  *')
+     + 6x,' *  Weight of longest column                         = ',
+     + i10,'  *'/
+     + 6x,' *  Weight of shortest column                        = ',
+     + i10,'  *')
  1021       format(
-     * 6x,' *  Weight of longest row                            = ',
-     * i10,'  *'/
-     * 6x,' *  Weight of shortest row                           = ',
-     * i10,'  *')
+     + 6x,' *  Weight of longest row                            = ',
+     + i10,'  *'/
+     + 6x,' *  Weight of shortest row                           = ',
+     + i10,'  *')
  117        format(
-     * 6x,' *  Lower bandwidth  (max: i-j, a(i,j) .ne. 0)       = ',
-     * i10,'  *'/
-     * 6x,' *  Upper bandwidth  (max: j-i, a(i,j) .ne. 0)       = ',
-     * i10,'  *'/
-     * 6x,' *  Maximum Bandwidth                                = ',
-     * i10,'  *'/
-     * 6x,' *  Average Bandwidth                                = ',
-     * e10.3,'  *')
+     + 6x,' *  Lower bandwidth  (max: i-j, a(i,j) .ne. 0)       = ',
+     + i10,'  *'/
+     + 6x,' *  Upper bandwidth  (max: j-i, a(i,j) .ne. 0)       = ',
+     + i10,'  *'/
+     + 6x,' *  Maximum Bandwidth                                = ',
+     + i10,'  *'/
+     + 6x,' *  Average Bandwidth                                = ',
+     + e10.3,'  *')
  1175       format(
-     * 6x,' *  Number of nonzeros in skyline storage            = ',
-     * i10,'  *')
+     + 6x,' *  Number of nonzeros in skyline storage            = ',
+     + i10,'  *')
  103   format(
-     * 6x,' *  Matching elements in symmetry                    = ',
-     * i10,'  *'/
-     * 6x,' *  Relative Symmetry Match (symmetry=1)             = ',
-     * f10.4,'  *'/
-     * 6x,' *  Average distance of a(i,j)  from diag.           = ',
-     * e10.3,'  *'/
-     * 6x,' *  Standard deviation for above average             = ',
-     * e10.3,'  *') 
+     + 6x,' *  Matching elements in symmetry                    = ',
+     + i10,'  *'/
+     + 6x,' *  Relative Symmetry Match (symmetry=1)             = ',
+     + f10.4,'  *'/
+     + 6x,' *  Average distance of a(i,j)  from diag.           = ',
+     + e10.3,'  *'/
+     + 6x,' *  Standard deviation for above average             = ',
+     + e10.3,'  *') 
  104   format(
-     * 6x,' *  Frobenius norm of A                              = ',
-     * e10.3,'  *'/
-     * 6x,' *  Frobenius norm of symmetric part                 = ',
-     * e10.3,'  *'/
-     * 6x,' *  Frobenius norm of nonsymmetric part              = ',
-     * e10.3,'  *'/
-     * 6x,' *  Maximum element in A                             = ',
-     * e10.3,'  *'/
-     * 6x,' *  Percentage of weakly diagonally dominant rows    = ',
-     * e10.3,'  *'/
-     * 6x,' *  Percentage of weakly diagonally dominant columns = ',
-     * e10.3,'  *')
+     + 6x,' *  Frobenius norm of A                              = ',
+     + e10.3,'  *'/
+     + 6x,' *  Frobenius norm of symmetric part                 = ',
+     + e10.3,'  *'/
+     + 6x,' *  Frobenius norm of nonsymmetric part              = ',
+     + e10.3,'  *'/
+     + 6x,' *  Maximum element in A                             = ',
+     + e10.3,'  *'/
+     + 6x,' *  Percentage of weakly diagonally dominant rows    = ',
+     + e10.3,'  *'/
+     + 6x,' *  Percentage of weakly diagonally dominant columns = ',
+     + e10.3,'  *')
  105        format(
-     * 6x,' *  The matrix is lower triangular ...       ',21x,' *')
+     + 6x,' *  The matrix is lower triangular ...       ',21x,' *')
  106        format(
-     * 6x,' *  The matrix is upper triangular ...       ',21x,' *')
+     + 6x,' *  The matrix is upper triangular ...       ',21x,' *')
  107        format(
-     * 6x,' *  Nonzero elements in strict lower part            = ',
-     * i10,'  *')
+     + 6x,' *  Nonzero elements in strict lower part            = ',
+     + i10,'  *')
  108       format(
-     * 6x,' *  Nonzero elements in strict upper part            = ',
-     * i10,'  *')
+     + 6x,' *  Nonzero elements in strict upper part            = ',
+     + i10,'  *')
  109       format(
-     * 6x,' *  Nonzero elements in main diagonal                = ',
-     * i10,'  *')
+     + 6x,' *  Nonzero elements in main diagonal                = ',
+     + i10,'  *')
  110   format(6x,' *  The ', i2, ' most important',
-     *	   ' diagonals are (offsets)    : ',10x,'  *',/,  
-     * 6x,' *',a61,3x,' *')
+     +	   ' diagonals are (offsets)    : ',10x,'  *',/,  
+     + 6x,' *',a61,3x,' *')
  111   format(6x,' *  The accumulated percentages they represent are ',
-     * '  : ', 10x,'  *',/,
-     * 6x,' *',a61,3x,' *')
+     + '  : ', 10x,'  *',/,
+     + 6x,' *',a61,3x,' *')
 c 111	format( 
 c     * 6x,' *  They constitute the following % of A             = ',
 c     * f8.1,' %  *') 
  112	format( 
-     * 6x,' *  90% of matrix is in the band of width            = ',
-     * i10,'  *',/,
-     * 6x,' *  80% of matrix is in the band of width            = ',
-     * i10,'  *')
+     + 6x,' *  90% of matrix is in the band of width            = ',
+     + i10,'  *',/,
+     + 6x,' *  80% of matrix is in the band of width            = ',
+     + i10,'  *')
  113 	format( 
-     * 6x,' *  The matrix does not have a block structure ',19x,
-     *    ' *')
+     + 6x,' *  The matrix does not have a block structure ',19x,
+     +    ' *')
  114 	format( 
-     * 6x,' *  Block structure found with block size            = ',
-     * i10,'  *')
+     + 6x,' *  Block structure found with block size            = ',
+     + i10,'  *')
  115 	format( 
-     * 6x,' *  There are zero rows. Number of such rows         = ', 
-     * i10,'  *')
+     + 6x,' *  There are zero rows. Number of such rows         = ', 
+     + i10,'  *')
  116 	format( 
-     * 6x,' *  There are zero columns. Number of such columns   = ', 
-     * i10,'  *')
+     + 6x,' *  There are zero columns. Number of such columns   = ', 
+     + i10,'  *')
  118 	format( 
-     * 6x,' *  The total number of nonvoid diagonals is         = ', 
-     * i10,'  *')
+     + 6x,' *  The total number of nonvoid diagonals is         = ', 
+     + i10,'  *')
 c-------------------------- end of dinfo --------------------------
         return
         end
