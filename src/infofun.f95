@@ -121,9 +121,15 @@ subroutine nonz(n,sym,ja,ia,iao,nzmaxc,nzminc,nzmaxr,nzminr,nzcol,nzrow)
 !      nzcol  = number of zero columns
 !      nzrow = number of zero rows
 ! -----------------------------------------------------------------------
-     integer :: i,j0,jor,j1r,indiag,k,j1,lenc,lenr
+     integer :: i,j0,j0r,j1r,indiag,k,j1,lenc,lenr
 ! 
-     data nzmaxc,nzminc,nzmaxr,nzminr,nzcol,nzrow /0,n,0,n,0,0/
+
+     nzmaxc = 0
+     nzminc = n
+     nzmaxr = 0
+     nzminr = n
+     nzcol = 0
+     nzrow = 0
 ! -----------------------------------------------------------------------
      do i = 1, n
           j0 = ia(i)
@@ -195,8 +201,9 @@ subroutine diag_domi(n,sym,valued,a,ja,ia,ao,jao,iao,ddomc,ddomr)
 
 !      number of diagonally dominant columns and number of diagonally dominant rows
 !      real arithmetic used to avoid problems.. YS. 03/27/01 
-     data ddomc, ddomr  /0.0, 0.0/ 
-
+    
+     ddomc = 0.0
+     ddomr = 0.0
      do i = 1, n
           j0 = ia(i)
           j1 = ia(i+1) - 1
@@ -262,7 +269,8 @@ subroutine frobnorm(n,sym,a,ja,ia,fnorm)
      real(kind=8) :: fdiag
      integer :: i, k
 
-     data fdiag, fnorm /0.0, 0.0/
+     fdiag = 0.0
+     fnorm = 0.0
      do i =1,n
           do k = ia(i), ia(i+1)-1
                if (ja(k) == i) then
@@ -341,7 +349,10 @@ subroutine ansym(n,sym,a,ja,ia,ao,jao,iao,imatch,av,fas,fan)
                end if
                av = real(imatch)/real(nnz)
           case(.false.)
-               data st,fas,fan /0.0,0.0,0.0/
+          
+               st = 0.0
+               fas = 0.0
+               fan = 0.0
                imatch = 0
                do i = 1,n
                     k1 = ia(i)
@@ -378,7 +389,6 @@ subroutine distaij(n,nnz,ja,ia,dist,std)
      integer, intent(In) :: n, nnz
      integer :: i, j0, j1,k ,j
      real(kind=8), intent(Out) :: dist, std
-     real(kind=8), intent(Out) :: std
      integer, dimension(*), intent(In) :: ja
      integer, dimension(n + 1), intent(In) :: ia
 ! -----------------------------------------------------------------------
@@ -403,7 +413,8 @@ subroutine distaij(n,nnz,ja,ia,dist,std)
 ! 
 !  distance of an element from diagonal.
 ! 
-     data dist, std  /0.0, 0.0/
+     dist = 0.0
+     std = 0.0
      do i=1,n
           j0 = ia(i)
           j1 = ia(i+1) - 1
@@ -635,8 +646,8 @@ subroutine nonz_lud(n,ja,ia,nlower,nupper,ndiag)
 ! 
 !  number of nonzero elements in upper part
 ! 
-     data nupper, ndiag /0,0/
- 
+     nupper = 0
+     ndiag = 0
      do i=1,n
 !      indiag = nonzero diagonal element indicator
           do k=ia(i), ia(i+1)-1
@@ -737,69 +748,64 @@ subroutine vbrinfo(nr,nc,kvstr,kvstc,ia,ka,iwk)
      n = kvstr(nr+1)-1
      nnz = ka(ia(nr+1)) - ka(1)
      nnzb = ia(nr+1) - ia(1)
-     write (iout, 96)
-     write (iout, 100) n, nnz, real(nnz)/real(n)
-     write (iout, 101) nr, nnzb, real(nnzb)/real(nr)
+     print '(6x,A,65(1h-),A)','*','*'
+     
+     print '(6x,A,i10,A,6x,i10,A,6x,f10.4,A)', '* Number of rows = ',n,' * Number of nonzero elements = ',nnz, &
+                         ' * Average number of nonzero elements/row = ',real(nnz)/real(n), ' *'
+     
+     print '(6x,A,i10,6x,A,i10,6x,A,f10.4,A)','* Number of block rows = ',nr,' * Number of nonzero blocks = ',nnzb, ' Average number of &
+                         nonzero blocks/ block rows = ',real(nnzb)/real(nr), ' * ' 
+     
 ! -----if non-square matrix, do analysis on block rows,
 !      else do analysis on conformal partitioning
- if (kvstr(nr+1) /= kvstc(nc+1)) then
-         write (iout, 103)
- do i = 1, nr+1
- iwk(i) = kvstr(i)
- enddo
- nb = nr
- else
- call kvstmerge(nr, kvstr, nc, kvstc, nb, iwk)
-         if ((nr  /=  nc) .or. (nc  /=  nb)) write (iout, 104) nb
- endif
+     if (kvstr(nr+1) /= kvstc(nc+1)) then
+          print '(6x,A,6x)', '* Non-square matrix * Performing analysis on block rows *'
+          
+          do i = 1, nr+1
+               iwk(i) = kvstr(i)
+          enddo
+          nb = nr
+     else
+          call kvstmerge(nr, kvstr, nc, kvstc, nb, iwk)
+          if ((nr  /=  nc) .or. (nc  /=  nb)) print '(6x,A,i10,A)', '* Non row-column conformal partitioning supplied; &
+                                                            using conformal partitioning. Number of bl rows = ', nb,' *'
+     endif
 ! -----accumulate frequencies of each blocksize
- max = 1
- iwk(1+nb+2) = 0
- do i = 1, nb
- neq = iwk(i+1) - iwk(i)
- if (neq > max) then
- do j = max+1, neq
- iwk(j+nb+2) = 0
- enddo
- max = neq
- endif
- iwk(neq+nb+2) = iwk(neq+nb+2) + 1
- enddo
+
+     max = 1
+     iwk(1+nb+2) = 0
+     
+     do i = 1, nb
+          neq = iwk(i+1) - iwk(i)
+          if (neq > max) then
+               do j = max+1, neq
+                    iwk(j+nb+2) = 0
+               enddo
+               max = neq
+          endif
+          iwk(neq+nb+2) = iwk(neq+nb+2) + 1
+     enddo
 ! -----store largest 10 of these blocksizes
- num = 0
- do i = max, 1, -1
- if ((iwk(i+nb+2) /= 0) .and. (num < 10)) then
- num = num + 1
- bsiz(num) = i
- freq(num) = iwk(i+nb+2)
- endif
- enddo
+     num = 0
+     do i = max, 1, -1
+          if ((iwk(i+nb+2) /= 0) .and. (num < 10)) then
+               num = num + 1
+               bsiz(num) = i
+               freq(num) = iwk(i+nb+2)
+          endif
+     enddo
 ! -----print information about blocksizes
-      write (iout, 109) num
-      write (tmpst,'(10i6)') (bsiz(j),j=1,num)
-      write (iout,110) num,tmpst
-      write (tmpst,'(10i6)') (freq(j),j=1,num)
-      write (iout,111) tmpst
-      write (iout, 96)
+     print '(6x,A,i10,A)', '* Number of different blocksizes = ',num, ' *'
+     write (tmpst,'(10i6)') (bsiz(j),j=1,num)
+     write (iout,110) num,tmpst
+     write (tmpst,'(10i6)') (freq(j),j=1,num)
+     write (iout,111) tmpst
+     print '(6x,A,65(1h-),A)','*','*'
 ! -----------------------------------------------------------------------
- 96    format (6x,' *',65(1h-),'*')
- 100   format( 6x,' *  Number of rows                                   = ', i10,'  *'/ 6x, &
-      ' *  Number of nonzero elements                       = ', i10,'  *'/ 6x, &
-      ' *  Average number of nonzero elements/Row           = ', f10.4,'  *')
- 101   format( 6x,' *  Number of block rows                             = ', i10,'  *'/ 6x, &
-      ' *  Number of nonzero blocks                         = ', i10,'  *'/ 6x, &
-      ' *  Average number of nonzero blocks/Block row       = ', f10.4,'  *')
- 103   format( 6x,' *  Non-square matrix.                                 ', &
-           '            *'/ 6x,' *  Performing analysis on block rows.                 ', &
-           '            *')
- 104   format( 6x,' *  Non row-column conformal partitioning supplied.    ', &
-           '            *'/ 6x,' *  Using conformal partitioning.  Number of bl rows = ', i10, &
-      '  *')
- 109   format( 6x,' *  Number of different blocksizes                   = ', i10,'  *')
  110   format(6x,' *  The ', i2, ' largest dimension nodes',     ' have dimension    : ',10x,'  *', &
       /, 6x,' *',a61,3x,' *')
  111   format(6x,' *  The frequency of nodes these ',     'dimensions are      : ',10x,'  *',/, 6x, &
       ' *',a61,3x,' *')
 ! ---------------------------------
- return
- end subroutine vbrinfo
+     return
+end subroutine vbrinfo
