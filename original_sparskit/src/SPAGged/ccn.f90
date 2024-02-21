@@ -182,7 +182,7 @@ SUBROUTINE blccnx(N,Nbloc,Nblcmx,Nsbloc,Job,Lpw,Amat,Ja,Ia,Iout,Ier,Izs,Nw)
          ipos = 1
 !..........We sort columns inside JA.
          CALL csrcsc(N,Job,ipos,Amat,Ja,Ia,Izs(iamat),Izs(ijat),Izs(iiat))
-         CALL csrcsc(N,Job,ipos,Izs(iamat),Izs(ijat),Izs(iiat),Amat,Ja,Ia)
+!         CALL csrcsc(N,Job,ipos,Izs(iamat),Izs(ijat),Izs(iiat),Amat,Ja,Ia)
       ENDIF
 !.....We modify the ordering of unknowns in LPW
       CALL compos(N,Lpw,Izs(ilpw))

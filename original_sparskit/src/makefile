@@ -36,23 +36,23 @@ LIB = libskit.a
 # library objects
 #
 
-OBJ =	src/blassm.o	\
-		src/matvec.o	\
-		src/formats.o	\
-		src/unary.o		\
-		src/infofun.o	\
-		src/inout.o		\
-		src/ilut.o		\
-		src/iters.o		\
-		src/genmat.o	\
-		src/elmtlib2.o	\
-		src/femgen.o	\
-		src/meshes.o	\
-		src/sobel.o		\
-		src/zlatev.o	\
-		src/ccn.o		\
-		src/color.o		\
-		src/dsepart.o
+OBJ =	SPAGged/blassm.o	\
+		SPAGged/matvec.o	\
+		SPAGged/formats.o	\
+		SPAGged/unary.o		\
+		SPAGged/infofun.o	\
+		SPAGged/inout.o		\
+		SPAGged/ilut.o		\
+		SPAGged/iters.o		\
+		SPAGged/genmat.o	\
+		SPAGged/elmtlib2.o	\
+		SPAGged/femgen.o	\
+		SPAGged/meshes.o	\
+		SPAGged/sobel.o		\
+		SPAGged/zlatev.o	\
+		SPAGged/ccn.o		\
+		SPAGged/color.o		\
+		SPAGged/dsepart.o
 
 #
 # non-library and unsupported objects
@@ -75,8 +75,8 @@ DIRS =	.			\
 	ITSOL			\
 	MATGEN/FDIF		\
 	MATGEN/FEM		\
-	src		\
-	src		\
+	SPAGged		\
+	SPAGged		\
 	UNSUPP/BLAS1		\
 	UNSUPP/MATEXP		\
 	UNSUPP/PLOTS
@@ -99,46 +99,46 @@ tarit:
 
 all: $(OBJ) $(OBJ2) libskit.a
 
-src/blassm.o: src/blassm.f90
-	(cd src ; $(F90)  $(OPT) blassm.f90)
-src/matvec.o: src/matvec.f90
-	(cd src ; $(F90)  $(OPT) matvec.f90)
-src/formats.o: src/formats.f90
-	(cd src ; $(F90)  $(OPT) formats.f90)
-src/unary.o: src/unary.f90
-	(cd src ; $(F90)  $(OPT) unary.f90)
-src/infofun.o: src/infofun.f90
-	(cd src ; $(F90)  $(OPT) infofun.f90)
-src/inout.o: src/inout.f90
-	(cd src; $(F90)  $(OPT) inout.f90)
-src/ilut.o: src/ilut.f90
-	(cd src; $(F90)  $(OPT) ilut.f90)
-src/iters.o: src/iters.f90
-	(cd src; $(F90)  $(OPT) iters.f90)
-src/itaux.o: src/itaux.f90
-	(cd src; $(F90)  $(OPT) itaux.f90)
-src/genmat.o: src/genmat.f90
-	(cd src ; $(F90)  $(OPT) genmat.f90)
-src/functns.o: src/functns.f90
-	(cd src ; $(F90)  $(OPT) functns.f90)
-src/elmtlib2.o: src/elmtlib2.f90
-	(cd src ; $(F90)  $(OPT) elmtlib2.f90)
-src/femgen.o: src/femgen.f90
-	(cd src ; $(F90)  $(OPT) femgen.f90)
-src/functns2.o : src/functns2.f90 
-	(cd src ; $(F90)  $(OPT) functns2.f90)
-src/meshes.o: src/meshes.f90
-	(cd src ; $(F90)  $(OPT) meshes.f90)
-src/sobel.o: src/sobel.f90
-	(cd src ; $(F90)  $(OPT) sobel.f90)
-src/zlatev.o: src/zlatev.f90
-	(cd src ; $(F90)  $(OPT) zlatev.f90)
-src/ccn.o: src/ccn.f90
-	(cd src ; $(F90)  $(OPT) ccn.f90)
-src/color.o: src/color.f90
-	(cd src ; $(F90)  $(OPT) color.f90)
-src/dsepart.o: src/dsepart.f90
-	(cd src ; $(F90)  $(OPT) dsepart.f)
+SPAGged/blassm.o: SPAGged/blassm.f90
+	(cd SPAGged ; $(F90)  $(OPT) blassm.f90)
+SPAGged/matvec.o: SPAGged/matvec.f90
+	(cd SPAGged ; $(F90)  $(OPT) matvec.f90)
+SPAGged/formats.o: SPAGged/formats.f90
+	(cd SPAGged ; $(F90)  $(OPT) formats.f90)
+SPAGged/unary.o: SPAGged/unary.f90
+	(cd SPAGged ; $(F90)  $(OPT) unary.f90)
+SPAGged/infofun.o: SPAGged/infofun.f90
+	(cd SPAGged ; $(F90)  $(OPT) infofun.f90)
+SPAGged/inout.o: SPAGged/inout.f90
+	(cd SPAGged; $(F90)  $(OPT) inout.f90)
+SPAGged/ilut.o: SPAGged/ilut.f90
+	(cd SPAGged; $(F90)  $(OPT) ilut.f90)
+SPAGged/iters.o: SPAGged/iters.f90
+	(cd SPAGged; $(F90)  $(OPT) iters.f90)
+SPAGged/itaux.o: SPAGged/itaux.f90
+	(cd SPAGged; $(F90)  $(OPT) itaux.f90)
+SPAGged/genmat.o: SPAGged/genmat.f90
+	(cd SPAGged ; $(F90)  $(OPT) genmat.f90)
+SPAGged/functns.o: SPAGged/functns.f90
+	(cd SPAGged ; $(F90)  $(OPT) functns.f90)
+SPAGged/elmtlib2.o: SPAGged/elmtlib2.f90
+	(cd SPAGged ; $(F90)  $(OPT) elmtlib2.f90)
+SPAGged/femgen.o: SPAGged/femgen.f90
+	(cd SPAGged ; $(F90)  $(OPT) femgen.f90)
+SPAGged/functns2.o : SPAGged/functns2.f90 
+	(cd SPAGged ; $(F90)  $(OPT) functns2.f90)
+SPAGged/meshes.o: SPAGged/meshes.f90
+	(cd SPAGged ; $(F90)  $(OPT) meshes.f90)
+SPAGged/sobel.o: SPAGged/sobel.f90
+	(cd SPAGged ; $(F90)  $(OPT) sobel.f90)
+SPAGged/zlatev.o: SPAGged/zlatev.f90
+	(cd SPAGged ; $(F90)  $(OPT) zlatev.f90)
+SPAGged/ccn.o: SPAGged/ccn.f90
+	(cd SPAGged ; $(F90)  $(OPT) ccn.f90)
+SPAGged/color.o: SPAGged/color.f90
+	(cd SPAGged ; $(F90)  $(OPT) color.f90)
+SPAGged/dsepart.o: SPAGged/dsepart.f90
+	(cd SPAGged ; $(F90)  $(OPT) dsepart.f90)
 UNSUPP/BLAS1/blas1.o: UNSUPP/BLAS1/blas1.f
 	(cd UNSUPP/BLAS1 ; $(F90)  $(OPT) blas1.f)
 UNSUPP/MATEXP/exppro.o: UNSUPP/MATEXP/exppro.f

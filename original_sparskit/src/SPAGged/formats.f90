@@ -1,51 +1,5 @@
 !*==test.f90 processed by SPAG 8.04RA 15:47 21 Feb 2024
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
-!--------------------------------------------------------------------
-PROGRAM test
-   IMPLICIT NONE
-   EXTERNAL bndcsr , bsrcsr , coicsr , coocsr , cooell , csorted , csrbnd , csrbsr , csrcoo , csrcsc , csrcsc2 , csrdia , csrdns , &
-          & csrell , csrjad , csrlnk , csrmsr , csrssk , csrssr , csrsss , csruss , csrvbr , dcsort , diacsr , dnscsr , ellcsr ,   &
-          & jadcsr , lnkcsr , msrcsr , sskcsr , ssrcsr , ssscsr , usscsr , vbrcsr
-!
-! End of declarations rewritten by SPAG
-!
-   CALL csrdns()
-   CALL dnscsr()
-   CALL coocsr()
-   CALL coicsr()
-   CALL csrcoo()
-   CALL csrssr()
-   CALL ssrcsr()
-   CALL csrell()
-   CALL ellcsr()
-   CALL csrmsr()
-   CALL msrcsr()
-   CALL csrcsc()
-   CALL csrcsc2()
-   CALL csrlnk()
-   CALL lnkcsr()
-   CALL csrdia()
-   CALL diacsr()
-   CALL bsrcsr()
-   CALL csrbsr()
-   CALL csrbnd()
-   CALL bndcsr()
-   CALL csrssk()
-   CALL sskcsr()
-   CALL csrjad()
-   CALL jadcsr()
-   CALL csruss()
-   CALL usscsr()
-   CALL csrsss()
-   CALL ssscsr()
-   CALL csrvbr()
-   CALL vbrcsr()
-   CALL csorted()
-   CALL cooell()
-   CALL dcsort()
-!
-!
-END PROGRAM test
 !*==csrdns.f90 processed by SPAG 8.04RA 15:47 21 Feb 2024
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
 !----------------------------------------------------------------------c

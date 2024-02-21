@@ -599,7 +599,7 @@ SUBROUTINE unassbl_lstif(A,Na,F,Nx,Nelx,Ijk,Node,X,Y,Ierr,Xyk,Funb,Func,Fung)
    REAL(REAL64) , INTENT(IN) , DIMENSION(*) :: X
    REAL(REAL64) , INTENT(IN) , DIMENSION(*) :: Y
    INTEGER , INTENT(OUT) :: Ierr
-   REAL(REAL64) , EXTERNAL :: Xyk
+!   REAL(REAL64) , EXTERNAL :: Xyk
    REAL(REAL64) , EXTERNAL :: Funb
    REAL(REAL64) , EXTERNAL :: Func
    REAL(REAL64) , EXTERNAL :: Fung
@@ -609,7 +609,7 @@ SUBROUTINE unassbl_lstif(A,Na,F,Nx,Nelx,Ijk,Node,X,Y,Ierr,Xyk,Funb,Func,Fung)
    REAL(REAL64) , DIMENSION(3) :: fe , xe , ye
    INTEGER :: i , j , ka , kb , nel
    REAL(REAL64) , DIMENSION(3,3) :: ske
-   EXTERNAL lstif3
+   EXTERNAL lstif3,xyk
 !
 ! End of declarations rewritten by SPAG
 !
@@ -728,7 +728,7 @@ SUBROUTINE assmbo(Nx,Nelx,Node,Ijk,Nodcode,X,Y,A,Ja,Ia,F,Iwk,Jwk,Ierr,Xyk,Funb,F
    INTEGER , INTENT(INOUT) , DIMENSION(1) :: Iwk
    INTEGER , INTENT(INOUT) , DIMENSION(1) :: Jwk
    INTEGER , INTENT(INOUT) :: Ierr
-   REAL(REAL64) , EXTERNAL :: Xyk
+!   REAL(REAL64) , EXTERNAL :: Xyk
    REAL(REAL64) , EXTERNAL :: Funb
    REAL(REAL64) , EXTERNAL :: Func
    REAL(REAL64) , EXTERNAL :: Fung
@@ -738,7 +738,7 @@ SUBROUTINE assmbo(Nx,Nelx,Node,Ijk,Nodcode,X,Y,A,Ja,Ia,F,Iwk,Jwk,Ierr,Xyk,Funb,F
    REAL(REAL64) , DIMENSION(3) :: fe , xe , ye
    INTEGER :: i , ii , ilast , irowst , ista , isto , j , jj , k , ka , kb , knod , ksav , ksavn , nel
    REAL(REAL64) , DIMENSION(3,3) :: ske
-   EXTERNAL lstif3
+   EXTERNAL lstif3,xyk
 !
 ! End of declarations rewritten by SPAG
 !
@@ -927,7 +927,7 @@ SUBROUTINE assmbo2(Nx,Nelx,Node,Ijk,X,Y,A,Ja,Ia,F,Iwk,Jwk,Ierr,Xyk,Funb,Func,Fun
    INTEGER , INTENT(INOUT) , DIMENSION(*) :: Iwk
    INTEGER , INTENT(INOUT) , DIMENSION(*) :: Jwk
    INTEGER , INTENT(INOUT) :: Ierr
-   REAL(REAL64) , EXTERNAL :: Xyk
+!   REAL(REAL64) , EXTERNAL :: Xyk
    REAL(REAL64) , EXTERNAL :: Funb
    REAL(REAL64) , EXTERNAL :: Func
    REAL(REAL64) , EXTERNAL :: Fung
@@ -938,7 +938,7 @@ SUBROUTINE assmbo2(Nx,Nelx,Node,Ijk,X,Y,A,Ja,Ia,F,Iwk,Jwk,Ierr,Xyk,Funb,Func,Fun
    INTEGER :: i , ii , ilast , irowst , j , jj , k , ka , kb , knod , ksav , ksavn , nedges , nel
    INTEGER , DIMENSION(500) :: kwk
    REAL(REAL64) , DIMENSION(3,3) :: ske
-   EXTERNAL lstif3
+   EXTERNAL lstif3,xyk
 !
 ! End of declarations rewritten by SPAG
 !
