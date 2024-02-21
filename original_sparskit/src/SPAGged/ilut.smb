@@ -1,0 +1,354 @@
+**++ Symbol table for subprogram ILUT in file ilut.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             ilut.f,0000038,0000381
+   1   10   2 R*8  ( 1)A U E            A(*)*8
+   2         IR*8  ( 1)  U E            ABS*8
+   3   10   7 R*8  ( 1)AMU E            ALU(*)*8
+   4   10   6 R*8      A U E            DROPTOL*8
+   5          R*8       MU E            FACT*8
+   6          I         MU E            I
+   7   10   4 I    ( 1)A U E            IA(n+1)
+   8   10  13 I        AM  E            IERR
+   9          I         MU E            II
+  10         S     (13) MU        143   ILUT(N,A,JA,IA,LFIL,DROPTOL,ALU,JLU,JU,IWK,W,JW,IERR)
+  11   10  10 I        A U E            IWK
+  12          I         MU E            J
+  13          I         MU E            J1
+  14          I         MU E            J2
+  15   10   3 I    ( 1)A U E            JA(*)
+  16          I         MU E            JJ
+  17   10   8 I    ( 1)AMU E            JLU(*)
+  18          I         MU E            JPOS
+  19          I         MU E            JROW
+  20   10   9 I    ( 1)AMU E            JU(n)
+  21          I         MU E            JU0
+  22   10  12 I    ( 1)AMU E            JW(2*n)
+  23          I         MU E            K
+  24          I         MU E            LEN
+  25          I         MU E            LENL
+  26          I         MU E            LENU
+  27   10   5 I        A U E            LFIL
+  28         II    ( 2)  U I            MIN0
+  29   10   1 I        A U E         Z  N
+  30         s     ( 4)  U              QSPLIT
+     (R8A,I4A,I4E,I4V)
+  31         IR    ( 1)  U I            REAL
+  32          R*8       MU E            S*8
+  33          R*8       MU E            T*8
+  34          R*8       MU E            TNORM*8
+  35   10  11 R*8  ( 1)AMU E            W(n+1)*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram ILUTP in file ilut.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           ilut.f,0000383,0000784
+   1   11   2 R*8  ( 1)A U E            A(*)*8
+   2         IR*8  ( 1)  U E            ABS*8
+   3   11   9 R*8  ( 1)AMU E            ALU(*)*8
+   4   11   6 R*8      A U E            DROPTOL*8
+   5          R*8       MU E            FACT*8
+   6          I         MU E            I
+   7   11   4 I    ( 1)A U E            IA(n+1)
+   8          I         MU E            ICUT
+   9   11  16 I        AM  E            IERR
+  10          I         MU E            II
+  11         S     (16) MU        169   ILUTP(N,A,JA,IA,LFIL,DROPTOL,PERMTOL,MBLOC,ALU,JLU,JU,IWK,W,JW,IPERM,IERR)
+  12          I         MU E            IMAX
+  13   11  15 I    ( 1)AMU E            IPERM(2*n)
+  14   11  12 I        A U E            IWK
+  15          I         MU E            J
+  16          I         MU E            J1
+  17          I         MU E            J2
+  18   11   3 I    ( 1)AMU E            JA(*)
+  19          I         MU E            JJ
+  20   11  10 I    ( 1)AMU E            JLU(*)
+  21          I         MU E            JPOS
+  22          I         MU E            JROW
+  23   11  11 I    ( 1)AMU E            JU(n)
+  24          I         MU E            JU0
+  25   11  14 I    ( 1)AMU E            JW(2*n)
+  26          I         MU E            K
+  27          I         MU E            LEN
+  28          I         MU E            LENL
+  29          I         MU E            LENU
+  30   11   5 I        A U E            LFIL
+  31   11   8 I        A U E            MBLOC
+  32         II    ( 2)  U I            MIN0
+  33         I?    ( 2)  U I            MOD
+  34   11   1 I        A U E         Z  N
+  35   11   7 R*8      A U E            PERMTOL*8
+  36         s     ( 4)  U              QSPLIT
+     (R8A,I4A,I4E,I4V)
+  37          R*8       MU E            S*8
+  38          R*8       MU E            T*8
+  39          R*8       MU E            TMP*8
+  40          R*8       MU E            TNORM*8
+  41   11  13 R*8  ( 1)AMU E            W(n+1)*8
+  42          R*8       MU E            XMAX*8
+  43          R*8       MU E            XMAX0*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram ILUD in file ilut.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             ilut.f,0000786,0001113
+   1   11   2 R*8  ( 1)A U E            A(*)*8
+   2         IR*8  ( 1)  U E            ABS*8
+   3   11   5 R*8      A U E            ALPH*8
+   4   11   7 R*8  ( 1)AMU E            ALU(*)*8
+   5          R*8       MU E            DROPSUM*8
+   6          R*8       MU E            FACT*8
+   7          I         MU E            I
+   8   11   4 I    ( 1)A U E            IA(n+1)
+   9   11  13 I        AM  E            IERR
+  10          I         MU E            II
+  11         S     (13) MU        137   ILUD(N,A,JA,IA,ALPH,TOL,ALU,JLU,JU,IWK,W,JW,IERR)
+  12   11  10 I        A U E            IWK
+  13          I         MU E            J
+  14          I         MU E            J1
+  15          I         MU E            J2
+  16   11   3 I    ( 1)A U E            JA(*)
+  17          I         MU E            JJ
+  18   11   8 I    ( 1)AMU E            JLU(*)
+  19          I         MU E            JPOS
+  20          I         MU E            JROW
+  21   11   9 I    ( 1)AMU E            JU(n)
+  22          I         MU E            JU0
+  23   11  12 I    ( 1)AMU E            JW(2*n)
+  24          I         MU E            K
+  25          I         MU E            LEN
+  26          I         MU E            LENL
+  27          I         MU E            LENU
+  28   11   1 I        A U E         Z  N
+  29         IR    ( 1)  U I            REAL
+  30          R*8       MU E            S*8
+  31          R*8       MU E            T*8
+  32          R*8       MU E            TNORM*8
+  33   11   6 R*8      A U E            TOL*8
+  34   11  11 R*8  ( 1)AMU E            W(2*n)*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram ILUDP in file ilut.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             ilut.f,0001115,0001484
+   1   13   2 R*8  ( 1)A U E            A(*)*8
+   2         IR*8  ( 1)  U E            ABS*8
+   3   13   5 R*8      A U E            ALPH*8
+   4   13   9 R*8  ( 1)AMU E            ALU(*)*8
+   5          R*8       MU E            DROPSUM*8
+   6   13   6 R*8      A U E            DROPTOL*8
+   7          R*8       MU E            FACT*8
+   8          I         MU E            I
+   9   13   4 I    ( 1)A U E            IA(n+1)
+  10          I         MU E            ICUT
+  11   13  16 I        AM  E            IERR
+  12          I         MU E            II
+  13         S     (16) MU        165   ILUDP(N,A,JA,IA,ALPH,DROPTOL,PERMTOL,MBLOC,ALU,JLU,JU,IWK,W,JW,IPERM,IERR)
+  14          I         MU E            IMAX
+  15   13  15 I    ( 1)AMU E            IPERM(2*n)
+  16   13  12 I        A U E            IWK
+  17          I         MU E            J
+  18          I         MU E            J1
+  19          I         MU E            J2
+  20   13   3 I    ( 1)AMU E            JA(*)
+  21          I         MU E            JJ
+  22   13  10 I    ( 1)AMU E            JLU(*)
+  23          I         MU E            JPOS
+  24          I         MU E            JROW
+  25   13  11 I    ( 1)AMU E            JU(n)
+  26          I         MU E            JU0
+  27   13  14 I    ( 1)AMU E            JW(2*n)
+  28          I         MU E            K
+  29          I         MU E            LEN
+  30          I         MU E            LENL
+  31          I         MU E            LENU
+  32   13   8 I        A U E            MBLOC
+  33         I?    ( 2)  U I            MOD
+  34   13   1 I        A U E         Z  N
+  35   13   7 R*8      A U E            PERMTOL*8
+  36          R*8       MU E            S*8
+  37          R*8       MU E            T*8
+  38          R*8       MU E            TMP*8
+  39          R*8       MU E            TNORM*8
+  40   13  13 R*8  ( 1)AMU E            W(2*n)*8
+  41          R*8       MU E            XMAX*8
+  42          R*8       MU E            XMAX0*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram ILUK in file ilut.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             ilut.f,0001486,0001791
+   1    8   2 R*8  ( 1)A U E            A(*)*8
+   2    8   6 R*8  ( 1)AMU E            ALU(*)*8
+   3          R*8       MU E            FACT*8
+   4          I         MU E            I
+   5    8   4 I    ( 1)A U E            IA(n+1)
+   6    8  13 I        AM  E            IERR
+   7          I         MU E            II
+   8         S     (13) MU        137   ILUK(N,A,JA,IA,LFIL,ALU,JLU,JU,LEVS,IWK,W,JW,IERR)
+   9    8  10 I        A U E            IWK
+  10          I         MU E            J
+  11          I         MU E            J1
+  12          I         MU E            J2
+  13    8   3 I    ( 1)A U E            JA(*)
+  14          I         MU E            JJ
+  15          I         MU E            JLEV
+  16    8   7 I    ( 1)AMU E            JLU(*)
+  17          I         MU E            JPOS
+  18          I         MU E            JROW
+  19    8   8 I    ( 1)AMU E            JU(n)
+  20          I         MU E            JU0
+  21    8  12 I    ( 1)AMU E            JW(3*n)
+  22          I         MU E            K
+  23          I         MU E            LENL
+  24          I         MU E            LENU
+  25    8   9 I    ( 1)AMU E            LEVS(*)
+  26    8   5 I        A U E            LFIL
+  27         II    ( 2)  U E            MIN
+  28    8   1 I        A U E         Z  N
+  29          I         MU E            N2
+  30          R*8       MU E            S*8
+  31          R*8       MU E            T*8
+  32    8  11 R*8  ( 1)AMU E            W(n)*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram ILU0 in file ilut.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             ilut.f,0001793,0001915
+   1    7   2 R*8  ( 1)A U E            A(*)*8
+   2    7   5 R*8  ( 1)AMU E            ALU(*)*8
+   3          I         MU I            I
+   4    7   4 I    ( 1)A U E            IA(*)
+   5    7   9 I        AM  I            IERR
+   6          I         MU I            II
+   7         S     ( 9) MU         42   ILU0(N,A,JA,IA,ALU,JLU,JU,IW,IERR)
+   8    7   8 I    ( 1)AMU E            IW(*)
+   9          I         MU I            J
+  10    7   3 I    ( 1)A U E            JA(*)
+  11          I         MU I            JCOL
+  12          I         MU I            JF
+  13          I         MU I            JJ
+  14    7   6 I    ( 1)AMU E            JLU(*)
+  15          I         MU I            JM
+  16          I         MU I            JROW
+  17          I         MU I            JS
+  18    7   7 I    ( 1)AMU E            JU(*)
+  19          I         MU I            JU0
+  20          I         MU I            JW
+  21    7   1 I        A U I            N
+  22          R*8       MU I            TL
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram MILU0 in file ilut.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             ilut.f,0001917,0002030
+   1   20   2 R*8  ( 1)A U E            A(*)*8
+   2   20   5 R*8  ( 1)AMU E            ALU(*)*8
+   3          I         MU I            I
+   4   20   4 I    ( 1)A U E            IA(*)
+   5   20   9 I        AM  I            IERR
+   6          I         MU I            II
+   7   20   8 I    ( 1)AMU E            IW(*)
+   8          I         MU I            J
+   9   20   3 I    ( 1)A U E            JA(*)
+  10          I         MU I            JCOL
+  11          I         MU I            JF
+  12          I         MU I            JJ
+  13   20   6 I    ( 1)AMU E            JLU(*)
+  14          I         MU I            JM
+  15          I         MU I            JROW
+  16          I         MU I            JS
+  17   20   7 I    ( 1)AMU E            JU(*)
+  18          I         MU I            JU0
+  19          I         MU I            JW
+  20         S     ( 9) MU         47   MILU0(N,A,JA,IA,ALU,JLU,JU,IW,IERR)
+  21   20   1 I        A U I            N
+  22          R*8       MU I            S
+  23          R*8       MU I            TL
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram PGMRES in file ilut.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             ilut.f,0002032,0002267
+   1   33   9 R*8  ( 1)A?? E            AA(*)*8
+   2         I?    ( 1)  U I            ABS
+   3   33  12 R*8  ( 1)A?? E            ALU(*)*8
+   4         s     ( 6)  U              AMUX
+     (I4V,R8A,R8A,R8A,I4A,I4A)
+   5          R*8  ( 1) MU E       50   C(kmax)*8
+   6         s     ( 6)  U              DAXPY
+     (I4V,R8E,R8L,I4E,R8A,I4E)
+   7         fR*8  ( 5)  U I            DDOT
+     (I4V,R8L,I4E,R8L,I4E)
+   8         fR*8  ( 3)  U I            DNRM2
+     (I4V,R8A,I4E)
+   9   33   6 R*8      A U E            EPS*8
+  10          R*8       MU I            EPS1
+  11          R*8      I U I            EPSMAC
+  12          R*8       MU I            GAM
+  13          R*8  ( 2) MU E     2550   HH(kmax+1,kmax)*8
+  14          I         MU I            I
+  15          I         MU I            I1
+  16   33  11 I    ( 1)A?? E            IA(n+1)
+  17   33  15 I        AM  E            IERR
+  18          I         MU I            II
+  19   33   2 I        A U E            IM
+  20   33   8 I        A U E            IOUT
+  21          I         MU I            ITS
+  22          I         MU I            J
+  23   33  10 I    ( 1)A?? E            JA(*)
+  24          I         MU I            JJ
+  25   33  13 I    ( 1)A?? E            JLU(*)
+  26   33  14 I    ( 1)A?? E            JU(n)
+  27          I         MU I            K
+  28          I         MU I            K1
+  29         PI          U I       50   KMAX=50
+  30         s     ( 6)  U              LUSOL
+     (I4V,R8A,R8A,R8A,I4A,I4A)
+  31   33   7 I        A U E            MAXITS
+  32   33   1 I        A?U E         Z  N
+  33         S     (15) MU         94   PGMRES(N,IM,RHS,SOL,VV,EPS,MAXITS,IOUT,AA,JA,IA,ALU,JLU,JU,IERR)
+  34   33   3 R*8  ( 1)AMU E            RHS(n)*8
+  35          R*8       MU I            RO
+  36          R*8  ( 1) MU E       51   RS(kmax+1)*8
+  37          R*8  ( 1) MU E       50   S(kmax)*8
+  38   33   4 R*8  ( 1)AMU E            SOL(n)*8
+  39         I?    ( 1)  U I            SQRT
+  40          R*8       MU E            T*8
+  41   33   5 R*8  ( 2)AMU E            VV(n,*)*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram LUSOL in file ilut.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           ilut.f,0002269,0002318
+   1    6   4 R*8  ( 1)A U E            ALU(*)*8
+   2          I         MU E            I
+   3    6   5 I    ( 1)A U E            JLU(*)
+   4    6   6 I    ( 1)A U E            JU(*)
+   5          I         MU E            K
+   6         S     ( 6) MU         13   LUSOL(N,Y,X,ALU,JLU,JU)
+   7    6   1 I        A U E         Z  N
+   8    6   3 R*8  ( 1)AMU E            X(n)*8
+   9    6   2 R*8  ( 1)A U E            Y(n)*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram LUTSOL in file ilut.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           ilut.f,0002320,0002371
+   1    6   4 R*8  ( 1)A U E            ALU(*)*8
+   2          I         MU E            I
+   3    6   5 I    ( 1)A U E            JLU(*)
+   4    6   6 I    ( 1)A U E            JU(*)
+   5          I         MU E            K
+   6         S     ( 6) MU         15   LUTSOL(N,Y,X,ALU,JLU,JU)
+   7    6   1 I        A U E         Z  N
+   8    6   3 R*8  ( 1)AMU E            X(n)*8
+   9    6   2 R*8  ( 1)A U E            Y(n)*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram QSPLIT in file ilut.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           ilut.f,0002373,0002431
+   1   12   1 R*8  ( 1)AMU E            A(n)*8
+   2         I?    ( 1)  U I            ABS
+   3          R*8       MU E            ABSKEY*8
+   4          I         MU E            FIRST
+   5   12   2 I    ( 1)AMU E            IND(n)
+   6          I         MU E            ITMP
+   7          I         MU I            J
+   8          I         MU E            LAST
+   9          I         MU I            MID
+  10   12   3 I        A U E         Z  N
+  11   12   4 I        A U E            NCUT
+  12         S     ( 4) MU         29   QSPLIT(A,IND,N,NCUT)
+  13          R*8       MU E            TMP*8
+**-- END OF SYMBOL TABLE

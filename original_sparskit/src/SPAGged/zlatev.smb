@@ -1,0 +1,65 @@
+**++ Symbol table for subprogram MATRF2 in file zlatev.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           zlatev.f,0000001,0000205
+   1   16   8 R*8  ( 1)AM  E            A*8(NN)
+   2   16   5 R*8      AMU E            ALPHA*8
+   3          R*8       MU E            ALPHA1*8
+   4   16   3 I        A U E            C
+   5         I?    ( 1)  U I            DFLOAT
+   6   16  11 I        AM  E            FEJLM
+   7          I         MU I            I
+   8   16   4 I        A U I            INDEX
+   9          I         MU I            INDEX1
+  10          I         MU I            J
+  11          I         MU I            J1
+  12          I         MU E            K
+  13   16   1 I        A U E            M
+  14          I         MU E            M1
+  15          I         MU E            M2
+  16         S     (11) MU         99   MATRF2(M,N,C,INDEX,ALPHA,NN,NZ,A,SNR,RNR,FEJLM)
+  17   16   2 I        A U E            N
+  18          I         MU E            N2
+  19   16   6 I        A U E         Z  NN
+  20   16   7 I        AMU E            NZ
+  21          I         MU E            NZ1
+  22   16  10 I    ( 1)AM  E            RNR(NN)
+  23          I         MU E            RR1
+  24          I         MU E            RR2
+  25          I         MU E            RR3
+  26   16   9 I    ( 1)AM  E            SNR(NN)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram DCN in file zlatev.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           zlatev.f,0000206,0000387
+   1    2   1 R*8  ( 1)AM  E            AR(nn)*8
+   2         S     ( 8) MU         79   DCN(AR,IA,JA,N,NE,IC,NN,IERR)
+   3         I?    ( 1)  U I            DFLOAT
+   4          I         MU I            I
+   5    2   2 I    ( 1)AM  E            IA(nn)
+   6    2   6 I        A U I            IC
+   7          I         MU I            ICOUNT
+   8    2   8 I        AM  E            IERR
+   9          I         MU I            ILAST
+  10          I         MU I            IT
+  11          I         MU I            J
+  12    2   3 I    ( 1)AM  E            JA(nn)
+  13    2   4 I        A U I            N
+  14    2   5 I        AMU I            NE
+  15    2   7 I        A U I         Z  NN
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram ECN in file zlatev.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           zlatev.f,0000388,0000541
+   1    2   6 R*8  ( 1)AM  E            AR(nn)*8
+   2         S     ( 8) MU         48   ECN(N,IC,NE,IA,JA,AR,NN,IERR)
+   3          I         MU I            I
+   4    2   4 I    ( 1)AM  E            IA(nn)
+   5    2   2 I        A U I            IC
+   6    2   8 I        AM  E            IERR
+   7          I         MU I            ILAST
+   8          I         MU I            IT
+   9    2   5 I    ( 1)AM  E            JA(nn)
+  10    2   1 I        A U E            N
+  11    2   3 I        AMU E            NE
+  12    2   7 I        A U I         Z  NN
+**-- END OF SYMBOL TABLE

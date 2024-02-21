@@ -1,0 +1,300 @@
+**++ Symbol table for subprogram MULTIC in file color.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           color.f,0000017,0000138
+   1          I         MU E            I
+   2   16   3 I    ( 1)A U E            IA(n+1)
+   3          I         MU I            ICOL
+   4   16   9 I        AM  E            IERR
+   5          I         MU I            II
+   6   16   6 I    ( 1)AMU E            IL(maxcol+1)
+   7   16   7 I    ( 1)AMU E            IORD(n)
+   8          I         MU E            J
+   9   16   2 I    ( 1)A U E            JA(*)
+  10          I         MU E            K
+  11          I         MU E            KOL
+  12   16   5 I    ( 1)AMU E            KOLRS(n)
+  13         I?    ( 2)  U I            MAX
+  14   16   8 I        A U E         Z  MAXCOL
+  15          I         MU I            MCOL
+  16         S     ( 9) MU         51   MULTIC(N,JA,IA,NCOL,KOLRS,IL,IORD,MAXCOL,IERR)
+  17          I         MU E            MYCOL
+  18   16   1 I        A U E         Z  N
+  19   16   4 I        AMU I            NCOL
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram INDSET0 in file color.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           color.f,0000141,0000207
+   1    2   3 I    ( 1)A U E            IA(*)
+   2         S     ( 8) MU         33   INDSET0(N,JA,IA,NSET,IORD,RIORD,SYM,IPTR)
+   3    2   5 I    ( 1)AMU E            IORD(*)
+   4          I         MU I            IPOS
+   5    2   8 I        A U I            IPTR
+   6          I         MU E            J
+   7    2   2 I    ( 1)A U E            JA(*)
+   8          I         MU E            K
+   9          I         MU E            K1
+  10          I         MU E            K2
+  11          I         MU E            MAT
+  12    2   1 I        A U E            N
+  13          I         MU E            NOD
+  14    2   4 I        AMU E            NSET
+  15          I         MU I            NUMMAT
+  16    2   6 I    ( 1)AM  E            RIORD(*)
+  17    2   7 L        A U E            SYM
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram INDSET1 in file color.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           color.f,0000209,0000310
+   1         s     ( 5)  U              HEAPSORT
+     (I4A,I4A,I4A,I4V,I4V)
+   2    5   3 I    ( 1)A U E            IA(*)
+   3          I         MU I            II
+   4          I         MU I            IMAT
+   5         S     ( 9) MU         52   INDSET1(N,JA,IA,NSET,IORD,RIORD,IW,SYM,IPTR)
+   6    5   5 I    ( 1)AMU E            IORD(*)
+   7          I         MU E            IPOS
+   8    5   9 I        A U E            IPTR
+   9          I         MU I            IPTRM1
+  10    5   7 I    ( 1)AMU E            IW(*)
+  11          I         MU E            J
+  12    5   2 I    ( 1)A U E            JA(*)
+  13          I         MU E            K
+  14          I         MU E            K1
+  15          I         MU E            K2
+  16          I         MU I            MAT
+  17    5   1 I        A?U E            N
+  18          I         MU E            NOD
+  19    5   4 I        AMU E            NSET
+  20          I         MU E            NUMMAT
+  21    5   6 I    ( 1)AM? E            RIORD(*)
+  22    5   8 L        A U E            SYM
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram INDSET2 in file color.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           color.f,0000312,0000468
+   1         s     ( 6)  U              FIXHEAP
+     (I4A,I4A,I4A,I4V,I4V,I4V)
+   2         s     ( 6)  U              HEAPINSERT
+     (I4A,I4A,I4A,I4V,I4V,I4V)
+   3          I         MU E            I
+   4    7   3 I    ( 1)A U E            IA(*)
+   5          I         ?? I            ICHILD
+   6          I         MU I            IMAT
+   7         S     ( 9) MU         74   INDSET2(N,JA,IA,NSET,IORD,RIORD,IW,SYM,IPTR)
+   8    7   5 I    ( 1)AMU E            IORD(n)
+   9          I         MU E            IPOS
+  10    7   9 I        A U E            IPTR
+  11          I         MU I            IPTRM1
+  12    7   7 I    ( 1)AMU E            IW(n)
+  13          I         MU E            J
+  14    7   2 I    ( 1)A U E            JA(*)
+  15          I         MU E            JN
+  16          I         MU E            JNEW
+  17          I         MU E            JO
+  18          I         MU E            JOLD
+  19          I         MU E            K
+  20          I         MU E            K1
+  21          I         MU E            K2
+  22          I         MU E            LAST
+  23          I         MU E            LASTLAST
+  24         s     ( 4)  U              MOVEBACK
+     (I4A,I4A,I4A,I4V)
+  25    7   1 I        A?U E         Z  N
+  26          I         MU E            NOD
+  27    7   4 I        AMU E            NSET
+  28          I         MU E            NUMMAT
+  29    7   6 I    ( 1)AMU E            RIORD(n)
+  30    7   8 L        A U E            SYM
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram INDSET3 in file color.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           color.f,0000470,0000587
+   1         s     ( 6)  U              FIXHEAPM
+     (I4A,I4A,I4A,I4V,I4V,I4V)
+   2          I         MU E            I
+   3    6   3 I    ( 1)A U E            IA(*)
+   4          I         MU I            IDEG
+   5          I         MU I            IMAT
+   6         S     ( 9) MU         47   INDSET3(N,JA,IA,NSET,IORD,RIORD,IW,SYM,IPTR)
+   7    6   5 I    ( 1)AMU E            IORD(n)
+   8          I         MU E            IPOS
+   9    6   9 I        A U E            IPTR
+  10          I         MU I            IPTRM1
+  11    6   7 I    ( 1)AMU E            IW(n)
+  12          I         MU E            J
+  13    6   2 I    ( 1)A U E            JA(*)
+  14          I         MU E            JNEW
+  15          I         MU E            JOLD
+  16          I         MU E            K
+  17         s     ( 4)  U              MOVEBACKM
+     (I4A,I4A,I4A,I4V)
+  18    6   1 I        A?U E         Z  N
+  19          I         MU I            NNZ
+  20          I         MU E            NOD
+  21    6   4 I        AMU E            NSET
+  22          I         MU E            NUMMAT
+  23    6   6 I    ( 1)AMU E            RIORD(n)
+  24    6   8 L        A U E            SYM
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram HEAPSORT in file color.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           color.f,0000589,0000621
+   1    3   1 I    ( 1)A?? E            A(*)
+   2         s     ( 6)  U              FIXHEAP
+     (I4A,I4A,I4A,I4V,I4V,I4V)
+   3         S     ( 5) ?U          9   HEAPSORT(A,IND,RIND,N,NCUT)
+   4          I         MU E            I
+   5    3   2 I    ( 1)A?? E            IND(n)
+   6          I         M? E            J
+   7          I         MU E            JLAST
+   8          I         MU E            LAST
+   9         I?    ( 2)  U I            MAX
+  10         s     ( 4)  U              MOVEBACK
+     (I4A,I4A,I4A,I4E)
+  11    3   4 I        A?U E         Z  N
+  12    3   5 I        A U E            NCUT
+  13    3   3 I    ( 1)A?? E            RIND(n)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram FIXHEAP in file color.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           color.f,0000623,0000661
+   1    3   1 I    ( 1)AMU E            A(*)
+   2          I         MU E            CHILD
+   3         S     ( 6) MU         19   FIXHEAP(A,IND,RIND,JKEY,VACANT,LAST)
+   4          I         MU I            IKEY
+   5    3   2 I    ( 1)AMU E            IND(*)
+   6    3   4 I        A U E            JKEY
+   7    3   6 I        A U E            LAST
+   8          I         MU E            LCHILD
+   9          I         MU E            RCHILD
+  10    3   3 I    ( 1)AM  E            RIND(*)
+  11    3   5 I        AMU E            VACANT
+  12          I         MU E            XKEY
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram HEAPINSERT in file color.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           color.f,0000663,0000690
+   1    3   1 I    ( 1)AMU E            A(*)
+   2    3   5 I        AMU E            CHILD
+   3         S     ( 6) MU         14   HEAPINSERT(A,IND,RIND,JKEY,CHILD,NODE)
+   4          I         MU E            IKEY
+   5    3   2 I    ( 1)AMU E            IND(*)
+   6         s     ( 5)  U              INTERCHANGE
+     (I4A,I4A,I4A,I4V,I4V)
+   7    3   4 I        A U E            JKEY
+   8    3   6 I        A U E            NODE
+   9          I         MU E            PARENT
+  10    3   3 I    ( 1)AM? E            RIND(*)
+  11          I         MU E            XKEY
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram INTERCHANGE in file color.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           color.f,0000692,0000707
+   1    4   1 I    ( 1)AMU E            A(*)
+   2    4   4 I        A U E            I
+   3    4   2 I    ( 1)AMU E            IND(*)
+   4         S     ( 5) MU          9   INTERCHANGE(A,IND,RIND,I,J)
+   5          I         MU E            ITMP
+   6    4   5 I        A U E            J
+   7    4   3 I    ( 1)AM  E            RIND(*)
+   8          I         MU E            TMP
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram MOVEBACK in file color.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           color.f,0000709,0000727
+   1    6   1 I    ( 1)AMU E            A(*)
+   2         s     ( 6)  U              FIXHEAP
+     (I4A,I4A,I4A,I4V,I4V,I4E)
+   3          I         MU I            IMIN
+   4    6   2 I    ( 1)AMU E            IND(*)
+   5    6   4 I        A?U E            LAST
+   6         S     ( 4) MU          8   MOVEBACK(A,IND,RIND,LAST)
+   7    6   3 I    ( 1)AM? E            RIND(*)
+   8          I         MU E            VACANT
+   9          I         MU E            XMIN
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram FIXHEAPM in file color.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           color.f,0000729,0000766
+   1    3   1 I    ( 1)AMU E            A(*)
+   2          I         MU E            CHILD
+   3         S     ( 6) MU         19   FIXHEAPM(A,IND,RIND,JKEY,VACANT,LAST)
+   4          I         MU I            IKEY
+   5    3   2 I    ( 1)AMU E            IND(*)
+   6    3   4 I        A U E            JKEY
+   7    3   6 I        A U E            LAST
+   8          I         MU E            LCHILD
+   9          I         MU E            RCHILD
+  10    3   3 I    ( 1)AM  E            RIND(*)
+  11    3   5 I        AMU E            VACANT
+  12          I         MU E            XKEY
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram HEAPINSERTM in file color.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           color.f,0000768,0000795
+   1    3   1 I    ( 1)AMU E            A(*)
+   2    3   5 I        AMU E            CHILD
+   3         S     ( 6) MU         14   HEAPINSERTM(A,IND,RIND,JKEY,CHILD,NODE)
+   4          I         MU E            IKEY
+   5    3   2 I    ( 1)AMU E            IND(*)
+   6         s     ( 5)  U              INTERCHANGE
+     (I4A,I4A,I4A,I4V,I4V)
+   7    3   4 I        A U E            JKEY
+   8    3   6 I        A U E            NODE
+   9          I         MU E            PARENT
+  10    3   3 I    ( 1)AM? E            RIND(*)
+  11          I         MU E            XKEY
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram MOVEBACKM in file color.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           color.f,0000797,0000817
+   1    6   1 I    ( 1)AMU E            A(*)
+   2         s     ( 6)  U              FIXHEAPM
+     (I4A,I4A,I4A,I4V,I4V,I4E)
+   3          I         MU I            IMIN
+   4    6   2 I    ( 1)AMU E            IND(*)
+   5    6   4 I        A?U E            LAST
+   6         S     ( 4) MU          8   MOVEBACKM(A,IND,RIND,LAST)
+   7    6   3 I    ( 1)AM? E            RIND(*)
+   8          I         MU E            VACANT
+   9          I         MU E            XMIN
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram INDSETR in file color.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           color.f,0000819,0000893
+   1    3   3 I    ( 1)A U E            IA(*)
+   2          I         MU I            II
+   3         S     ( 8) MU         37   INDSETR(N,JA,IA,NSET,IORD,RIORD,SYM,IPTR)
+   4    3   5 I    ( 1)AMU E            IORD(*)
+   5          I         MU I            IPOS
+   6    3   8 I        A U I            IPTR
+   7          I         M? I            ISEED
+   8          I         MU E            J
+   9    3   2 I    ( 1)A U E            JA(*)
+  10          I         MU E            K
+  11          I         MU E            K1
+  12          I         MU E            K2
+  13          I         MU E            MAT
+  14    3   1 I        A?U E            N
+  15          I         MU E            NOD
+  16    3   4 I        AMU E            NSET
+  17          I         MU I            NUMMAT
+  18    3   6 I    ( 1)AMU E            RIORD(*)
+  19         s     ( 3)  U              RNDPERM
+     (I4V,I4A,I4V)
+  20    3   7 L        A U E            SYM
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram RNDPERM in file color.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           color.f,0000895,0000919
+   1          I         MU E            I
+   2    9   2 I    ( 1)AMU E            IORD(n)
+   3         fI    ( 1)  U I            IRAND
+     (I4E)
+   4    9   3 I        A U E            ISEED
+   5          I         MU E            ITMP
+   6          I         MU E            J
+   7         I?    ( 2)  U I            MOD
+   8    9   1 I        A U E         Z  N
+   9         S     ( 3) MU         10   RNDPERM(N,IORD,ISEED)
+**-- END OF SYMBOL TABLE

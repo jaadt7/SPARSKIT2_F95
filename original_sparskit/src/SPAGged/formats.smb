@@ -1,0 +1,813 @@
+**++ Symbol table for subprogram TEST in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0000001,0000038
+   1         s           U              BNDCSR
+   2         s           U              BSRCSR
+   3         s           U              COICSR
+   4         s           U              COOCSR
+   5         s           U              COOELL
+   6         s           U              CSORTED
+   7         s           U              CSRBND
+   8         s           U              CSRBSR
+   9         s           U              CSRCOO
+  10         s           U              CSRCSC
+  11         s           U              CSRCSC2
+  12         s           U              CSRDIA
+  13         s           U              CSRDNS
+  14         s           U              CSRELL
+  15         s           U              CSRJAD
+  16         s           U              CSRLNK
+  17         s           U              CSRMSR
+  18         s           U              CSRSSK
+  19         s           U              CSRSSR
+  20         s           U              CSRSSS
+  21         s           U              CSRUSS
+  22         s           U              CSRVBR
+  23         s           U              DCSORT
+  24         s           U              DIACSR
+  25         s           U              DNSCSR
+  26         s           U              ELLCSR
+  27         s           U              JADCSR
+  28         s           U              LNKCSR
+  29         s           U              MSRCSR
+  30         s           U              SSKCSR
+  31         s           U              SSRCSR
+  32         s           U              SSSCSR
+  33         M                     34   TEST
+  34         s           U              USSCSR
+  35         s           U              VBRCSR
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CSRDNS in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0000094,0000145
+   1    2   3 R*8  ( 1)A U E            A(*)*8
+   2         S     ( 8) MU         17   CSRDNS(NROW,NCOL,A,JA,IA,DNS,NDNS,IERR)
+   3    2   6 R*8  ( 2)AM  E            DNS(ndns,*)*8
+   4          I         MU I            I
+   5    2   5 I    ( 1)A U E            IA(*)
+   6    2   8 I        AM  I            IERR
+   7          I         MU I            J
+   8    2   4 I    ( 1)A U E            JA(*)
+   9          I         MU I            K
+  10    2   2 I        A U I            NCOL
+  11    2   7 I        A U I         Z  NDNS
+  12    2   1 I        A U I            NROW
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram DNSCSR in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0000147,0000200
+   1    3   6 R*8  ( 1)AM  E            A(*)*8
+   2    3   4 R*8  ( 2)A U E            DNS(ndns,*)*8
+   3         S     ( 9) MU         17   DNSCSR(NROW,NCOL,NZMAX,DNS,NDNS,A,JA,IA,IERR)
+   4          I         MU I            I
+   5    3   8 I    ( 1)AM  E            IA(*)
+   6    3   9 I        AM  I            IERR
+   7          I         MU I            J
+   8    3   7 I    ( 1)AM  E            JA(*)
+   9    3   2 I        A U I            NCOL
+  10    3   5 I        A U I         Z  NDNS
+  11          I         MU I            NEXT
+  12    3   1 I        A U I            NROW
+  13    3   3 I        A U I            NZMAX
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram COOCSR in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0000202,0000270
+   1    3   3 R*8  ( 1)A U E            A(*)*8
+   2    3   6 R*8  ( 1)AM  E            AO(*)*8
+   3         S     ( 8) MU         26   COOCSR(NROW,NNZ,A,IR,JC,AO,JAO,IAO)
+   4          I         MU I            I
+   5          I         MU I            IAD
+   6    3   8 I    ( 1)AMU E            IAO(*)
+   7    3   4 I    ( 1)A U E            IR(*)
+   8          I         MU I            J
+   9    3   7 I    ( 1)AM  E            JAO(*)
+  10    3   5 I    ( 1)A U E            JC(*)
+  11          I         MU I            K
+  12          I         MU I            K0
+  13    3   2 I        A U I            NNZ
+  14    3   1 I        A U I            NROW
+  15          R*8       MU E            X*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram COICSR in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0000272,0000372
+   1    2   4 R*8  ( 1)AMU E            A(*)*8
+   2         S     ( 7) MU         44   COICSR(N,NNZ,JOB,A,JA,IA,IWK)
+   3          I         MU I            I
+   4    2   6 I    ( 1)AMU E            IA(*)
+   5          I         MU I            INEXT
+   6          I         MU I            INIT
+   7          I         MU I            IPOS
+   8    2   7 I    ( 1)AMU E            IWK(n+1)
+   9          I         MU I            J
+  10    2   5 I    ( 1)AMU E            JA(nnz)
+  11          I         MU I            JNEXT
+  12    2   3 I        A U I            JOB
+  13          I         MU I            K
+  14    2   1 I        A U I         Z  N
+  15    2   2 I        A U I         Z  NNZ
+  16          R*8       MU E            T*8
+  17          R*8       MU E            TNEXT*8
+  18          L         MU E            VALUES
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CSRCOO in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0000374,0000449
+   1    3   4 R*8  ( 1)A U E            A(*)*8
+   2    3   8 R*8  ( 1)AM  E            AO(*)*8
+   3         S     (11) MU         21   CSRCOO(NROW,JOB,NZMAX,A,JA,IA,NNZ,AO,IR,JC,IERR)
+   4          I         MU I            I
+   5    3   6 I    ( 1)A U E            IA(nrow+1)
+   6    3  11 I        AM  I            IERR
+   7    3   9 I    ( 1)AM  E            IR(*)
+   8    3   5 I    ( 1)A U E            JA(*)
+   9    3  10 I    ( 1)AM  E            JC(*)
+  10    3   2 I        A U I            JOB
+  11          I         MU I            K
+  12          I         MU I            K1
+  13          I         MU I            K2
+  14    3   7 I        AMU I            NNZ
+  15    3   1 I        A U I         Z  NROW
+  16    3   3 I        A U I            NZMAX
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CSRSSR in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0000451,0000522
+   1    3   2 R*8  ( 1)A U E            A(*)*8
+   2    3   6 R*8  ( 1)AMU E            AO(*)*8
+   3         S     ( 9) MU         27   CSRSSR(NROW,A,JA,IA,NZMAX,AO,JAO,IAO,IERR)
+   4          I         MU I            I
+   5    3   4 I    ( 1)A U E            IA(*)
+   6    3   8 I    ( 1)AM  E            IAO(*)
+   7    3   9 I        AM  I            IERR
+   8    3   3 I    ( 1)A U E            JA(*)
+   9    3   7 I    ( 1)AMU E            JAO(*)
+  10          I         MU I            K
+  11          I         MU I            KDIAG
+  12          I         MU I            KO
+  13          I         MU I            KOLD
+  14    3   1 I        A U I            NROW
+  15    3   5 I        A U I            NZMAX
+  16          R*8       MU E            T*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram SSRCSR in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0000524,0000791
+   1   22   4 R*8  ( 1)A U E            A(*)*8
+   2   22   8 R*8  ( 1)AMU E            AO(nzmax)*8
+   3          I         MU E            I
+   4   22   6 I    ( 1)A U E            IA(nrow+1)
+   5   22  10 I    ( 1)AMU E            IAO(nrow+1)
+   6   22  13 I        AM  E            IERR
+   7   22  11 I    ( 1)AMU E            INDU(nrow)
+   8          I         MU E            IPOS
+   9   22  12 I    ( 1)AMU E            IWK(nrow+1)
+  10          I         MU E            J
+  11   22   5 I    ( 1)A U E            JA(*)
+  12   22   9 I    ( 1)AMU E            JAO(nzmax)
+  13   22   1 I        A U E            JOB
+  14          I         MU E            K
+  15          I         MU E            KFIRST
+  16          I         MU E            KLAST
+  17          I         MU E            KO
+  18          I         MU E            KOSAV
+  19          I         MU E            NNZ
+  20   22   3 I        A U E         Z  NROW
+  21   22   7 I        A U E         Z  NZMAX
+  22         S     (13) MU        144   SSRCSR(JOB,VALUE2,NROW,A,JA,IA,NZMAX,AO,JAO,IAO,INDU,IWK,IERR)
+  23          R*8       MU E            TMP*8
+  24   22   2 I        A U E            VALUE2
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram XSSRCSR in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0000793,0000903
+   1   21   2 R*8  ( 1)A U E            A(*)*8
+   2   21   6 R*8  ( 1)AMU E            AO(nzmax)*8
+   3          I         MU I            I
+   4   21   4 I    ( 1)A U E            IA(nrow+1)
+   5   21   8 I    ( 1)AMU E            IAO(nrow+1)
+   6   21  10 I        AM  I            IERR
+   7   21   9 I    ( 1)AMU E            INDU(nrow+1)
+   8          I         MU I            IPOS
+   9          I         MU I            J
+  10   21   3 I    ( 1)A U E            JA(*)
+  11   21   7 I    ( 1)AMU E            JAO(nzmax)
+  12          I         MU I            K
+  13          I         MU I            KFIRST
+  14          I         MU I            KLAST
+  15          I         MU I            KO
+  16          I         MU I            KOSAV
+  17          I         MU I            LENROW
+  18          I         MU I            NNZ
+  19   21   1 I        A U I         Z  NROW
+  20   21   5 I        A U I         Z  NZMAX
+  21         S     (10) MU         46   XSSRCSR(NROW,A,JA,IA,NZMAX,AO,JAO,IAO,INDU,IERR)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CSRELL in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0000905,0000976
+   1    3   2 R*8  ( 1)A U E            A(*)*8
+   2    3   6 R*8  ( 2)AM  E            COEF(ncoef,1)*8
+   3         S     (10) MU         25   CSRELL(NROW,A,JA,IA,MAXCOL,COEF,JCOEF,NCOEF,NDIAG,IERR)
+   4          I         MU I            I
+   5    3   4 I    ( 1)A U E            IA(nrow+1)
+   6    3  10 I        AM  I            IERR
+   7          I         MU I            J
+   8    3   3 I    ( 1)A U E            JA(*)
+   9    3   7 I    ( 2)AM  E            JCOEF(ncoef,1)
+  10          I         MU I            K
+  11          I         MU I            K1
+  12          I         MU I            K2
+  13         II    ( 2)  U I            MAX0
+  14    3   5 I        A U I            MAXCOL
+  15    3   8 I        A U I         Z  NCOEF
+  16    3   9 I        AMU I            NDIAG
+  17    3   1 I        A U I         Z  NROW
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram ELLCSR in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0000978,0001038
+   1    3   6 R*8  ( 1)AM  E            A(*)*8
+   2    3   2 R*8  ( 2)A U E            COEF(ncoef,1)*8
+   3         S     (10) MU         18   ELLCSR(NROW,COEF,JCOEF,NCOEF,NDIAG,A,JA,IA,NZMAX,IERR)
+   4          I         MU I            I
+   5    3   8 I    ( 1)AM  E            IA(nrow+1)
+   6    3  10 I        AM  I            IERR
+   7    3   7 I    ( 1)AM  E            JA(*)
+   8    3   3 I    ( 2)A U E            JCOEF(ncoef,1)
+   9          I         MU I            K
+  10          I         MU I            KPOS
+  11    3   4 I        A U I         Z  NCOEF
+  12    3   5 I        A U I            NDIAG
+  13    3   1 I        A U I         Z  NROW
+  14    3   9 I        A U I            NZMAX
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CSRMSR in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0001040,0001145
+   1    3   2 R*8  ( 1)A U E            A(*)*8
+   2    3   5 R*8  ( 1)AM  E            AO(*)*8
+   3         S     ( 8) MU         29   CSRMSR(N,A,JA,IA,AO,JAO,WK,IWK)
+   4          I         MU I            I
+   5    3   4 I    ( 1)A U E            IA(n+1)
+   6          I         MU I            ICOUNT
+   7          I         MU I            II
+   8          I         MU I            IPTR
+   9    3   8 I    ( 1)AMU E            IWK(n+1)
+  10          I         MU I            J
+  11    3   3 I    ( 1)A U E            JA(*)
+  12    3   6 I    ( 1)AMU E            JAO(*)
+  13          I         MU I            K
+  14    3   1 I        A U I         Z  N
+  15    3   7 R*8  ( 1)AMU E            WK(n)*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram MSRCSR in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0001147,0001224
+   1   14   2 R*8  ( 1)A U E            A(*)*8
+   2          L         MU E            ADDED
+   3   14   4 R*8  ( 1)AM  E            AO(*)*8
+   4          I         MU I            I
+   5   14   6 I    ( 1)AM  E            IAO(n+1)
+   6          I         MU I            IDIAG
+   7          I         MU I            II
+   8          I         MU I            IPTR
+   9   14   8 I    ( 1)AMU E            IWK(n+1)
+  10          I         MU I            J
+  11   14   3 I    ( 1)A U E            JA(*)
+  12   14   5 I    ( 1)AM  E            JAO(*)
+  13          I         MU I            K
+  14         S     ( 8) MU         35   MSRCSR(N,A,JA,AO,JAO,IAO,WK,IWK)
+  15   14   1 I        A U I         Z  N
+  16   14   7 R*8  ( 1)AMU E            WK(n)*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CSRCSC in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0001226,0001266
+   1    3   4 R*8  ( 1)A?? E            A(*)*8
+   2    3   7 R*8  ( 1)A?? E            AO(*)*8
+   3         S     ( 9) ?U          1   CSRCSC(N,JOB,IPOS,A,JA,IA,AO,JAO,IAO)
+   4         s     (10)  U              CSRCSC2
+     (I4V,I4V,I4V,I4V,R8A,I4A,I4A,R8A,I4A,I4A)
+   5    3   6 I    ( 1)A?? E            IA(n+1)
+   6    3   9 I    ( 1)A?? E            IAO(n+1)
+   7    3   3 I        A?? I            IPOS
+   8    3   5 I    ( 1)A?? E            JA(*)
+   9    3   8 I    ( 1)A?? E            JAO(*)
+  10    3   2 I        A?? I            JOB
+  11    3   1 I        A?U I         Z  N
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CSRCSC2 in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0001268,0001343
+   1    3   5 R*8  ( 1)A U E            A(*)*8
+   2    3   8 R*8  ( 1)AM  E            AO(*)*8
+   3         S     (10) MU         26   CSRCSC2(N,N2,JOB,IPOS,A,JA,IA,AO,JAO,IAO)
+   4          I         MU I            I
+   5    3   7 I    ( 1)A U E            IA(n+1)
+   6    3  10 I    ( 1)AMU E            IAO(n2+1)
+   7    3   4 I        A U I            IPOS
+   8          I         MU I            J
+   9    3   6 I    ( 1)A U E            JA(*)
+  10    3   9 I    ( 1)AM  E            JAO(*)
+  11    3   3 I        A U I            JOB
+  12          I         MU I            K
+  13    3   1 I        A U I         Z  N
+  14    3   2 I        A U I         Z  N2
+  15          I         MU I            NEXT
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CSRLNK in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0001345,0001417
+   1         S     ( 3) MU         13   CSRLNK(N,IA,LINK)
+   2          I         MU E            I
+   3    1   2 I    ( 1)AMU E            IA(n+1)
+   4          I         MU I            IEND
+   5          I         MU I            ISTART
+   6          I         MU E            K
+   7    1   3 I    ( 1)AM  E            LINK(*)
+   8    1   1 I        A U E         Z  N
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram LNKCSR in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0001419,0001487
+   1   10   2 R*8  ( 1)A U E            A(*)*8
+   2   10   6 R*8  ( 1)AM  E            AO(*)*8
+   3   10   8 I    ( 1)AM  E            IAO(*)
+   4          I         MU E            IPOS
+   5          I         MU E            IROW
+   6   10   4 I    ( 1)A U E            ISTART(n)
+   7   10   7 I    ( 1)AM  E            JAO(*)
+   8   10   3 I    ( 1)A U E            JCOL(*)
+   9   10   5 I    ( 1)A U E            LINK(*)
+  10         S     ( 8) MU         13   LNKCSR(N,A,JCOL,ISTART,LINK,AO,JAO,IAO)
+  11   10   1 I        A U E         Z  N
+  12          I         MU E            NEXT
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CSRDIA in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0001489,0001628
+   1    3   4 R*8  ( 1)A U E            A(*)*8
+   2    3  10 R*8  ( 1)AM  E            AO(*)*8
+   3         S     (13) MU         50   CSRDIA(N,IDIAG,JOB,A,JA,IA,NDIAG,DIAG,IOFF,AO,JAO,IAO,IND)
+   4    3   8 R*8  ( 2)AM  E            DIAG(ndiag,idiag)*8
+   5          I         MU I            I
+   6    3   6 I    ( 1)A?U E            IA(*)
+   7    3  12 I    ( 1)AM  E            IAO(*)
+   8    3   2 I        AMU I         Z  IDIAG
+   9          I         ?? I            IDUM
+  10          I         MU I            II
+  11    3  13 I    ( 1)AMU E            IND(*)
+  12         s     ( 5)  U              INFDIA
+     (I4V,I4A,I4A,I4A,I4V)
+  13    3   9 I    ( 1)AMU E            IOFF(*)
+  14          I         MU I            J
+  15    3   5 I    ( 1)A?U E            JA(*)
+  16    3  11 I    ( 1)AM  E            JAO(*)
+  17          I         MU I            JMAX
+  18    3   3 I        A U I            JOB
+  19          I         MU I            JOB1
+  20          I         MU I            JOB2
+  21          I         MU I            K
+  22          I         MU I            KO
+  23          I         MU I            L
+  24    3   1 I        A?U I            N
+  25          I         MU I            N2
+  26    3   7 I        A U I         Z  NDIAG
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram DIACSR in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0001630,0001690
+   1    2   7 R*8  ( 1)AM  E            A(*)*8
+   2         S     ( 9) MU         15   DIACSR(N,JOB,IDIAG,DIAG,NDIAG,IOFF,A,JA,IA)
+   3    2   4 R*8  ( 2)A U E            DIAG(ndiag,idiag)*8
+   4          I         MU I            I
+   5    2   9 I    ( 1)AM  E            IA(*)
+   6    2   3 I        A U I         Z  IDIAG
+   7    2   6 I    ( 1)A U E            IOFF(*)
+   8          I         MU I            J
+   9    2   8 I    ( 1)AM  E            JA(*)
+  10          I         MU I            JJ
+  11    2   2 I        A U I            JOB
+  12          I         MU I            KO
+  13    2   1 I        A U I            N
+  14    2   5 I        A U I         Z  NDIAG
+  15          R*8       MU E            T*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram BSRCSR in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             formats.f,0001692,0001820
+   1    3   5 R*8  ( 2)A U E            A(na,*)*8
+   2    3   8 R*8  ( 1)AM  E            AO(*)*8
+   3         S     (10) MU         22   BSRCSR(JOB,N,M,NA,A,JA,IA,AO,JAO,IAO)
+   4          I         MU E            I
+   5          I         MU E            I1
+   6          I         MU E            I2
+   7    3   7 I    ( 1)A U E            IA(*)
+   8    3  10 I    ( 1)AM  E            IAO(n+1)
+   9          I         MU E            II
+  10          I         MU E            IJ
+  11          I         MU E            IROW
+  12          I         MU E            J
+  13    3   6 I    ( 1)A U E            JA(*)
+  14    3   9 I    ( 1)AM  E            JAO(*)
+  15    3   1 I        A U E            JOB
+  16          I         MU E            JSTART
+  17          I         MU E            K
+  18          I         MU E            KROW
+  19    3   3 I        A U E            M
+  20    3   2 I        A U E         Z  N
+  21    3   4 I        A U E         Z  NA
+  22          L         MU E            VAL
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CSRBSR in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             formats.f,0001822,0001987
+   1    3   5 R*8  ( 1)A U E            A(*)*8
+   2    3   8 R*8  ( 2)AM  E            AO(na,*)*8
+   3         S     (12) MU         54   CSRBSR(JOB,NROW,M,NA,A,JA,IA,AO,JAO,IAO,IW,IERR)
+   4          I         MU E            I
+   5    3   7 I    ( 1)A U E            IA(nrow+1)
+   6    3  10 I    ( 1)AMU E            IAO(*)
+   7    3  12 I        AMU E            IERR
+   8          I         MU E            II
+   9          I         MU E            IJ
+  10          I         MU E            IO
+  11          I         MU E            IROW
+  12    3  11 I    ( 1)AMU E            IW(*)
+  13          I         MU E            J
+  14    3   6 I    ( 1)A U E            JA(*)
+  15    3   9 I    ( 1)AMU E            JAO(na)
+  16    3   1 I        A U E            JOB
+  17          I         MU E            JPOS
+  18          I         MU E            JR
+  19          I         MU E            K
+  20          I         MU E            KO
+  21          I         MU E            LEN
+  22    3   3 I        A U E            M
+  23          I         MU E            M2
+  24    3   4 I        A U E         Z  NA
+  25          I         MU E            NR
+  26    3   2 I        A U E         Z  NROW
+  27          L         MU E            VALS
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CSRBND in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0001989,0002127
+   1    3   2 R*8  ( 1)A U E            A(*)*8
+   2    3   6 R*8  ( 2)AM  E            ABD(nabd,n)*8
+   3         S     (11) MU         21   CSRBND(N,A,JA,IA,JOB,ABD,NABD,LOWD,ML,MU,IERR)
+   4         s     ( 5)  U              GETBWD
+     (I4V,I4A,I4A,I4V,I4V)
+   5          I         MU I            I
+   6    3   4 I    ( 1)A?U E            IA(n+1)
+   7    3  11 I        AMU I            IERR
+   8          I         MU I            II
+   9          I         MU I            J
+  10    3   3 I    ( 1)A?U E            JA(*)
+  11    3   5 I        A U I            JOB
+  12          I         MU I            K
+  13    3   8 I        AMU I            LOWD
+  14          I         MU I            M
+  15          I         MU I            MDIAG
+  16    3   9 I        A?U I            ML
+  17    3  10 I        A?U I            MU
+  18    3   1 I        A?U I         Z  N
+  19    3   7 I        A U I         Z  NABD
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram BNDCSR in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0002129,0002218
+   1    3   7 R*8  ( 1)AM  E            A(*)*8
+   2    3   2 R*8  ( 2)A U E            ABD(nabd,*)*8
+   3         S     (11) MU         26   BNDCSR(N,ABD,NABD,LOWD,ML,MU,A,JA,IA,LEN,IERR)
+   4          I         MU I            I
+   5    3   9 I    ( 1)AM  E            IA(n+1)
+   6    3  11 I        AM  I            IERR
+   7          I         MU I            IROW
+   8          I         MU I            J
+   9    3   8 I    ( 1)AM  E            JA(*)
+  10          I         MU I            KO
+  11    3  10 I        A U I            LEN
+  12    3   4 I        A U I            LOWD
+  13    3   5 I        A U I            ML
+  14    3   6 I        A U I            MU
+  15    3   1 I        A U I         Z  N
+  16    3   3 I        A U I         Z  NABD
+  17          R*8       MU E            T*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CSRSSK in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0002220,0002331
+   1    3   3 R*8  ( 1)A U E            A(*)*8
+   2    3   6 R*8  ( 1)AM  E            ASKY(nzmax)*8
+   3         S     ( 9) MU         36   CSRSSK(N,IMOD,A,JA,IA,ASKY,ISKY,NZMAX,IERR)
+   4          I         MU I            I
+   5    3   5 I    ( 1)A U E            IA(n+1)
+   6    3   9 I        AM  E            IERR
+   7    3   2 I        A U E            IMOD
+   8    3   7 I    ( 1)AMU E            ISKY(n+1)
+   9          I         MU I            J
+  10    3   4 I    ( 1)A U E            JA(*)
+  11          I         MU I            K
+  12          I         MU I            KEND
+  13         I?    ( 2)  U I            MAX
+  14          I         MU I            ML
+  15    3   1 I        A U E         Z  N
+  16          I         MU I            NNZ
+  17    3   8 I        A U E         Z  NZMAX
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram SSKSSR in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0002333,0002444
+   1   16   5 R*8  ( 1)AM  E            AO(nzmax)*8
+   2   16   3 R*8  ( 1)A U E            ASKY(*)*8
+   3          I         MU E            I
+   4   16   7 I    ( 1)AM  E            IAO(n+1)
+   5   16   9 I        AM  E            IERR
+   6   16   2 I        A U E            IMOD
+   7   16   4 I    ( 1)A U E            ISKY(n+1)
+   8          I         MU E            J
+   9   16   6 I    ( 1)AM  E            JAO(nzmax)
+  10          I         MU I            K
+  11          I         MU E            KEND
+  12          I         MU E            KSTART
+  13   16   1 I        A U E         Z  N
+  14          I         MU E            NEXT
+  15   16   8 I        A U E         Z  NZMAX
+  16         S     ( 9) MU         29   SSKSSR(N,IMOD,ASKY,ISKY,AO,JAO,IAO,NZMAX,IERR)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CSRJAD in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0002446,0002542
+   1    3   2 R*8  ( 1)A U E            A(*)*8
+   2    3   7 R*8  ( 1)AM  E            AO(*)*8
+   3         S     ( 9) MU         34   CSRJAD(NROW,A,JA,IA,IDIAG,IPERM,AO,JAO,IAO)
+   4         s     ( 6)  U              DCSORT
+     (I4A,I4V,I4A,I4A,I4V,I4V)
+   5          I         MU I            I
+   6    3   4 I    ( 1)A U E            IA(nrow+1)
+   7    3   9 I    ( 1)AMU E            IAO(nrow)
+   8    3   5 I        AMU I            IDIAG
+   9          I         MU I            ILO
+  10    3   6 I    ( 1)AMU E            IPERM(nrow)
+  11          I         MU I            J
+  12    3   3 I    ( 1)A U E            JA(*)
+  13    3   8 I    ( 1)AMU E            JAO(*)
+  14          I         MU I            JJ
+  15          I         MU I            K
+  16          I         MU I            K0
+  17          I         MU I            K1
+  18          I         MU I            LEN
+  19         I?    ( 2)  U I            MAX
+  20         I?    ( 2)  U I            MIN
+  21    3   1 I        A?U I         Z  NROW
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram JADCSR in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0002544,0002619
+   1   10   3 R*8  ( 1)A U E            A(*)*8
+   2   10   7 R*8  ( 1)AM  E            AO(*)*8
+   3          I         MU I            I
+   4   10   5 I    ( 1)A U E            IA(idiag+1)
+   5   10   9 I    ( 1)AMU E            IAO(nrow+1)
+   6   10   2 I        A U I         Z  IDIAG
+   7   10   6 I    ( 1)A U E            IPERM(nrow)
+   8          I         MU I            J
+   9   10   4 I    ( 1)A U E            JA(*)
+  10         S     ( 9) MU         30   JADCSR(NROW,IDIAG,A,JA,IA,IPERM,AO,JAO,IAO)
+  11   10   8 I    ( 1)AMU E            JAO(*)
+  12          I         MU I            JJ
+  13          I         MU I            K
+  14          I         MU I            K1
+  15          I         MU I            KPOS
+  16          I         MU I            LEN
+  17   10   1 I        A U I         Z  NROW
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram DCSORT in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0002620,0002720
+   1         S     ( 6) MU         15   DCSORT(IVAL,N,ICNT,INDEX,ILO,IHI)
+   2          I         MU E            I
+   3    1   3 I    ( 1)AMU E            ICNT(ilo:ihi)
+   4    1   6 I        A U E         Z  IHI
+   5    1   5 I        A U E         Z  ILO
+   6    1   4 I    ( 1)AM  E            INDEX(n)
+   7    1   1 I    ( 1)A U E            IVAL(n)
+   8          I         MU E            IVALJ
+   9          I         MU E            J
+  10    1   2 I        A U E         Z  N
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram COOELL in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             formats.f,0002723,0002799
+   1    3   4 R*8  ( 1)A U E            A(nnz)*8
+   2    3   7 R*8  ( 2)AM  E            AO(lda,ncmax)*8
+   3         S     (12) MU         39   COOELL(JOB,N,NNZ,A,JA,IA,AO,JAO,LDA,NCMAX,NC,IERR)
+   4          L         MU E            COPYVAL
+   5          I         MU E            I
+   6    3   6 I    ( 1)A U E            IA(nnz)
+   7    3  12 I        AM  E            IERR
+   8          I         MU E            IP
+   9          I         MU E            J
+  10    3   5 I    ( 1)A U E            JA(nnz)
+  11    3   8 I    ( 2)AMU E            JAO(lda,ncmax)
+  12    3   1 I        A U E            JOB
+  13          I         MU E            K
+  14    3   9 I        A U E         Z  LDA
+  15    3   2 I        A U E            N
+  16    3  11 I        AMU E            NC
+  17    3  10 I        A U E         Z  NCMAX
+  18    3   3 I        A U E         Z  NNZ
+  19         PR*8        U E            ZERO*8=0.0D0
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram XCOOELL in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0002802,0002992
+   1   19   3 R*8  ( 1)A U E            A(nnz)*8
+   2   19   6 R*8  ( 2)AMU E            AC(nac,ner)*8
+   3   19   5 I    ( 1)A U E            IA(nnz)
+   4          I         MU E            ICOUNT
+   5   19  11 I        AM  E            IERR
+   6          I         MU I            II
+   7          I         MU I            IN
+   8          I         MU I            INN
+   9          I         MU I            INNZ
+  10          I         MU I            IS
+  11   19   4 I    ( 1)A U E            JA(nnz)
+  12   19   7 I    ( 2)AM  E            JAC(nac,ner)
+  13          I         MU I            K
+  14   19   1 I        A U I            N
+  15   19   8 I        A U I         Z  NAC
+  16   19  10 I        AMU E            NCMAX
+  17   19   9 I        A U I         Z  NER
+  18   19   2 I        A U I         Z  NNZ
+  19         S     (11) MU         46   XCOOELL(N,NNZ,A,JA,IA,AC,JAC,NAC,NER,NCMAX,IERR)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CSRUSS in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0002994,0003084
+   1    4   2 R*8  ( 1)A U E            A(*)*8
+   2    4   6 R*8  ( 1)AM  E            AL(*)*8
+   3    4   9 R*8  ( 1)AM  E            AU(*)*8
+   4         S     (11) MU         38   CSRUSS(NROW,A,JA,IA,DIAG,AL,JAL,IAL,AU,JAU,IAU)
+   5    4   5 R*8  ( 1)AM  E            DIAG(*)*8
+   6          I         MU E            I
+   7    4   4 I    ( 1)A U E            IA(nrow+1)
+   8    4   8 I    ( 1)AMU E            IAL(nrow+1)
+   9    4  11 I    ( 1)AMU E            IAU(nrow+1)
+  10          I         MU E            J
+  11    4   3 I    ( 1)A U E            JA(*)
+  12    4   7 I    ( 1)AM  E            JAL(*)
+  13    4  10 I    ( 1)AM  E            JAU(*)
+  14          I         MU E            K
+  15          I         MU E            KL
+  16          I         MU E            KU
+  17    4   1 I        A U E         Z  NROW
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram USSCSR in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0003086,0003174
+   1   17   2 R*8  ( 1)AM  E            A(*)*8
+   2   17   6 R*8  ( 1)A U E            AL(*)*8
+   3   17   9 R*8  ( 1)A U E            AU(*)*8
+   4   17   5 R*8  ( 1)A U E            DIAG(*)*8
+   5          I         MU I            I
+   6   17   4 I    ( 1)AMU E            IA(nrow+1)
+   7   17   8 I    ( 1)A U E            IAL(nrow+1)
+   8   17  11 I    ( 1)A U E            IAU(nrow+1)
+   9          I         MU I            J
+  10   17   3 I    ( 1)AM  E            JA(*)
+  11          I         MU I            JAK
+  12   17   7 I    ( 1)A U E            JAL(*)
+  13   17  10 I    ( 1)A U E            JAU(*)
+  14          I         MU I            K
+  15          I         MU I            KA
+  16   17   1 I        A U I         Z  NROW
+  17         S     (11) MU         37   USSCSR(NROW,A,JA,IA,DIAG,AL,JAL,IAL,AU,JAU,IAU)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CSRSSS in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0003176,0003261
+   1    5   2 R*8  ( 1)A U E            A(*)*8
+   2    5   7 R*8  ( 1)AM? E            AL(*)*8
+   3    5  10 R*8  ( 1)AM  E            AU(*)*8
+   4         s     ( 5)  U              CSORT
+     (I4V,R8A,I4A,I4A,L4E)
+   5         S     (10) MU         32   CSRSSS(NROW,A,JA,IA,SORTED,DIAG,AL,JAL,IAL,AU)
+   6    5   6 R*8  ( 1)AM  E            DIAG(*)*8
+   7          I         MU I            I
+   8    5   4 I    ( 1)A U E            IA(nrow+1)
+   9    5   9 I    ( 1)AMU E            IAL(nrow+1)
+  10    5   3 I    ( 1)A U E            JA(*)
+  11          I         MU I            JAK
+  12    5   8 I    ( 1)AM? E            JAL(*)
+  13          I         MU I            K
+  14          I         MU I            KL
+  15          I         MU I            KU
+  16    5   1 I        A?U I         Z  NROW
+  17    5   5 L        A U E            SORTED
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram SSSCSR in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0003263,0003349
+   1   15   2 R*8  ( 1)AM  E            A(*)*8
+   2   15   6 R*8  ( 1)A U E            AL(*)*8
+   3   15   9 R*8  ( 1)A U E            AU(*)*8
+   4   15   5 R*8  ( 1)A U E            DIAG(*)*8
+   5          I         MU I            I
+   6   15   4 I    ( 1)AMU E            IA(nrow+1)
+   7   15   8 I    ( 1)A U E            IAL(nrow+1)
+   8          I         MU I            J
+   9   15   3 I    ( 1)AM  E            JA(*)
+  10          I         MU I            JAK
+  11   15   7 I    ( 1)A U E            JAL(*)
+  12          I         MU I            K
+  13          I         MU I            KA
+  14   15   1 I        A U I         Z  NROW
+  15         S     ( 9) MU         36   SSSCSR(NROW,A,JA,IA,DIAG,AL,JAL,IAL,AU)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CSRVBR in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0003351,0003618
+   1   10   4 R*8  ( 1)A?U E            A(*)*8
+   2          I         MU E            A0
+   3   10  12 R*8  ( 1)AM  E            B(nzmax)*8
+   4          I         MU E            B0
+   5          I         MU E            B1
+   6         s     ( 5)  U              CSORT
+     (I4V,R8A,I4A,I4A,L4E)
+   7         s     ( 4)  U              CSORTED
+     (I4V,I4A,I4A,L4V)
+   8         s     ( 6)  U              CSRKVSTC
+     (I4V,I4A,I4A,I4V,I4A,I4A)
+   9         s     ( 5)  U              CSRKVSTR
+     (I4V,I4A,I4A,I4V,I4A)
+  10         S     (17) MU        133   CSRVBR(N,IA,JA,A,NR,NC,KVSTR,KVSTC,IB,JB,KB,B,JOB,IWK,NKMAX,NZMAX,IERR)
+  11          I         MU E            I
+  12   10   2 I    ( 1)A?U E            IA(n+1)
+  13   10   9 I    ( 1)AMU E            IB(*)
+  14   10  17 I        AM  E            IERR
+  15          I         MU E            II
+  16   10  14 I    ( 1)AMU E            IWK(*)
+  17          I         MU E            J
+  18   10   3 I    ( 1)A?U E            JA(*)
+  19   10  10 I    ( 1)AMU E            JB(nkmax-1)
+  20          I         MU E            JJ
+  21          I         MU E            JNEW
+  22   10  13 I        A U E            JOB
+  23          I         MU E            K0
+  24   10  11 I    ( 1)AMU E            KB(nkmax)
+  25   10   8 I    ( 1)AMU E            KVSTC(*)
+  26         s     ( 6)  U              KVSTMERGE
+     (I4V,I4A,I4V,I4A,I4V,I4A)
+  27   10   7 I    ( 1)AMU E            KVSTR(*)
+  28         II    ( 2)  U I            MAX0
+  29   10   1 I        A?U E         Z  N
+  30          I         ?U E            NB
+  31   10   6 I        AMU E            NC
+  32          I         MU E            NCOL
+  33          I         MU E            NEQR
+  34   10  15 I        A U E         Z  NKMAX
+  35   10   5 I        AMU E            NR
+  36          I         MU E            NUMC
+  37   10  16 I        A U E         Z  NZMAX
+  38          L         ?U E            SORTED
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram VBRCSR in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0003622,0003720
+   1   21   3 R*8  ( 1)AM  E            A(*)*8
+   2          I         MU E            A0
+   3   21  10 R*8  ( 1)A U E            B(nzmax)*8
+   4          I         MU E            B0
+   5          I         MU E            I
+   6   21   1 I    ( 1)AM  E            IA(*)
+   7   21   7 I    ( 1)A U E            IB(nr+1)
+   8   21  12 I        AMU E            IERR
+   9          I         MU E            II
+  10          I         MU E            J
+  11   21   2 I    ( 1)AMU E            JA(*)
+  12   21   8 I    ( 1)A U E            JB(*)
+  13          I         MU E            JJ
+  14   21   9 I    ( 1)A U E            KB(*)
+  15   21   6 I    ( 1)A U E            KVSTC(*)
+  16   21   5 I    ( 1)A U E            KVSTR(nr+1)
+  17          I         MU E            NEQR
+  18   21   4 I        A U E         Z  NR
+  19          I         MU E            NUMC
+  20   21  11 I        A U E         Z  NZMAX
+  21         S     (12) MU         36   VBRCSR(IA,JA,A,NR,KVSTR,KVSTC,IB,JB,KB,B,NZMAX,IERR)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CSORTED in file formats.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           formats.f,0003725,0003755
+   1         S     ( 4) MU         10   CSORTED(N,IA,JA,SORTED)
+   2          I         MU E            I
+   3    1   2 I    ( 1)A U E            IA(n+1)
+   4          I         MU E            J
+   5    1   3 I    ( 1)A U E            JA(*)
+   6    1   1 I        A U E         Z  N
+   7    1   4 L        AM  E            SORTED
+**-- END OF SYMBOL TABLE

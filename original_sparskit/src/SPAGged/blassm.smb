@@ -1,0 +1,304 @@
+**++ Symbol table for subprogram AMUB in file blassm.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           blassm.f,0000020,0000110
+   1    2   4 R*8  ( 1)A U E            A(*)*8
+   2         S     (15) MU         34   AMUB(NROW,NCOL,JOB,A,JA,IA,B,JB,IB,C,JC,IC,NZMAX,IW,IERR)
+   3    2   7 R*8  ( 1)A U E            B(*)*8
+   4    2  10 R*8  ( 1)AMU E            C(*)*8
+   5    2   6 I    ( 1)A U E            IA(nrow+1)
+   6    2   9 I    ( 1)A U E            IB(*)
+   7    2  12 I    ( 1)AMU E            IC(*)
+   8    2  15 I        AM  I            IERR
+   9          I         MU I            II
+  10    2  14 I    ( 1)AMU E            IW(ncol)
+  11          I         MU I            J
+  12    2   5 I    ( 1)A U E            JA(*)
+  13    2   8 I    ( 1)A U E            JB(*)
+  14    2  11 I    ( 1)AMU E            JC(*)
+  15          I         MU I            JCOL
+  16          I         MU I            JJ
+  17    2   3 I        A U I            JOB
+  18          I         MU I            JPOS
+  19          I         MU I            K
+  20          I         MU I            KA
+  21          I         MU I            KB
+  22          I         MU I            LEN
+  23    2   2 I        A U I         Z  NCOL
+  24    2   1 I        A U I         Z  NROW
+  25    2  13 I        A U I            NZMAX
+  26          R*8       MU E            SCAL*8
+  27          L         MU E            VALUES
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram APLB in file blassm.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           blassm.f,0000112,0000201
+   1    2   4 R*8  ( 1)A U E            A(*)*8
+   2         S     (15) MU         37   APLB(NROW,NCOL,JOB,A,JA,IA,B,JB,IB,C,JC,IC,NZMAX,IW,IERR)
+   3    2   7 R*8  ( 1)A U E            B(*)*8
+   4    2  10 R*8  ( 1)AMU E            C(*)*8
+   5    2   6 I    ( 1)A U E            IA(nrow+1)
+   6    2   9 I    ( 1)A U E            IB(nrow+1)
+   7    2  12 I    ( 1)AMU E            IC(nrow+1)
+   8    2  15 I        AM  I            IERR
+   9          I         MU I            II
+  10    2  14 I    ( 1)AMU E            IW(ncol)
+  11          I         MU I            J
+  12    2   5 I    ( 1)A U E            JA(*)
+  13    2   8 I    ( 1)A U E            JB(*)
+  14    2  11 I    ( 1)AMU E            JC(*)
+  15          I         MU I            JCOL
+  16    2   3 I        A U I            JOB
+  17          I         MU I            JPOS
+  18          I         MU I            K
+  19          I         MU I            KA
+  20          I         MU I            KB
+  21          I         MU I            LEN
+  22    2   2 I        A U I         Z  NCOL
+  23    2   1 I        A U I         Z  NROW
+  24    2  13 I        A U I            NZMAX
+  25          L         MU E            VALUES
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram APLB1 in file blassm.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           blassm.f,0000203,0000301
+   1    2   4 R*8  ( 1)A U E            A(*)*8
+   2         S     (14) MU         44   APLB1(NROW,NCOL,JOB,A,JA,IA,B,JB,IB,C,JC,IC,NZMAX,IERR)
+   3    2   7 R*8  ( 1)A U E            B(*)*8
+   4    2  10 R*8  ( 1)AM  E            C(*)*8
+   5          I         MU I            I
+   6    2   6 I    ( 1)A U E            IA(nrow+1)
+   7    2   9 I    ( 1)A U E            IB(nrow+1)
+   8    2  12 I    ( 1)AM  E            IC(nrow+1)
+   9    2  14 I        AM  I            IERR
+  10          I         MU I            J1
+  11          I         MU I            J2
+  12    2   5 I    ( 1)A U E            JA(*)
+  13    2   8 I    ( 1)A U E            JB(*)
+  14    2  11 I    ( 1)AM  E            JC(*)
+  15    2   3 I        A U I            JOB
+  16          I         MU I            KA
+  17          I         MU I            KAMAX
+  18          I         MU I            KB
+  19          I         MU I            KBMAX
+  20          I         MU I            KC
+  21    2   2 I        A U I            NCOL
+  22    2   1 I        A U I         Z  NROW
+  23    2  13 I        A U I            NZMAX
+  24          L         MU E            VALUES
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram APLSB in file blassm.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           blassm.f,0000303,0000392
+   1    2   3 R*8  ( 1)A U E            A(*)*8
+   2         S     (15) MU         36   APLSB(NROW,NCOL,A,JA,IA,S,B,JB,IB,C,JC,IC,NZMAX,IW,IERR)
+   3    2   7 R*8  ( 1)A U E            B(*)*8
+   4    2  10 R*8  ( 1)AMU E            C(*)*8
+   5    2   5 I    ( 1)A U E            IA(nrow+1)
+   6    2   9 I    ( 1)A U E            IB(nrow+1)
+   7    2  12 I    ( 1)AMU E            IC(nrow+1)
+   8    2  15 I        AM  I            IERR
+   9          I         MU I            II
+  10    2  14 I    ( 1)AMU E            IW(ncol)
+  11          I         MU I            J
+  12    2   4 I    ( 1)A U E            JA(*)
+  13    2   8 I    ( 1)A U E            JB(*)
+  14    2  11 I    ( 1)AMU E            JC(*)
+  15          I         MU I            JCOL
+  16          I         MU I            JPOS
+  17          I         MU I            K
+  18          I         MU I            KA
+  19          I         MU I            KB
+  20          I         MU I            LEN
+  21    2   2 I        A U I         Z  NCOL
+  22    2   1 I        A U I         Z  NROW
+  23    2  13 I        A U I            NZMAX
+  24    2   6 R*8      A U E            S*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram APLSB1 in file blassm.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           blassm.f,0000394,0000503
+   1    2   3 R*8  ( 1)A U E            A(*)*8
+   2         S     (14) MU         45   APLSB1(NROW,NCOL,A,JA,IA,S,B,JB,IB,C,JC,IC,NZMAX,IERR)
+   3    2   7 R*8  ( 1)A U E            B(*)*8
+   4    2  10 R*8  ( 1)AM  E            C(*)*8
+   5          I         MU I            I
+   6    2   5 I    ( 1)A U E            IA(nrow+1)
+   7    2   9 I    ( 1)A U E            IB(nrow+1)
+   8    2  12 I    ( 1)AM  E            IC(nrow+1)
+   9    2  14 I        AM  I            IERR
+  10          I         MU I            J1
+  11          I         MU I            J2
+  12    2   4 I    ( 1)A U E            JA(*)
+  13    2   8 I    ( 1)A U E            JB(*)
+  14    2  11 I    ( 1)AM  E            JC(*)
+  15          I         MU I            KA
+  16          I         MU I            KAMAX
+  17          I         MU I            KB
+  18          I         MU I            KBMAX
+  19          I         MU I            KC
+  20    2   2 I        A U I            NCOL
+  21    2   1 I        A U I         Z  NROW
+  22    2  13 I        A U I            NZMAX
+  23    2   6 R*8      A U E            S*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram APMBT in file blassm.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           blassm.f,0000505,0000639
+   1    2   4 R*8  ( 1)A U E            A(*)*8
+   2         S     (15) MU         54   APMBT(NROW,NCOL,JOB,A,JA,IA,B,JB,IB,C,JC,IC,NZMAX,IW,IERR)
+   3    2   7 R*8  ( 1)A?? E            B(*)*8
+   4    2  10 R*8  ( 1)AMU E            C(*)*8
+   5         s     ( 7)  U              COICSR
+     (I4V,I4V,I4V,R8A,I4A,I4A,I4A)
+   6         s     (11)  U              CSRCOO
+     (I4V,I4V,I4V,R8A,I4A,I4A,I4V,R8A,I4A,I4A,I4V)
+   7         s     ( 9)  U              CSRCSC
+     (I4V,I4V,I4V,R8A,I4A,I4A,R8A,I4A,I4A)
+   8          I         MU I            I
+   9    2   6 I    ( 1)A U E            IA(nrow+1)
+  10    2   9 I    ( 1)A?U E            IB(ncol+1)
+  11    2  12 I    ( 1)AMU E            IC(*)
+  12    2  15 I        AM? I            IERR
+  13          I         MU I            II
+  14          I         M? I            IPOS
+  15    2  14 I    ( 1)AMU E            IW(*)
+  16          I         MU I            J
+  17    2   5 I    ( 1)A U E            JA(*)
+  18    2   8 I    ( 1)A?? E            JB(*)
+  19    2  11 I    ( 1)AMU E            JC(*)
+  20          I         MU I            JCOL
+  21    2   3 I        A U I            JOB
+  22          I         MU I            JPOS
+  23          I         MU I            K
+  24          I         MU I            KA
+  25          I         MU I            LEN
+  26          I         M? I            LJOB
+  27    2   2 I        A?U I         Z  NCOL
+  28          I         MU I            NNZA
+  29          I         MU I            NNZB
+  30    2   1 I        A?U I         Z  NROW
+  31    2  13 I        A U I            NZMAX
+  32          L         MU E            VALUES
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram APLSBT in file blassm.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           blassm.f,0000641,0000762
+   1    2   3 R*8  ( 1)A U E            A(*)*8
+   2         S     (15) MU         47   APLSBT(NROW,NCOL,A,JA,IA,S,B,JB,IB,C,JC,IC,NZMAX,IW,IERR)
+   3    2   7 R*8  ( 1)A?? E            B(*)*8
+   4    2  10 R*8  ( 1)AMU E            C(*)*8
+   5         s     ( 7)  U              COICSR
+     (I4V,I4V,I4V,R8A,I4A,I4A,I4A)
+   6         s     (11)  U              CSRCOO
+     (I4V,I4V,I4V,R8A,I4A,I4A,I4V,R8A,I4A,I4A,I4V)
+   7         s     ( 9)  U              CSRCSC
+     (I4V,I4V,I4V,R8A,I4A,I4A,R8A,I4A,I4A)
+   8          I         MU I            I
+   9    2   5 I    ( 1)A U E            IA(nrow+1)
+  10    2   9 I    ( 1)A?U E            IB(ncol+1)
+  11    2  12 I    ( 1)AMU E            IC(*)
+  12    2  15 I        AM? I            IERR
+  13          I         MU I            II
+  14          I         M? I            IPOS
+  15    2  14 I    ( 1)AMU E            IW(*)
+  16          I         MU I            J
+  17    2   4 I    ( 1)A U E            JA(*)
+  18    2   8 I    ( 1)A?? E            JB(*)
+  19    2  11 I    ( 1)AMU E            JC(*)
+  20          I         MU I            JCOL
+  21          I         MU I            JPOS
+  22          I         MU I            K
+  23          I         MU I            KA
+  24          I         MU I            LEN
+  25          I         M? I            LJOB
+  26    2   2 I        A?U I         Z  NCOL
+  27          I         MU I            NNZA
+  28          I         MU I            NNZB
+  29    2   1 I        A?U I         Z  NROW
+  30    2  13 I        A U I            NZMAX
+  31    2   6 R*8      A U E            S*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram DIAMUA in file blassm.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           blassm.f,0000764,0000819
+   1    4   3 R*8  ( 1)A U E            A(*)*8
+   2    4   7 R*8  ( 1)AM  E            B(*)*8
+   3    4   6 R*8  ( 1)A U E            DIAG(nrow)*8
+   4         S     ( 9) MU         16   DIAMUA(NROW,JOB,A,JA,IA,DIAG,B,JB,IB)
+   5    4   5 I    ( 1)A U E            IA(nrow+1)
+   6    4   9 I    ( 1)AM  E            IB(nrow+1)
+   7          I         MU I            II
+   8    4   4 I    ( 1)A U E            JA(*)
+   9    4   8 I    ( 1)AM  E            JB(*)
+  10    4   2 I        A U I            JOB
+  11          I         MU I            K
+  12          I         MU I            K1
+  13          I         MU I            K2
+  14    4   1 I        A U I         Z  NROW
+  15          R*8       MU E            SCAL*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram AMUDIA in file blassm.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           blassm.f,0000821,0000874
+   1    2   3 R*8  ( 1)A U E            A(*)*8
+   2         S     ( 9) MU         15   AMUDIA(NROW,JOB,A,JA,IA,DIAG,B,JB,IB)
+   3    2   7 R*8  ( 1)AM  E            B(*)*8
+   4    2   6 R*8  ( 1)A U E            DIAG(nrow)*8
+   5    2   5 I    ( 1)A U E            IA(nrow+1)
+   6    2   9 I    ( 1)AM  E            IB(nrow+1)
+   7          I         MU I            II
+   8    2   4 I    ( 1)A U E            JA(*)
+   9    2   8 I    ( 1)AM  E            JB(*)
+  10    2   2 I        A U I            JOB
+  11          I         MU I            K
+  12          I         MU I            K1
+  13          I         MU I            K2
+  14    2   1 I        A U I         Z  NROW
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram APLSCA in file blassm.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           blassm.f,0000876,0000971
+   1    2   2 R*8  ( 1)AMU E            A(*)*8
+   2         S     ( 6) MU         38   APLSCA(NROW,A,JA,IA,SCAL,IW)
+   3         s     ( 4)  U              DIAPOS
+     (I4V,I4A,I4A,I4A)
+   4    2   4 I    ( 1)AMU E            IA(nrow+1)
+   5          I         MU I            ICOUNT
+   6          I         MU I            II
+   7    2   6 I    ( 1)AMU E            IW(*)
+   8          I         MU I            J
+   9    2   3 I    ( 1)AMU E            JA(*)
+  10          I         MU I            K
+  11          I         MU I            K1
+  12          I         MU I            K2
+  13          I         MU I            KO
+  14    2   1 I        A?U I         Z  NROW
+  15    2   5 R*8      A U E            SCAL*8
+  16          L         MU E            TEST
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram APLDIA in file blassm.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           blassm.f,0000973,0001096
+   1    2   3 R*8  ( 1)A U E            A(*)*8
+   2         S     (10) MU         48   APLDIA(NROW,JOB,A,JA,IA,DIAG,B,JB,IB,IW)
+   3    2   7 R*8  ( 1)AM  E            B(*)*8
+   4    2   6 R*8  ( 1)A U E            DIAG(nrow)*8
+   5         s     ( 4)  U              DIAPOS
+     (I4V,I4A,I4A,I4A)
+   6    2   5 I    ( 1)A?U E            IA(nrow+1)
+   7    2   9 I    ( 1)AMU E            IB(nrow+1)
+   8          I         MU I            ICOUNT
+   9          I         MU I            II
+  10    2  10 I    ( 1)AMU E            IW(*)
+  11          I         MU I            J
+  12    2   4 I    ( 1)A?U E            JA(*)
+  13    2   8 I    ( 1)AMU E            JB(*)
+  14    2   2 I        A U I            JOB
+  15          I         MU I            K
+  16          I         MU I            K1
+  17          I         MU I            K2
+  18          I         MU I            KO
+  19          I         MU I            NNZ
+  20    2   1 I        A?U I         Z  NROW
+  21          L         MU E            TEST
+**-- END OF SYMBOL TABLE

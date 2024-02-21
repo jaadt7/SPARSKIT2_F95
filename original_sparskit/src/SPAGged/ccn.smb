@@ -1,0 +1,215 @@
+**++ Symbol table for subprogram BLCCNX in file ccn.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           ccn.f,0000032,0000173
+   1    3   7 R*8  ( 1)A?? E            AMAT(*)*8
+   2         s     (14)  U              BLCCN1
+     (I4V,I4V,I4V,I4A,I4L,I4L,I4A,I4A,I4L,I4V,I4L,I4V,I4V,I4V)
+   3         S     (13) MU         50   BLCCNX(N,NBLOC,NBLCMX,NSBLOC,JOB,LPW,AMAT,JA,IA,IOUT,IER,IZS,NW)
+   4         s     ( 3)  U              CCNICOPY
+     (I4E,I4A,I4L)
+   5          C*6       MU E            CHSUBR*6
+   6         s     ( 3)  U              COMPOS
+     (I4V,I4A,I4L)
+   7         s     ( 9)  U              CSRCSC
+     (I4V,I4V,I4V,R8A,I4A,I4A,I4L,I4A,I4A)
+     (   ,   ,   ,I4L,   ,   ,R8A,   ,   )
+   8         s     ( 5)  U              DCOPY
+     (I4V,R8A,I4E,I4L,I4E)
+   9         s     (10)  U              DPERM
+     (I4V,I4L,I4L,I4L,R8A,I4A,I4A,I4L,I4L,I4V)
+  10    3   9 I    ( 1)A?U E            IA(n+1)
+  11          I         MU I            IAMAT
+  12          I         MU I            IBLOC
+  13          I         MU I            IEND
+  14    3  11 I        AMU I            IER
+  15          I         MU I            IIAT
+  16          I         MU I            IIEND
+  17          I         MU I            IJAT
+  18          I         MU I            IKPW
+  19          I         MU I            ILCCNX
+  20          I         MU I            ILPW
+  21          I         MU I            IMARK
+  22          L         MU E            IMPR
+  23    3  10 I        A?U I            IOUT
+  24          I         M? I            IPOS
+  25          I         MU I            IREAL
+  26    3  12 I    ( 1)A?? E            IZS(nw)
+  27    3   8 I    ( 1)A?? E            JA(*)
+  28    3   5 I        A?U I            JOB
+  29          I         MU I            LONG1
+  30          I         MU I            LONG2
+  31    3   6 I    ( 1)A?? E            LPW(n)
+  32         I?    ( 2)  U I            MAX
+  33          I         MU I            MXCCEX
+  34          I         MU I            MXPTBL
+  35    3   1 I        A?U I         Z  N
+  36    3   3 I        A?U I         Z  NBLCMX
+  37    3   2 I        A?U I            NBLOC
+  38          I         MU I            NBLOC0
+  39          I         M? I            NFREE
+  40    3   4 I    ( 1)A?U E            NSBLOC(0:nblcmx)
+  41          I         MU I            NTB
+  42    3  13 I        A U I         Z  NW
+  43         s     ( 2)  U              TBZERO
+     (I4L,I4V)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CCONEX in file ccn.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           ccn.f,0000175,0000376
+   1         s     ( 5)  U              ANCCNX
+     (I4V,I4V,I4V,I4A,I4V)
+   2         S     (10) MU        107   CCONEX(N,ICOL0,MXCCNX,LCCNEX,KPW,IA,JA,MARK,IOUT,IER)
+   3          I         MU I            I
+   4    2   6 I    ( 1)A U I            IA(n+1)
+   5          I         MU I            ICCNEX
+   6    2   2 I        A U I            ICOL0
+   7          I         MU I            IDEB
+   8          I         MU I            IDIAG
+   9    2  10 I        AM  I            IER
+  10          L         MU E            IMPR
+  11          I         MU I            INDEX
+  12    2   9 I        A U I            IOUT
+  13          I         MU I            IPOS
+  14          I         MU I            IR
+  15          I         MU I            J
+  16    2   7 I    ( 1)A U I            JA(*)
+  17          I         MU I            JREF
+  18    2   5 I    ( 1)AMU I            KPW(n)
+  19    2   4 I    ( 1)AMU I            LCCNEX(0:mxccnx)
+  20    2   8 I    ( 1)AMU I            MARK(n)
+  21          I         MU I            MCCNEX
+  22    2   3 I        AMU I         Z  MXCCNX
+  23    2   1 I        A?U I         Z  N
+  24          I         MU I            NCCNEX
+  25         s     ( 6)  U              NEWCNX
+     (I4V,I4V,I4V,I4V,I4A,I4A)
+  26          I         MU I            NEWIND
+  27          I         MU I            NOEICC
+  28         s     ( 2)  U              NUMINI
+     (I4V,I4A)
+  29          I         ?U I            NWINDX
+  30         s     ( 2)  U              TBZERO
+     (I4A,I4V)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram ANCCNX in file ccn.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           ccn.f,0000378,0000398
+   1         S     ( 5) MU          8   ANCCNX(N,MCCNEX,ICCNEX,MARK,NCOUNT)
+   2          I         MU I            I
+   3    1   3 I        A U I            ICCNEX
+   4    1   4 I    ( 1)AMU I            MARK(n)
+   5    1   2 I        A U I            MCCNEX
+   6    1   1 I        A U I         Z  N
+   7    1   5 I        AMU I            NCOUNT
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram NEWCNX in file ccn.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           ccn.f,0000400,0000421
+   1          I         MU I            I
+   2    8   3 I        A U I            ICCNEX
+   3    8   4 I        AMU I            INDEX
+   4    8   5 I    ( 1)AM  I            KPW(*)
+   5    8   6 I    ( 1)AMU I            MARK(n)
+   6    8   2 I        A U I            MCCNEX
+   7    8   1 I        A U I         Z  N
+   8         S     ( 6) MU          8   NEWCNX(N,MCCNEX,ICCNEX,INDEX,KPW,MARK)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram BLCCN1 in file ccn.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           ccn.f,0000423,0000568
+   1         S     (14) MU         54   BLCCN1(N,NBLOC,NBLCMX,NSBLOC,LPW,KPW,IA,JA,MARK,MXCCEX,LCCNEX,MXPTBL,IOUT,IER)
+   2         s     (10)  U              CCONEX
+     (I4V,I4V,I4V,I4L,I4L,I4L,I4L,I4L,I4V,I4V)
+   3          C*6       MU E            CHSUBR*6
+   4    1   7 I    ( 1)A?U I            IA(n+1)
+   5          I         MU I            IBLOC
+   6          I         MU I            ICC
+   7    1  14 I        AMU I            IER
+   8          I         MU I            IK0
+   9          I         MU I            IK1
+  10          I         MU I            ILCCNX
+  11          L         MU E            IMPR
+  12          I         ?U I            INFO
+  13          I         M? I            INS0
+  14         s     ( 3)  U              INVLPW
+     (I4V,I4L,I4L)
+  15    1  13 I        A U I            IOUT
+  16         s     ( 4)  U              IPLUSA
+     (I4V,I4V,I4E,I4L)
+  17          I         M? I            ISOR
+  18    1   8 I    ( 1)A?? I            JA(*)
+  19          I         MU I            KPIBL
+  20    1   6 I    ( 1)A?? I            KPW(mxptbl*nbloc)
+  21          I         MU I            LCC0
+  22    1  11 I    ( 1)A?U I            LCCNEX((mxccex+1)*nbloc)
+  23    1   5 I    ( 1)A?? I            LPW(n)
+  24    1   9 I    ( 1)A?? I            MARK(n)
+  25    1  10 I        A U I         Z  MXCCEX
+  26    1  12 I        A U I         Z  MXPTBL
+  27    1   1 I        A U I         Z  N
+  28    1   3 I        A U I            NBLCMX
+  29    1   2 I        AMU I         Z  NBLOC
+  30          I         MU I            NCCNEX
+  31          I         MU I            NEWBLC
+  32          I         MU I            NSB
+  33    1   4 I    ( 1)AMU I            NSBLOC(0:nbloc)
+  34          I         MU I            NSFIN
+  35          I         MU I            NTB0
+  36         s     ( 2)  U              NUMINI
+     (I4V,I4L)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CCNICOPY in file ccn.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           ccn.f,0000570,0000583
+   1         S     ( 3) MU          5   CCNICOPY(N,IX,IY)
+   2          I         MU I            I
+   3    1   2 I    ( 1)A U I            IX(n)
+   4    1   3 I    ( 1)AM  I            IY(n)
+   5    1   1 I        A U I         Z  N
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram COMPOS in file ccn.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           ccn.f,0000585,0000602
+   1         S     ( 3) MU          4   COMPOS(N,LPW0,LPW1)
+   2          I         MU I            I0
+   3    1   2 I    ( 1)AMU I            LPW0(n)
+   4    1   3 I    ( 1)A U I            LPW1(n)
+   5    1   1 I        A U I         Z  N
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram INVLPW in file ccn.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           ccn.f,0000604,0000621
+   1          I         MU I            I0
+   2          I         MU I            I1
+   3         S     ( 3) MU          5   INVLPW(N,LPW,KPW)
+   4    3   3 I    ( 1)AM  I            KPW(n)
+   5    3   2 I    ( 1)A U I            LPW(n)
+   6    3   1 I        A U I         Z  N
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram NUMINI in file ccn.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           ccn.f,0000623,0000639
+   1          I         MU I            I
+   2    4   2 I    ( 1)AM  I            LPW(n)
+   3    4   1 I        A U I         Z  N
+   4         S     ( 2) MU          4   NUMINI(N,LPW)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram TBZERO in file ccn.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           ccn.f,0000641,0000653
+   1          I         MU I            I
+   2    4   1 I    ( 1)AM  I            M(NMOT)
+   3    4   2 I        A U I         Z  NMOT
+   4         S     ( 2) MU          5   TBZERO(M,NMOT)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram IPLUSA in file ccn.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           ccn.f,0000655,0000710
+   1          I         MU I            I
+   2    3   4 I    ( 1)AMU E            IA(n)
+   3         S     ( 4) MU         35   IPLUSA(N,NALPHA,NBETA,IA)
+   4    3   1 I        A U I         Z  N
+   5    3   2 I        A U I            NALPHA
+   6    3   3 I        A U I            NBETA
+   7          I         M  I            NMAX
+**-- END OF SYMBOL TABLE

@@ -1,0 +1,77 @@
+**++ Symbol table for subprogram SOBEL in file sobel.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           sobel.f,0000001,0000046
+   1   27   7 R*8  ( 1)A?? E            A(*)*8
+   2         s     (20)  U              ADDBLK
+     (I4V,I4V,R8A,I4A,I4A,I4E,I4E,I4E,I4V,I4V,R8A,I4A,I4A,I4V,I4V,R8A,I4A,I4A
+     ,I4V,I4V)
+   3   27  10 R*8  ( 1)A?? E            B(*)*8
+   4   27   4 R*8  ( 1)A?? E            C(*)*8
+   5         s     ( 9)  U              COPMAT
+     (I4V,R8A,I4A,I4A,R8A,I4A,I4A,I4E,I4E)
+   6         s     ( 6)  U              DIAGBLK
+     (I4E,I4V,I4V,R8A,I4A,I4A)
+   7          I         MU E            I
+   8   27   9 I    ( 1)A?? E            IA(*)
+   9   27  12 I    ( 1)A?? E            IB(*)
+  10   27   6 I    ( 1)A?? E            IC(*)
+  11   27  14 I        A?? E            IERR
+  12          I         MU E            IPOS
+  13   27   8 I    ( 1)A?? E            JA(*)
+  14   27  11 I    ( 1)A?? E            JB(*)
+  15   27   5 I    ( 1)A?? E            JC(*)
+  16         s     ( 6)  U              LEFTBLK
+     (I4E,I4V,I4V,R8A,I4A,I4A)
+  17   27   1 I        A U E            N
+  18          I         M? E            NCOLA
+  19          I         ?? E            NCOLB
+  20   27   3 I        A?U E            NCOLC
+  21          I         M? E            NROWA
+  22          I         ?? E            NROWB
+  23   27   2 I        A?U E            NROWC
+  24   27  13 I        A?? I            NZMAX
+  25          I         MU E            OFFSET
+  26         s     ( 6)  U              RIGHTBLK
+     (I4E,I4V,I4V,R8A,I4A,I4A)
+  27         S     (14) ?U         17   SOBEL(N,NROWC,NCOLC,C,JC,IC,A,JA,IA,B,JB,IB,NZMAX,IERR)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram DIAGBLK in file sobel.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             sobel.f,0000048,0000090
+   1    2   4 R*8  ( 1)AM  E            A(1:*)*8
+   2         S     ( 6) MU         32   DIAGBLK(N,NROW,NCOL,A,JA,IA)
+   3          I         MU E            I
+   4    2   6 I    ( 1)AM  E            IA(1:*)
+   5    2   5 I    ( 1)AM  E            JA(1:*)
+   6          I         MU E            K
+   7         I?    ( 2)  U I            MOD
+   8    2   1 I        A U E            N
+   9    2   3 I        AMU E            NCOL
+  10    2   2 I        AMU E            NROW
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram LEFTBLK in file sobel.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             sobel.f,0000092,0000128
+   1    6   4 R*8  ( 1)AM  E            A(1:*)*8
+   2          I         MU E            I
+   3    6   6 I    ( 1)AM  E            IA(1:*)
+   4    6   5 I    ( 1)AM  E            JA(1:*)
+   5          I         MU E            K
+   6         S     ( 6) MU         27   LEFTBLK(N,NROW,NCOL,A,JA,IA)
+   7    6   1 I        A U E            N
+   8    6   3 I        AMU E            NCOL
+   9    6   2 I        AMU E            NROW
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram RIGHTBLK in file sobel.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             sobel.f,0000130,0000158
+   1    9   4 R*8  ( 1)AM  E            A(1:*)*8
+   2          I         MU E            I
+   3    9   6 I    ( 1)AM  E            IA(1:*)
+   4    9   5 I    ( 1)AM  E            JA(1:*)
+   5          I         MU E            K
+   6    9   1 I        A U E            N
+   7    9   3 I        AMU E            NCOL
+   8    9   2 I        AMU E            NROW
+   9         S     ( 6) MU         22   RIGHTBLK(N,NROW,NCOL,A,JA,IA)
+**-- END OF SYMBOL TABLE

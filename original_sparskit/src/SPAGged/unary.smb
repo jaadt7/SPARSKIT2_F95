@@ -1,0 +1,808 @@
+**++ Symbol table for subprogram SUBMAT in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0000052,0000118
+   1   21   6 R*8  ( 1)A U E            A(*)*8
+   2   21  11 R*8  ( 1)AM  E            AO(*)*8
+   3          I         MU I            I
+   4   21   2 I        A U E            I1
+   5   21   3 I        A U E            I2
+   6   21   8 I    ( 1)A U E            IA(*)
+   7   21  13 I    ( 1)AM  E            IAO(*)
+   8          I         MU I            II
+   9          I         MU I            J
+  10   21   4 I        A U E            J1
+  11   21   5 I        A U E            J2
+  12   21   7 I    ( 1)A U E            JA(*)
+  13   21  12 I    ( 1)AM  E            JAO(*)
+  14   21   1 I        A U E            JOB
+  15          I         MU I            K
+  16          I         MU I            K1
+  17          I         MU I            K2
+  18          I         MU I            KLEN
+  19   21  10 I        AMU E            NC
+  20   21   9 I        AMU E            NR
+  21         S     (13) MU         20   SUBMAT(JOB,I1,I2,J1,J2,A,JA,IA,NR,NC,AO,JAO,IAO)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram FILTER in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0000120,0000210
+   1    5   4 R*8  ( 1)A U E            A(*)*8
+   2         I?    ( 1)  U I            ABS
+   3    5   7 R*8  ( 1)AM  E            B(*)*8
+   4    5   3 R*8      A U E            DRPTOL*8
+   5         S     (11) MU         35   FILTER(N,JOB,DRPTOL,A,JA,IA,B,JB,IB,LEN,IERR)
+   6    5   6 I    ( 1)A U E            IA(*)
+   7    5   9 I    ( 1)AM  E            IB(*)
+   8    5  11 I        AM  E            IERR
+   9          I         MU E            INDEX
+  10    5   5 I    ( 1)A U E            JA(*)
+  11    5   8 I    ( 1)AM  E            JB(*)
+  12    5   2 I        A U E            JOB
+  13          I         MU E            K
+  14          I         MU E            K1
+  15          I         MU E            K2
+  16    5  10 I        A U E            LEN
+  17          R*8       MU E            LOCTOL*8
+  18    5   1 I        A U E            N
+  19          R*8       MU E            NORM*8
+  20          I         MU E            ROW
+  21         I?    ( 1)  U I            SQRT
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram FILTERM in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0000212,0000298
+   1    5   4 R*8  ( 1)A U E            A(*)*8
+   2         I?    ( 1)  U I            ABS
+   3    5   6 R*8  ( 1)AM  E            B(*)*8
+   4    5   3 R*8      A U E            DROP*8
+   5         S     ( 9) MU         33   FILTERM(N,JOB,DROP,A,JA,B,JB,LEN,IERR)
+   6    5   9 I        AM  E            IERR
+   7          I         MU E            INDEX
+   8    5   5 I    ( 1)A U E            JA(*)
+   9    5   7 I    ( 1)AM  E            JB(*)
+  10    5   2 I        A U E            JOB
+  11          I         MU E            K
+  12          I         MU E            K1
+  13          I         MU E            K2
+  14    5   8 I        A U E            LEN
+  15          R*8       MU E            LOCTOL*8
+  16         I?    ( 2)  U I            MAX
+  17    5   1 I        A U E            N
+  18          R*8       MU E            NORM*8
+  19          I         MU E            ROW
+  20         I?    ( 1)  U I            SQRT
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CSORT in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0000301,0000356
+   1    2   2 R*8  ( 1)AMU E            A(*)*8
+   2         S     ( 5) MU         17   CSORT(N,A,JA,IA,VALUES)
+   3          I         MU E            I
+   4    2   4 I    ( 1)A U E            IA(n+1)
+   5          I         MU E            J
+   6    2   3 I    ( 1)AMU E            JA(*)
+   7          I         MU E            K
+   8    2   1 I        A U E         Z  N
+   9          R*8       MU E            RJ*8
+  10          I         MU E            ROW
+  11    2   5 L        A U E            VALUES
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CLNCSR in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0000358,0000521
+   1    2   4 R*8  ( 1)AMU E            A(*)*8
+   2         S     ( 8) MU         96   CLNCSR(JOB,VALUE2,NROW,A,JA,IA,INDU,IWK)
+   3          I         MU E            I
+   4    2   6 I    ( 1)AMU E            IA(nrow+1)
+   5    2   7 I    ( 1)AMU E            INDU(nrow)
+   6          I         MU E            IPOS
+   7    2   8 I    ( 1)AMU E            IWK(nrow+1)
+   8          I         MU E            J
+   9    2   5 I    ( 1)AMU E            JA(*)
+  10    2   1 I        A U E            JOB
+  11          I         MU E            K
+  12          I         MU E            KFIRST
+  13          I         MU E            KLAST
+  14          I         MU E            KO
+  15    2   3 I        A U E         Z  NROW
+  16          R*8       MU E            TMP*8
+  17    2   2 I        A U E            VALUE2
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram COPMAT in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0000523,0000569
+   1    3   2 R*8  ( 1)A U E            A(*)*8
+   2    3   5 R*8  ( 1)AM  E            AO(*)*8
+   3         S     ( 9) MU         12   COPMAT(NROW,A,JA,IA,AO,JAO,IAO,IPOS,JOB)
+   4          I         MU E            I
+   5    3   4 I    ( 1)A U E            IA(*)
+   6    3   7 I    ( 1)AM  E            IAO(*)
+   7    3   8 I        A U E            IPOS
+   8    3   3 I    ( 1)A U E            JA(*)
+   9    3   6 I    ( 1)AM  E            JAO(*)
+  10    3   9 I        A U E            JOB
+  11          I         MU E            K
+  12          I         MU E            KST
+  13    3   1 I        A U E            NROW
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram MSRCOP in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0000571,0000611
+   1    8   2 R*8  ( 1)A U E            A(*)*8
+   2    8   4 R*8  ( 1)AM  E            AO(*)*8
+   3          I         MU E            I
+   4    8   3 I    ( 1)A U E            JA(*)
+   5    8   5 I    ( 1)AM  E            JAO(*)
+   6    8   6 I        A U E            JOB
+   7          I         MU E            K
+   8         S     ( 6) MU         14   MSRCOP(NROW,A,JA,AO,JAO,JOB)
+   9    8   1 I        A U E            NROW
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram GETELM in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0000613,0000714
+   1    2   3 D    ( 1)A U E            A(*)
+   2         FD    ( 7) MU E       27   GETELM(I,J,A,JA,IA,IADD,SORTED)
+   3    2   1 I        A U E            I
+   4    2   5 I    ( 1)A U E            IA(*)
+   5    2   6 I        AMU E            IADD
+   6          I         MU E            IBEG
+   7          I         MU E            IEND
+   8          I         MU E            IMID
+   9    2   2 I        A U E            J
+  10    2   4 I    ( 1)A U E            JA(*)
+  11          I         MU E            K
+  12    2   7 L        A U E            SORTED
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram GETDIA in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0000716,0000824
+   1    3   4 R*8  ( 1)AMU E            A(*)*8
+   2    3   8 R*8  ( 1)AM  E            DIAG(*)*8
+   3         S     (10) MU         33   GETDIA(NROW,NCOL,JOB,A,JA,IA,LEN,DIAG,IDIAG,IOFF)
+   4          I         MU E            I
+   5    3   6 I    ( 1)AMU E            IA(*)
+   6    3   9 I    ( 1)AMU E            IDIAG(*)
+   7          I         MU E            IEND
+   8    3  10 I        A U E            IOFF
+   9          I         MU E            ISTART
+  10    3   5 I    ( 1)AMU E            JA(*)
+  11    3   3 I        A U E            JOB
+  12          I         MU E            K
+  13          I         MU E            KDIAG
+  14          I         MU E            KO
+  15          I         MU E            KOLD
+  16    3   7 I        AMU E            LEN
+  17         II    ( 2)  U E            MAX
+  18         I?    ( 2)  U I            MIN
+  19    3   2 I        A U E            NCOL
+  20    3   1 I        A U E            NROW
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram TRANSP in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0000826,0000961
+   1   19   3 R*8  ( 1)AMU E            A(*)*8
+   2          I         MU I            I
+   3   19   5 I    ( 1)AMU E            IA(*)
+   4   19   7 I        AM  E            IERR
+   5          I         MU I            INEXT
+   6          I         MU I            INIT
+   7   19   6 I    ( 1)AMU E            IWK(*)
+   8          I         MU I            J
+   9   19   4 I    ( 1)AMU E            JA(*)
+  10          I         MU I            JCOL
+  11          I         MU I            K
+  12          I         MU I            L
+  13         I?    ( 2)  U I            MAX
+  14   19   2 I        AMU E            NCOL
+  15          I         MU I            NNZ
+  16   19   1 I        A U E            NROW
+  17          R*8       MU E            T*8
+  18          R*8       MU E            T1*8
+  19         S     ( 7) MU         57   TRANSP(NROW,NCOL,A,JA,IA,IWK,IERR)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram GETL in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0000963,0001021
+   1    3   2 R*8  ( 1)A U E            A(*)*8
+   2    3   5 R*8  ( 1)AMU E            AO(*)*8
+   3         S     ( 7) MU         22   GETL(N,A,JA,IA,AO,JAO,IAO)
+   4          I         MU E            I
+   5    3   4 I    ( 1)A U E            IA(*)
+   6    3   7 I    ( 1)AM  E            IAO(*)
+   7    3   3 I    ( 1)A U E            JA(*)
+   8    3   6 I    ( 1)AMU E            JAO(*)
+   9          I         MU E            K
+  10          I         MU E            KDIAG
+  11          I         MU E            KO
+  12          I         MU E            KOLD
+  13    3   1 I        A U E            N
+  14          R*8       MU E            T*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram GETU in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0001023,0001076
+   1    3   2 R*8  ( 1)A U E            A(*)*8
+   2    3   5 R*8  ( 1)AMU E            AO(*)*8
+   3         S     ( 7) MU         22   GETU(N,A,JA,IA,AO,JAO,IAO)
+   4          I         MU E            I
+   5    3   4 I    ( 1)A U E            IA(*)
+   6    3   7 I    ( 1)AM  E            IAO(*)
+   7    3   3 I    ( 1)A U E            JA(*)
+   8    3   6 I    ( 1)AMU E            JAO(*)
+   9          I         MU E            K
+  10          I         MU E            KDIAG
+  11          I         MU E            KFIRST
+  12          I         MU E            KO
+  13    3   1 I        A U E            N
+  14          R*8       MU E            T*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram LEVELS in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0001078,0001151
+   1          I         MU I            I
+   2    7   3 I    ( 1)A U E            IAL(*)
+   3    7   6 I    ( 1)AMU E            ILEV(*)
+   4          I         MU I            J
+   5    7   2 I    ( 1)A U E            JAL(*)
+   6    7   5 I    ( 1)AM  E            LEV(*)
+   7         S     ( 7) MU         34   LEVELS(N,JAL,IAL,NLEV,LEV,ILEV,LEVNUM)
+   8          I         MU I            LEVI
+   9    7   7 I    ( 1)AMU E            LEVNUM(*)
+  10         I?    ( 2)  U I            MAX
+  11    7   1 I        A U I            N
+  12    7   4 I        AMU I            NLEV
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram AMASK in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0001153,0001240
+   1    2   3 R*8  ( 1)A U E            A(*)*8
+   2         S     (13) MU         30   AMASK(NROW,NCOL,A,JA,IA,JMASK,IMASK,C,JC,IC,IW,NZMAX,IERR)
+   3    2   8 R*8  ( 1)AM  E            C(*)*8
+   4    2   5 I    ( 1)A U E            IA(nrow+1)
+   5    2  10 I    ( 1)AM  E            IC(nrow+1)
+   6    2  13 I        AM  I            IERR
+   7          I         MU I            II
+   8    2   7 I    ( 1)A U E            IMASK(nrow+1)
+   9    2  11 L    ( 1)AMU E            IW(ncol)
+  10          I         MU I            J
+  11    2   4 I    ( 1)A U E            JA(*)
+  12    2   9 I    ( 1)AM  E            JC(*)
+  13    2   6 I    ( 1)A U E            JMASK(*)
+  14          I         MU I            K
+  15          I         MU I            K1
+  16          I         MU I            K2
+  17          I         MU I            LEN
+  18    2   2 I        A U I         Z  NCOL
+  19    2   1 I        A U I         Z  NROW
+  20    2  12 I        A U I            NZMAX
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram RPERM in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0001242,0001313
+   1   15   2 R*8  ( 1)A U E            A(*)*8
+   2   15   5 R*8  ( 1)AM  E            AO(*)*8
+   3          I         MU I            I
+   4   15   4 I    ( 1)A U E            IA(nrow+1)
+   5   15   7 I    ( 1)AMU E            IAO(nrow+1)
+   6          I         MU I            II
+   7          I         MU I            J
+   8   15   3 I    ( 1)A U E            JA(*)
+   9   15   6 I    ( 1)AM  E            JAO(*)
+  10   15   9 I        A U E            JOB
+  11          I         MU I            K
+  12          I         MU I            KO
+  13   15   1 I        A U E         Z  NROW
+  14   15   8 I    ( 1)A U E            PERM(nrow)
+  15         S     ( 9) MU         18   RPERM(NROW,A,JA,IA,AO,JAO,IAO,PERM,JOB)
+  16          L         MU E            VALUES
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CPERM in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0001315,0001381
+   1    3   2 R*8  ( 1)A U E            A(*)*8
+   2    3   5 R*8  ( 1)AM  E            AO(*)*8
+   3         S     ( 9) MU         12   CPERM(NROW,A,JA,IA,AO,JAO,IAO,PERM,JOB)
+   4          I         MU E            I
+   5    3   4 I    ( 1)A U E            IA(nrow+1)
+   6    3   7 I    ( 1)AM  E            IAO(nrow+1)
+   7    3   3 I    ( 1)A U E            JA(*)
+   8    3   6 I    ( 1)AM  E            JAO(*)
+   9    3   9 I        A U E            JOB
+  10          I         MU E            K
+  11          I         MU E            NNZ
+  12    3   1 I        A U E         Z  NROW
+  13    3   8 I    ( 1)A U E            PERM(*)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram DPERM in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0001383,0001457
+   1    4   2 R*8  ( 1)A?? E            A(*)*8
+   2    4   5 R*8  ( 1)A?? E            AO(*)*8
+   3         s     ( 9)  U              CPERM
+     (I4V,R8A,I4A,I4A,R8A,I4A,I4A,I4A,I4V)
+   4         S     (10) ?U          9   DPERM(NROW,A,JA,IA,AO,JAO,IAO,PERM,QPERM,JOB)
+   5    4   4 I    ( 1)A?? E            IA(nrow+1)
+   6    4   7 I    ( 1)A?? E            IAO(nrow+1)
+   7    4   3 I    ( 1)A?? E            JA(*)
+   8    4   6 I    ( 1)A?? E            JAO(*)
+   9    4  10 I        A U E            JOB
+  10          I         M? E            LOCJOB
+  11         II    ( 2)  U E            MOD
+  12    4   1 I        A?U E         Z  NROW
+  13    4   8 I    ( 1)A?? E            PERM(nrow)
+  14    4   9 I    ( 1)A?? E            QPERM(*)
+  15         s     ( 9)  U              RPERM
+     (I4V,R8A,I4A,I4A,R8A,I4A,I4A,I4A,I4V)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram DPERM1 in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0001459,0001516
+   1    3   3 R*8  ( 1)A U E            A(*)*8
+   2    3   6 R*8  ( 1)AM  E            B(*)*8
+   3         S     (11) MU         13   DPERM1(I1,I2,A,JA,IA,B,JB,IB,PERM,IPOS,JOB)
+   4          I         MU I            I
+   5    3   1 I        A U E            I1
+   6    3   2 I        A U E            I2
+   7    3   5 I    ( 1)A U E            IA(*)
+   8    3   8 I    ( 1)AM  E            IB(*)
+   9    3  10 I        A U I            IPOS
+  10          I         MU E            IROW
+  11    3   4 I    ( 1)A U E            JA(*)
+  12    3   7 I    ( 1)AM  E            JB(*)
+  13    3  11 I        A U E            JOB
+  14          I         MU E            K
+  15          I         MU E            KO
+  16    3   9 I    ( 1)A U E            PERM(*)
+  17          L         MU E            VALUES
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram DPERM2 in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0001518,0001606
+   1    4   3 R*8  ( 1)A U E            A(*)*8
+   2    4   6 R*8  ( 1)AM  E            B(*)*8
+   3    4   9 I    ( 1)A U E            CPERM(*)
+   4         S     (13) MU         13   DPERM2(I1,I2,A,JA,IA,B,JB,IB,CPERM,RPERM,ISTART,IPOS,JOB)
+   5          I         MU I            I
+   6    4   1 I        A U E            I1
+   7    4   2 I        A U E            I2
+   8    4   5 I    ( 1)A U E            IA(*)
+   9    4   8 I    ( 1)AM  E            IB(*)
+  10    4  12 I        A U I            IPOS
+  11          I         MU E            IROW
+  12    4  11 I        A U E            ISTART
+  13    4   4 I    ( 1)A U E            JA(*)
+  14    4   7 I    ( 1)AM  E            JB(*)
+  15    4  13 I        A U E            JOB
+  16          I         MU E            K
+  17          I         MU E            KO
+  18    4  10 I    ( 1)A U E            RPERM(*)
+  19          L         MU E            VALUES
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram DMPERM in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0001608,0001667
+   1    3   2 R*8  ( 1)A?U E            A(*)*8
+   2    3   4 R*8  ( 1)AM? E            AO(*)*8
+   3         S     ( 7) MU          9   DMPERM(NROW,A,JA,AO,JAO,PERM,JOB)
+   4         s     (10)  U              DPERM
+     (I4V,R8A,I4A,I4A,R8L,I4L,I4A,I4A,I4A,I4V)
+   5          I         MU I            J
+   6    3   3 I    ( 1)A?? E            JA(*)
+   7    3   5 I    ( 1)AMU E            JAO(*)
+   8    3   7 I        A?? E            JOB
+   9          I         MU E            N1
+  10          I         MU E            N2
+  11    3   1 I        A?U E         Z  NROW
+  12    3   6 I    ( 1)A?U E            PERM(nrow)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram DVPERM in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0001669,0001742
+   1         S     ( 3) MU         27   DVPERM(N,X,PERM)
+   2          I         MU I            II
+   3          I         MU I            INIT
+   4          I         MU I            J
+   5          I         MU I            K
+   6    1   1 I        A U E         Z  N
+   7          I         MU I            NEXT
+   8    1   3 I    ( 1)AMU E            PERM(n)
+   9          R*8       MU E            TMP*8
+  10          R*8       MU E            TMP1*8
+  11    1   2 R*8  ( 1)AMU E            X(n)*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram IVPERM in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0001744,0001816
+   1          I         MU I            II
+   2          I         MU I            INIT
+   3         S     ( 3) MU         27   IVPERM(N,IX,PERM)
+   4    3   2 I    ( 1)AMU E            IX(n)
+   5          I         MU I            J
+   6          I         MU I            K
+   7    3   1 I        A U E         Z  N
+   8          I         MU I            NEXT
+   9    3   3 I    ( 1)AMU E            PERM(n)
+  10          I         MU E            TMP
+  11          I         MU E            TMP1
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram RETMX in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0001818,0001867
+   1   11   2 R*8  ( 1)A U E            A(*)*8
+   2         I?    ( 1)  U I            ABS
+   3   11   5 R*8  ( 1)AM  E            DD(*)*8
+   4          I         MU E            I
+   5   11   4 I    ( 1)A U E            IA(*)
+   6   11   3 I    ( 1)A U E            JA(*)
+   7          I         MU E            K
+   8          I         MU E            K1
+   9          I         MU E            K2
+  10   11   1 I        A U E            N
+  11         S     ( 5) MU         22   RETMX(N,A,JA,IA,DD)
+  12          R*8       MU E            T*8
+  13          R*8       MU E            T1*8
+  14          R*8       MU E            T2*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram DIAPOS in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0001869,0001905
+   1         S     ( 4) MU          9   DIAPOS(N,JA,IA,IDIAG)
+   2          I         MU I            I
+   3    1   3 I    ( 1)A U E            IA(n+1)
+   4    1   4 I    ( 1)AM  E            IDIAG(n)
+   5    1   2 I    ( 1)A U E            JA(*)
+   6          I         MU I            K
+   7    1   1 I        A U I         Z  N
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram DSCALDG in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0001907,0001949
+   1    3   2 R*8  ( 1)AMU E            A(*)*8
+   2    3   5 R*8  ( 1)AMU E            DIAG(*)*8
+   3         S     ( 6) MU         25   DSCALDG(N,A,JA,IA,DIAG,JOB)
+   4          I         MU I            I
+   5    3   4 I    ( 1)A?U E            IA(*)
+   6          I         MU I            J
+   7    3   3 I    ( 1)A?? E            JA(*)
+   8    3   6 I        A U I            JOB
+   9          I         MU I            K
+  10          I         MU I            K1
+  11          I         MU I            K2
+  12    3   1 I        A?U I            N
+  13         s     ( 5)  U              RETMX
+     (I4V,R8A,I4A,I4A,R8A)
+  14         I?    ( 1)  U I            SQRT
+  15          R*8       MU E            T*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram EXTBDG in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             unary.f,0001951,0002016
+   1    4   2 R*8  ( 1)A U E            A(*)*8
+   2    4   7 R*8  ( 1)AM  E            AO(*)*8
+   3    4   5 R*8  ( 1)AM  E            BDIAG(*)*8
+   4         S     ( 9) MU         28   EXTBDG(N,A,JA,IA,BDIAG,NBLK,AO,JAO,IAO)
+   5          I         MU I            I
+   6    4   4 I    ( 1)A U E            IA(*)
+   7    4   9 I    ( 1)AM  E            IAO(*)
+   8          I         MU I            J
+   9          I         MU I            J1
+  10          I         MU I            J2
+  11    4   3 I    ( 1)A U E            JA(*)
+  12    4   8 I    ( 1)AM  E            JAO(*)
+  13          I         MU I            JJ
+  14          I         MU I            K
+  15          I         MU I            KB
+  16          I         MU I            KO
+  17          I         MU I            L
+  18          I         MU I            LTR
+  19          I         MU I            M
+  20         II    ( 2)  U I            MIN0
+  21    4   1 I        A U I            N
+  22    4   6 I        A U I            NBLK
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram GETBWD in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0002018,0002059
+   1         S     ( 5) MU         10   GETBWD(N,JA,IA,ML,MU)
+   2          I         MU E            I
+   3    1   3 I    ( 1)A U E            IA(n+1)
+   4    1   2 I    ( 1)A U E            JA(*)
+   5          I         MU E            K
+   6          I         MU E            LDIST
+   7         I?    ( 2)  U I            MAX
+   8    1   4 I        AMU E            ML
+   9    1   5 I        AMU E            MU
+  10    1   1 I        A U I         Z  N
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram BLKFND in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0002061,0002140
+   1         s     ( 5)  U              BLKCHK
+     (I4V,I4A,I4A,I4E,I4V)
+   2         S     ( 4) MU         31   BLKFND(NROW,JA,IA,NBLK)
+   3          I         MU I            I
+   4          I         MU I            I1
+   5          I         MU I            I2
+   6    2   3 I    ( 1)A?U E            IA(nrow+1)
+   7          I         MU I            IBLK
+   8          I         ?U I            IMSG
+   9          I         MU I            IROW
+  10    2   2 I    ( 1)A?U E            JA(*)
+  11          I         MU I            JF
+  12          I         MU I            JFIRST
+  13          I         MU I            JL
+  14          I         MU I            JLAST
+  15          I         MU I            JROW
+  16          I         MU I            LEN
+  17          I         MU I            LEN0
+  18          I         MU I            MINLEN
+  19         I?    ( 2)  U I            MOD
+  20    2   4 I        AMU I            NBLK
+  21    2   1 I        A?U I         Z  NROW
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram BLKCHK in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0002142,0002235
+   1         S     ( 5) MU         33   BLKCHK(NROW,JA,IA,NBLK,IMSG)
+   2          I         MU I            I
+   3          I         MU I            I1
+   4    1   3 I    ( 1)A U E            IA(nrow+1)
+   5          I         MU I            II
+   6    1   5 I        AM  I            IMSG
+   7          I         MU I            IROW
+   8          I         MU I            J
+   9          I         MU I            J2
+  10    1   2 I    ( 1)A U E            JA(*)
+  11          I         MU I            JSTART
+  12          I         MU I            K
+  13          I         MU I            LEN
+  14          I         MU I            LENA
+  15    1   4 I        A U I            NBLK
+  16          I         MU I            NR
+  17    1   1 I        A U I         Z  NROW
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram INFDIA in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0002237,0002285
+   1          I         MU I            I
+   2    5   3 I    ( 1)A U E            IA(*)
+   3    5   5 I        AMU I            IDIAG
+   4    5   4 I    ( 1)AMU E            IND(*)
+   5         S     ( 5) MU         15   INFDIA(N,JA,IA,IND,IDIAG)
+   6          I         MU I            J
+   7    5   2 I    ( 1)A U E            JA(*)
+   8          I         MU I            K
+   9    5   1 I        A U I            N
+  10          I         MU I            N2
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram AMUBDG in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0002287,0002379
+   1         S     (10) MU         32   AMUBDG(NROW,NCOL,NCOLB,JA,IA,JB,IB,NDEGR,NNZ,IW)
+   2    1   5 I    ( 1)A U E            IA(nrow+1)
+   3    1   7 I    ( 1)A U E            IB(ncol+1)
+   4          I         MU I            II
+   5    1  10 I    ( 1)AMU E            IW(ncolb)
+   6          I         MU I            J
+   7    1   4 I    ( 1)A U E            JA(*)
+   8    1   6 I    ( 1)A U E            JB(*)
+   9          I         MU I            JC
+  10          I         MU I            JR
+  11          I         MU I            K
+  12          I         MU I            LAST
+  13          I         MU I            LDG
+  14    1   2 I        A U I         Z  NCOL
+  15    1   3 I        A U I         Z  NCOLB
+  16    1   8 I    ( 1)AMU E            NDEGR(nrow)
+  17    1   9 I        AMU I            NNZ
+  18    1   1 I        A U I         Z  NROW
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram APLBDG in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0002381,0002472
+   1         S     ( 9) MU         35   APLBDG(NROW,NCOL,JA,IA,JB,IB,NDEGR,NNZ,IW)
+   2    1   4 I    ( 1)A U E            IA(nrow+1)
+   3    1   6 I    ( 1)A U E            IB(nrow+1)
+   4          I         MU I            II
+   5    1   9 I    ( 1)AMU E            IW(ncol)
+   6          I         MU I            J
+   7    1   3 I    ( 1)A U E            JA(*)
+   8    1   5 I    ( 1)A U E            JB(*)
+   9          I         MU I            JC
+  10          I         MU I            JR
+  11          I         MU I            K
+  12          I         MU I            LAST
+  13          I         MU I            LDG
+  14    1   2 I        A U I         Z  NCOL
+  15    1   7 I    ( 1)AMU E            NDEGR(nrow)
+  16    1   8 I        AMU I            NNZ
+  17    1   1 I        A U I         Z  NROW
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram RNRMS in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0002474,0002523
+   1   12   3 R*8  ( 1)A U E            A(*)*8
+   2         I?    ( 1)  U I            ABS
+   3   12   5 R*8  ( 1)AM  E            DIAG(nrow)*8
+   4   12   4 I    ( 1)A U E            IA(nrow+1)
+   5          I         MU I            II
+   6          I         MU I            K
+   7          I         MU I            K1
+   8          I         MU I            K2
+   9         I?    ( 2)  U I            MAX
+  10   12   2 I        A U I            NRM
+  11   12   1 I        A U I         Z  NROW
+  12         S     ( 5) MU         21   RNRMS(NROW,NRM,A,IA,DIAG)
+  13          R*8       MU E            SCAL*8
+  14         I?    ( 1)  U I            SQRT
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CNRMS in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0002525,0002576
+   1    3   3 R*8  ( 1)A U E            A(*)*8
+   2         I?    ( 1)  U I            ABS
+   3         S     ( 6) MU         22   CNRMS(NROW,NRM,A,JA,IA,DIAG)
+   4    3   6 R*8  ( 1)AMU E            DIAG(nrow)*8
+   5    3   5 I    ( 1)A U E            IA(nrow+1)
+   6          I         MU I            II
+   7          I         MU I            J
+   8    3   4 I    ( 1)A U E            JA(*)
+   9          I         MU I            K
+  10          I         MU I            K1
+  11          I         MU I            K2
+  12         I?    ( 2)  U I            MAX
+  13    3   2 I        A U I            NRM
+  14    3   1 I        A U I         Z  NROW
+  15         I?    ( 1)  U I            SQRT
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram ROSCAL in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0002578,0002631
+   1   15   4 R*8  ( 1)A?? E            A(*)*8
+   2   15   8 R*8  ( 1)A?? E            B(*)*8
+   3   15   7 R*8  ( 1)AMU E            DIAG(nrow)*8
+   4         s     ( 9)  U              DIAMUA
+     (I4V,I4V,R8A,I4A,I4A,R8A,R8A,I4A,I4A)
+   5   15   6 I    ( 1)A?? E            IA(nrow+1)
+   6   15  10 I    ( 1)A?? E            IB(nrow+1)
+   7   15  11 I        AM  E            IERR
+   8          I         MU I            J
+   9   15   5 I    ( 1)A?? E            JA(*)
+  10   15   9 I    ( 1)A?? E            JB(*)
+  11   15   2 I        A?? E            JOB
+  12   15   3 I        A?? E            NRM
+  13   15   1 I        A?U E         Z  NROW
+  14         s     ( 5)  U              RNRMS
+     (I4V,I4V,R8A,I4A,R8A)
+  15         S     (11) MU         12   ROSCAL(NROW,JOB,NRM,A,JA,IA,DIAG,B,JB,IB,IERR)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram COSCAL in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0002633,0002688
+   1    5   4 R*8  ( 1)A?? E            A(*)*8
+   2         s     ( 9)  U              AMUDIA
+     (I4V,I4V,R8A,I4A,I4A,R8A,R8A,I4A,I4A)
+   3    5   8 R*8  ( 1)A?? E            B(*)*8
+   4         s     ( 6)  U              CNRMS
+     (I4V,I4V,R8A,I4A,I4A,R8A)
+   5         S     (11) MU         12   COSCAL(NROW,JOB,NRM,A,JA,IA,DIAG,B,JB,IB,IERR)
+   6    5   7 R*8  ( 1)AMU E            DIAG(nrow)*8
+   7    5   6 I    ( 1)A?? E            IA(nrow+1)
+   8    5  10 I    ( 1)A?? E            IB(nrow+1)
+   9    5  11 I        AM  E            IERR
+  10          I         MU I            J
+  11    5   5 I    ( 1)A?? E            JA(*)
+  12    5   9 I    ( 1)A?? E            JB(*)
+  13    5   2 I        A?? E            JOB
+  14    5   3 I        A?? I            NRM
+  15    5   1 I        A?U E         Z  NROW
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram ADDBLK in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0002690,0002809
+   1    2   3 R*8  ( 1)A U E            A(1:*)*8
+   2         S     (20) MU         58   ADDBLK(NROWA,NCOLA,A,JA,IA,IPOS,JPOS,JOB,NROWB,NCOLB,B,JB,IB,NROWC,NCOLC,C,JC,IC,NZMX,IERR)
+   3    2  11 R*8  ( 1)A U E            B(1:*)*8
+   4    2  16 R*8  ( 1)AM  E            C(1:*)*8
+   5          I         MU E            I
+   6    2   5 I    ( 1)A U E            IA(1:*)
+   7    2  13 I    ( 1)A U E            IB(1:*)
+   8    2  18 I    ( 1)AM  E            IC(1:*)
+   9    2  20 I        AM  E            IERR
+  10    2   6 I        A U E            IPOS
+  11          I         MU E            J1
+  12          I         MU E            J2
+  13    2   4 I    ( 1)A U E            JA(1:*)
+  14    2  12 I    ( 1)A U E            JB(1:*)
+  15    2  17 I    ( 1)AM  E            JC(1:*)
+  16    2   8 I        A U E            JOB
+  17    2   7 I        A U E            JPOS
+  18          I         MU E            KA
+  19          I         MU E            KAMAX
+  20          I         MU E            KB
+  21          I         MU E            KBMAX
+  22          I         MU E            KC
+  23         I?    ( 2)  U I            MAX
+  24    2   2 I        A U E            NCOLA
+  25    2  10 I        A U E            NCOLB
+  26    2  15 I        AMU E            NCOLC
+  27    2   1 I        A U E            NROWA
+  28    2   9 I        A U E            NROWB
+  29    2  14 I        AMU E            NROWC
+  30    2  19 I        A U E            NZMX
+  31          L         MU E            VALUES
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram GET1UP in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0002811,0002853
+   1         S     ( 4) MU         13   GET1UP(N,JA,IA,JU)
+   2          I         MU E            I
+   3    1   3 I    ( 1)A U E            IA(*)
+   4    1   2 I    ( 1)A U E            JA(*)
+   5    1   4 I    ( 1)AM  E            JU(*)
+   6          I         MU E            K
+   7    1   1 I        A U E            N
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram XTROWS in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0002855,0002918
+   1   16   3 R*8  ( 1)A U E            A(*)*8
+   2   16   6 R*8  ( 1)AM  E            AO(*)*8
+   3   16   1 I        A U E            I1
+   4   16   2 I        A U E            I2
+   5   16   5 I    ( 1)A U E            IA(*)
+   6   16   8 I    ( 1)AM  E            IAO(*)
+   7          I         MU I            II
+   8   16   9 I    ( 1)A U E            IPERM(*)
+   9          I         MU I            J
+  10   16   4 I    ( 1)A U E            JA(*)
+  11   16   7 I    ( 1)AM  E            JAO(*)
+  12   16  10 I        A U E            JOB
+  13          I         MU I            K
+  14          I         MU I            KO
+  15          L         MU E            VALUES
+  16         S     (10) MU         13   XTROWS(I1,I2,A,JA,IA,AO,JAO,IAO,IPERM,JOB)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CSRKVSTR in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0002920,0002967
+   1         S     ( 5) MU         20   CSRKVSTR(N,IA,JA,NR,KVSTR)
+   2          I         MU E            I
+   3    1   2 I    ( 1)A U E            IA(n+1)
+   4          I         MU E            J
+   5    1   3 I    ( 1)A U E            JA(*)
+   6          I         MU E            JDIFF
+   7    1   5 I    ( 1)AM  E            KVSTR(*)
+   8    1   1 I        A U E         Z  N
+   9    1   4 I        AMU E            NR
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CSRKVSTC in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0002970,0003031
+   1         S     ( 6) MU         27   CSRKVSTC(N,IA,JA,NC,KVSTC,IWK)
+   2          I         MU E            I
+   3    1   2 I    ( 1)A U E            IA(n+1)
+   4    1   6 I    ( 1)AMU E            IWK(*)
+   5          I         MU E            J
+   6    1   3 I    ( 1)A U E            JA(*)
+   7          I         MU E            K
+   8    1   5 I    ( 1)AM  E            KVSTC(*)
+   9         II    ( 2)  U I            MAX0
+  10    1   1 I        A U E         Z  N
+  11    1   4 I        AMU E            NC
+  12          I         MU E            NCOL
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram KVSTMERGE in file unary.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           unary.f,0003035,0003087
+   1          I         MU E            I
+   2          I         MU E            J
+   3    5   6 I    ( 1)AM  E            KVST(*)
+   4    5   4 I    ( 1)A U E            KVSTC(nc+1)
+   5         S     ( 6) MU         25   KVSTMERGE(NR,KVSTR,NC,KVSTC,N,KVST)
+   6    5   2 I    ( 1)A U E            KVSTR(nr+1)
+   7    5   5 I        AMU E            N
+   8    5   3 I        A U E         Z  NC
+   9    5   1 I        A U E         Z  NR
+**-- END OF SYMBOL TABLE

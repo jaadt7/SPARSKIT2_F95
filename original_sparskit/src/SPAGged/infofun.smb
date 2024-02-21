@@ -1,0 +1,265 @@
+**++ Symbol table for subprogram BANDWIDTH in file infofun.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             infofun.f,0000036,0000090
+   1         S     ( 7) MU         16   BANDWIDTH(N,JA,IA,ML,MU,IBAND,BNDAV)
+   2    1   7 R*8      AMU E            BNDAV*8
+   3          I         MU E            I
+   4    1   3 I    ( 1)A U E            IA(n+1)
+   5    1   6 I        AMU E            IBAND
+   6          I         MU E            J0
+   7          I         MU E            J1
+   8    1   2 I    ( 1)A U E            JA(*)
+   9          I         MU E            JMAXC
+  10          I         MU E            JMINC
+  11         II    ( 2)  U E            MAX
+  12    1   4 I        AMU E            ML
+  13    1   5 I        AMU E            MU
+  14    1   1 I        A U E         Z  N
+  15         IR    ( 1)  U I            REAL
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram NONZ in file infofun.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             infofun.f,0000092,0000153
+   1          I         MU E            I
+   2   16   4 I    ( 1)A U E            IA(n+1)
+   3   16   5 I    ( 1)A U E            IAO(n+1)
+   4          I         MU E            INDIAG
+   5          I         MU E            J0
+   6          I         MU E            J0R
+   7          I         MU E            J1
+   8          I         MU E            J1R
+   9   16   3 I    ( 1)A U E            JA(*)
+  10          I         MU E            K
+  11          I         MU E            LENC
+  12          I         MU E            LENR
+  13         II    ( 2)  U I            MAX0
+  14         II    ( 2)  U I            MIN0
+  15   16   1 I        A U E         Z  N
+  16         S     (11) MU         26   NONZ(N,SYM,JA,IA,IAO,NZMAXC,NZMINC,NZMAXR,NZMINR,NZCOL,NZROW)
+  17   16  10 I        AMU E            NZCOL
+  18   16   6 I        AMU E            NZMAXC
+  19   16   8 I        AMU E            NZMAXR
+  20   16   7 I        AMU E            NZMINC
+  21   16   9 I        AMU E            NZMINR
+  22   16  11 I        AMU E            NZROW
+  23   16   2 L        A U E            SYM
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram DIAG_DOMI in file infofun.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             infofun.f,0000155,0000232
+   1    7   4 R*8  ( 1)A U E            A(*)*8
+   2         I?    ( 1)  U I            ABS
+   3          R*8       MU E            AII*8
+   4    7   7 R*8  ( 1)A U E            AO(*)*8
+   5    7  10 R*8      AMU E            DDOMC*8
+   6    7  11 R*8      AMU E            DDOMR*8
+   7         S     (11) MU         31   DIAG_DOMI(N,SYM,VALUED,A,JA,IA,AO,JAO,IAO,DDOMC,DDOMR)
+   8          R*8       MU E            DSUMC*8
+   9          R*8       MU E            DSUMR*8
+  10          I         MU E            I
+  11    7   6 I    ( 1)A U E            IA(n+1)
+  12    7   9 I    ( 1)A U E            IAO(n+1)
+  13          I         MU E            J
+  14          I         MU E            J0
+  15          I         MU E            J1
+  16    7   5 I    ( 1)A U E            JA(*)
+  17    7   8 I    ( 1)A U E            JAO(*)
+  18          I         MU E            K
+  19    7   1 I        A U E         Z  N
+  20         IR    ( 1)  U I            REAL
+  21    7   2 L        A U E            SYM
+  22    7   3 L        A U E            VALUED
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram FROBNORM in file infofun.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             infofun.f,0000234,0000281
+   1    4   3 R*8  ( 1)A U E            A(*)*8
+   2          R*8       MU E            FDIAG*8
+   3    4   6 R*8      AMU E            FNORM*8
+   4         S     ( 6) MU         18   FROBNORM(N,SYM,A,JA,IA,FNORM)
+   5          I         MU E            I
+   6    4   5 I    ( 1)A U E            IA(n+1)
+   7    4   4 I    ( 1)A U E            JA(*)
+   8          I         MU E            K
+   9    4   1 I        A U E         Z  N
+  10         I?    ( 1)  U I            SQRT
+  11    4   2 L        A U E            SYM
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram ANSYM in file infofun.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             infofun.f,0000283,0000365
+   1    2   3 R*8  ( 1)A?U E            A(*)*8
+   2         S     (12) MU         46   ANSYM(N,SYM,A,JA,IA,AO,JAO,IAO,IMATCH,AV,FAS,FAN)
+   3    2   6 R*8  ( 1)A?U E            AO(*)*8
+   4    2  10 R*8      AM  E            AV*8
+   5         s     ( 9)  U              CSRCSC
+     (I4V,I4E,I4E,R8A,I4A,I4A,R8A,I4A,I4A)
+   6    2  12 R*8      AMU E            FAN*8
+   7    2  11 R*8      AMU E            FAS*8
+   8          R*8       ?U E            FNORM*8
+   9         s     ( 6)  U              FROBNORM
+     (I4V,L4V,R8A,I4A,I4A,R8V)
+  10          I         MU I            I
+  11    2   5 I    ( 1)A?U E            IA(n+1)
+  12    2   8 I    ( 1)A?U E            IAO(n+1)
+  13    2   9 I        AMU E            IMATCH
+  14          I         MU I            J1
+  15          I         MU I            J2
+  16    2   4 I    ( 1)A?U E            JA(*)
+  17    2   7 I    ( 1)A?U E            JAO(*)
+  18          I         MU I            K1
+  19          I         MU I            K1MAX
+  20          I         MU I            K2
+  21          I         MU I            K2MAX
+  22    2   1 I        A?U E         Z  N
+  23          I         MU I            NNZ
+  24         IR    ( 1)  U I            REAL
+  25         I?    ( 1)  U I            SQRT
+  26          R*8       MU E            ST*8
+  27    2   2 L        A?U E            SYM
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram DISTAIJ in file infofun.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             infofun.f,0000368,0000412
+   1    2   5 R*8      AMU E            DIST*8
+   2         S     ( 6) MU         18   DISTAIJ(N,NNZ,JA,IA,DIST,STD)
+   3          I         MU I            I
+   4    2   4 I    ( 1)A U E            IA(n+1)
+   5         II    ( 1)  U I            IABS
+   6          I         MU I            J
+   7          I         MU I            J0
+   8          I         MU I            J1
+   9    2   3 I    ( 1)A U E            JA(*)
+  10          I         MU I            K
+  11    2   1 I        A U I         Z  N
+  12    2   2 I        A U I            NNZ
+  13         IR    ( 1)  U I            REAL
+  14         I?    ( 1)  U I            SQRT
+  15    2   6 R*8      AMU E            STD*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram SKYLINE in file infofun.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             infofun.f,0000414,0000460
+   1          I         MU I            I
+   2   14   4 I    ( 1)A U E            IA(n+1)
+   3   14   6 I    ( 1)A U E            IAO(n+1)
+   4          I         MU I            J0
+   5          I         MU I            J0R
+   6   14   3 I    ( 1)A U E            JA(*)
+   7   14   5 I    ( 1)A U E            JAO(*)
+   8          I         MU I            JMINC
+   9          I         MU I            JMINR
+  10   14   1 I        A U E         Z  N
+  11   14   7 I        AM  E            NSKY
+  12          I         MU E            NSKYL
+  13          I         MU E            NSKYU
+  14         S     ( 7) MU         14   SKYLINE(N,SYM,JA,IA,JAO,IAO,NSKY)
+  15   14   2 L        A U E            SYM
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram DISTDIAG in file infofun.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             infofun.f,0000462,0000497
+   1    2   5 I    ( 1)AMU E            DIST(*)
+   2         S     ( 5) MU         13   DISTDIAG(NROW,NCOL,JA,IA,DIST)
+   3          I         MU I            I
+   4    2   4 I    ( 1)A U E            IA(nrow+1)
+   5          I         MU I            J
+   6    2   3 I    ( 1)A U E            JA(*)
+   7          I         MU I            K
+   8          I         MU I            K1
+   9          I         MU I            K2
+  10          I         MU I            N2
+  11    2   2 I        A U E            NCOL
+  12    2   1 I        A U E         Z  NROW
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram BANDPART in file infofun.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             infofun.f,0000499,0000533
+   1    2   5 I        AMU E            BAND
+   2         S     ( 5) MU         11   BANDPART(N,IA,DIST,NPER,BAND)
+   3    2   3 I    ( 1)A U E            DIST(*)
+   4    2   2 I    ( 1)A U E            IA(n+1)
+   5          I         MU I            IACC
+   6          I         MU I            J
+   7    2   1 I        A U E         Z  N
+   8          I         MU I            NNZ
+   9    2   4 I        A U E            NPER
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram N_IMP_DIAG in file infofun.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             infofun.f,0000535,0000587
+   1   16   7 R*8  ( 1)AM  E            DCOUNT(*)*8
+   2   16   3 I    ( 1)AMU E            DIST(*)
+   3          I         MU I            I
+   4          I         MU I            II
+   5   16   6 I    ( 1)AM  E            IOFF(*)
+   6   16   4 I        A U E            IPAR1
+   7          I         MU I            ITOT
+   8          I         MU I            J
+   9          I         MU I            JMAX
+  10          I         MU I            K
+  11         II    ( 2)  U I            MIN0
+  12   16   1 I        A U E            N
+  13          I         MU I            N2
+  14   16   5 I        AMU E            NDIAG
+  15   16   2 I        A U E            NNZ
+  16         S     ( 7) MU         23   N_IMP_DIAG(N,NNZ,DIST,IPAR1,NDIAG,IOFF,DCOUNT)
+  17         IR    ( 1)  U I            REAL
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram NONZ_LUD in file infofun.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             infofun.f,0000589,0000627
+   1          I         MU I            I
+   2    9   3 I    ( 1)A U E            IA(n+1)
+   3          I         MU I            J
+   4    9   2 I    ( 1)A U E            JA(*)
+   5          I         MU I            K
+   6    9   1 I        A U E         Z  N
+   7    9   6 I        AMU E            NDIAG
+   8    9   4 I        AM  E            NLOWER
+   9         S     ( 6) MU         11   NONZ_LUD(N,JA,IA,NLOWER,NUPPER,NDIAG)
+  10    9   5 I        AMU E            NUPPER
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram AVNZ_COL in file infofun.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             infofun.f,0000629,0000672
+   1    2   3 R*8      AMU E            AV*8
+   2         S     ( 4) MU         10   AVNZ_COL(N,IA,AV,ST)
+   3          I         MU I            I
+   4    2   2 I    ( 1)A U E            IA(n+1)
+   5          I         MU I            J0
+   6          I         MU I            J1
+   7          I         MU I            LENC
+   8    2   1 I        A U E         Z  N
+   9         IR    ( 1)  U I            REAL
+  10         I?    ( 1)  U I            SQRT
+  11    2   4 R*8      AMU E            ST*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram VBRINFO in file infofun.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           infofun.f,0000675,0000794
+   1          I    ( 1) MU E       10   BSIZ(10)
+   2          I    ( 1) MU E       10   FREQ(10)
+   3          I         MU E            I
+   4   23   5 I    ( 1)A U E            IA(nr+1)
+   5   23   8 I        A U E            IOUT
+   6   23   7 I    ( 1)AMU E            IWK(nr+nc+2+nr)
+   7          I         MU E            J
+   8   23   6 I    ( 1)A U E            KA(*)
+   9   23   4 I    ( 1)A?U E            KVSTC(nc+1)
+  10         s     ( 6)  U              KVSTMERGE
+     (I4V,I4A,I4V,I4A,I4V,I4A)
+  11   23   3 I    ( 1)A?U E            KVSTR(nr+1)
+  12          I         MU E            MAX
+  13          I         MU E            N
+  14          I         MU E            NB
+  15   23   2 I        A?U E         Z  NC
+  16          I         MU E            NEQ
+  17          I         MU E            NNZ
+  18          I         MU E            NNZB
+  19   23   1 I        A?U E         Z  NR
+  20          I         MU E            NUM
+  21         IR    ( 1)  U I            REAL
+  22          C*101     MU E            TMPST*101
+  23         S     ( 8) MU         43   VBRINFO(NR,NC,KVSTR,KVSTC,IA,KA,IWK,IOUT)
+**-- END OF SYMBOL TABLE

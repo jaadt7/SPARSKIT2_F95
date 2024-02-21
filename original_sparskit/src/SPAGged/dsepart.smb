@@ -1,0 +1,344 @@
+**++ Symbol table for subprogram DBLSTR in file dsepart.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             dsepart.f,0000024,0000133
+   1         s     (10)  U              BFS
+     (I4V,I4A,I4A,I4V,I4A,I4A,I4V,I4A,I4A,I4V)
+   2         S     (13) MU         47   DBLSTR(N,JA,IA,IP1,IP2,NFIRST,RIORD,NDOM,MAP,MAPPTR,MASK,LEVELS,IWK)
+   3    2   3 I    ( 1)A?? E            IA(*)
+   4          I         MU E            IDOM
+   5          I         M? E            INIT
+   6    2   4 I        A?? E            IP1
+   7    2   5 I        A?U E            IP2
+   8    2  13 I    ( 1)AMU E            IWK(*)
+   9          I         MU E            J
+  10    2   2 I    ( 1)A?? E            JA(*)
+  11          I         MU E            JDOM
+  12          I         MU E            K
+  13          I         ?U E            KDOM
+  14    2  12 I    ( 1)A?? E            LEVELS(*)
+  15    2   9 I    ( 1)A?U E            MAP(*)
+  16    2  10 I    ( 1)AMU E            MAPPTR(*)
+  17    2  11 I    ( 1)AM? E            MASK(*)
+  18          I         MU E            MASKVAL
+  19    2   1 I        A?U E            N
+  20    2   8 I        AMU E            NDOM
+  21          I         MU E            NDP1
+  22          I         MU E            NEXTDOM
+  23    2   6 I        AM? E            NFIRST
+  24          I         ?? E            NLEV
+  25          I         M? E            NUMNOD
+  26         s     ( 9)  U              PERPHN
+     (I4V,I4A,I4A,I4V,I4A,I4V,I4V,I4A,I4A)
+  27    2   7 I    ( 1)A?? E            RIORD(*)
+  28         s     ( 7)  U              STRIPES
+     (I4V,I4A,I4A,I4V,I4A,I4A,I4V)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram RDIS in file dsepart.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             dsepart.f,0000135,0000257
+   1   22   3 I    ( 1)A?? E            IA(*)
+   2          I         MU E            IDOM
+   3          I         M? E            INIT
+   4   22  10 I    ( 1)AMU E            IPTR(ndom)
+   5          I         MU E            J
+   6   22   2 I    ( 1)A?? E            JA(*)
+   7          I         MU E            K
+   8          I         MU E            KO
+   9          I         MU E            LEV
+  10   22   8 I    ( 1)A?U E            LEVELS(*)
+  11   22   5 I    ( 1)AMU E            MAP(*)
+  12   22   6 I    ( 1)AMU E            MAPPTR(*)
+  13   22   7 I    ( 1)AMU E            MASK(*)
+  14          I         M? E            MASKVAL
+  15          I         MU E            MAXSIZ
+  16   22   1 I        A?U E            N
+  17   22   4 I        A U E         Z  NDOM
+  18          I         MU E            NEXTDOM
+  19          I         MU E            NEXTSIZ
+  20          I         ?U E            NLEV
+  21         s     ( 9)  U              PERPHN
+     (I4V,I4A,I4A,I4V,I4A,I4V,I4V,I4A,I4A)
+  22         S     (10) MU         48   RDIS(N,JA,IA,NDOM,MAP,MAPPTR,MASK,LEVELS,SIZE,IPTR)
+  23   22   9 I    ( 1)AMU E            SIZE(ndom)
+  24          I         MU E            WANTSIZ
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram DSE2WAY in file dsepart.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             dsepart.f,0000259,0000316
+   1         s     (13)  U              DBLSTR
+     (I4V,I4A,I4A,I4V,I4V,I4V,I4A,I4V,I4A,I4A,I4A,I4A,I4A)
+   2    3   9 I    ( 1)A?U E            DOM(*)
+   3         S     (13) MU         19   DSE2WAY(N,JA,IA,IP1,IP2,NFIRST,RIORD,NDOM,DOM,IDOM,MASK,JWK,LINK)
+   4         s     (11)  U              FIND_CTR
+     (I4V,I4V,I4A,I4A,I4V,I4A,I4V,I4A,I4A,I4V,I4L)
+   5         s     ( 6)  U              GET_DOMNS2
+     (I4V,I4A,I4A,I4A,I4A,I4A)
+   6          I         MU E            I
+   7    3   3 I    ( 1)A?? E            IA(*)
+   8    3  10 I    ( 1)A?U E            IDOM(*)
+   9          I         M? E            INIT
+  10    3   4 I        A?? E            IP1
+  11    3   5 I        A?? E            IP2
+  12    3   2 I    ( 1)A?? E            JA(*)
+  13    3  12 I    ( 1)A?? E            JWK(*)
+  14          I         MU E            K
+  15    3  13 I    ( 1)A?? E            LINK(*)
+  16         s     ( 8)  U              MAPPER4
+     (I4V,I4A,I4A,I4V,I4A,I4A,I4A,I4A)
+  17    3  11 I    ( 1)AM? E            MASK(*)
+  18          I         M? E            MASKVAL
+  19          I         ?U E            MID
+  20    3   1 I        A?? E            N
+  21    3   8 I        A?U E            NDOM
+  22    3   6 I        A?? E            NFIRST
+  23          I         MU E            NOUTER
+  24          I         MU E            NSIZ
+  25          I         MU E            OUTER
+  26    3   7 I    ( 1)AM? E            RIORD(*)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram DSE in file dsepart.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             dsepart.f,0000318,0000367
+   1    2   6 I    ( 1)A?U E            DOM(*)
+   2         S     (10) MU         19   DSE(N,JA,IA,NDOM,RIORD,DOM,IDOM,MASK,JWK,LINK)
+   3         s     (11)  U              FIND_CTR
+     (I4V,I4V,I4A,I4A,I4V,I4A,I4V,I4A,I4A,I4V,I4L)
+   4         s     ( 6)  U              GET_DOMNS2
+     (I4V,I4A,I4A,I4A,I4A,I4A)
+   5          I         MU E            I
+   6    2   3 I    ( 1)A?? E            IA(*)
+   7    2   7 I    ( 1)A?U E            IDOM(*)
+   8          I         M? E            INIT
+   9    2   2 I    ( 1)A?? E            JA(*)
+  10    2   9 I    ( 1)A?? E            JWK(*)
+  11          I         MU E            K
+  12    2  10 I    ( 1)A?? E            LINK(*)
+  13         s     ( 8)  U              MAPPER4
+     (I4V,I4A,I4A,I4V,I4A,I4A,I4A,I4A)
+  14    2   8 I    ( 1)AM? E            MASK(*)
+  15          I         M? E            MASKVAL
+  16          I         ?U E            MID
+  17    2   1 I        A?? E            N
+  18    2   4 I        A?U E            NDOM
+  19          I         MU E            NOUTER
+  20          I         MU E            NSIZ
+  21          I         MU E            OUTER
+  22         s     (10)  U              RDIS
+     (I4V,I4A,I4A,I4V,I4A,I4A,I4A,I4A,I4A,I4L)
+  23    2   5 I    ( 1)AM? E            RIORD(*)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram BFS in file dsepart.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             dsepart.f,0000369,0000467
+   1         s     ( 7)  U              ADD_LVST
+     (I4V,I4V,I4A,I4A,I4A,I4A,I4V)
+   2         S     (10) MU         31   BFS(N,JA,IA,NFIRST,IPERM,MASK,MASKVAL,RIORD,LEVELS,NLEV)
+   3    2   3 I    ( 1)A?? E            IA(*)
+   4          I         MU E            IEND
+   5          I         MU E            II
+   6    2   5 I    ( 1)A U E            IPERM(n)
+   7          I         MU E            ISTART
+   8          I         MU E            J
+   9    2   2 I    ( 1)A?? E            JA(*)
+  10    2   9 I    ( 1)AM  E            LEVELS(*)
+  11    2   6 I    ( 1)AMU E            MASK(n)
+  12    2   7 I        A?U E            MASKVAL
+  13    2   1 I        A U E         Z  N
+  14    2   4 I        A U E            NFIRST
+  15    2  10 I        AMU E            NLEV
+  16          I         MU E            NOD
+  17          L         MU E            PERMUT
+  18    2   8 I    ( 1)AMU E            RIORD(*)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram ADD_LVST in file dsepart.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           dsepart.f,0000469,0000490
+   1         S     ( 7) MU         15   ADD_LVST(ISTART,IEND,RIORD,JA,IA,MASK,MASKVAL)
+   2          I         MU I            I
+   3    1   5 I    ( 1)A U E            IA(*)
+   4    1   2 I        AMU I            IEND
+   5          I         MU I            IR
+   6    1   1 I        AMU I            ISTART
+   7          I         MU I            J
+   8    1   4 I    ( 1)A U E            JA(*)
+   9          I         MU I            K
+  10    1   6 I    ( 1)AMU E            MASK(*)
+  11    1   7 I        A U I            MASKVAL
+  12          I         MU E            NOD
+  13    1   3 I    ( 1)AMU E            RIORD(*)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram STRIPES in file dsepart.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             dsepart.f,0000492,0000549
+   1          I         MU E            IB
+   2          I         MU E            ILEV
+   3   15   4 I        A U E            IP
+   4          I         MU E            K
+   5          I         MU E            KTR
+   6   15   3 I    ( 1)A U E            LEVELS(nlev+1)
+   7   15   5 I    ( 1)AM  E            MAP(*)
+   8   15   6 I    ( 1)AM  E            MAPPTR(*)
+   9         I?    ( 2)  U I            MAX
+  10   15   7 I        AMU E            NDOM
+  11   15   1 I        A U E         Z  NLEV
+  12          I         MU E            NSIZ
+  13          I         MU E            PSIZ
+  14   15   2 I    ( 1)A U E            RIORD(*)
+  15         S     ( 7) MU         21   STRIPES(NLEV,RIORD,LEVELS,IP,MAP,MAPPTR,NDOM)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram STRIPES0 in file dsepart.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           dsepart.f,0000551,0000596
+   1          I         MU I            IBAND
+   2    9   3 I    ( 1)A U E            IL(*)
+   3          I         MU I            ILEV
+   4    9   1 I        A U E            IP
+   5    9   5 I    ( 1)AM  E            IPTR(*)
+   6          I         MU I            KTR
+   7    9   4 I        AM  E            NDOM
+   8    9   2 I        A U E            NLEV
+   9         S     ( 5) MU         14   STRIPES0(IP,NLEV,IL,NDOM,IPTR)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram MASKDEG in file dsepart.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             dsepart.f,0000598,0000609
+   1          I         MU E            DEG
+   2    6   2 I    ( 1)A U E            IA(*)
+   3    6   1 I    ( 1)A U E            JA(*)
+   4          I         MU E            K
+   5    6   4 I    ( 1)A U E            MASK(*)
+   6         FI    ( 5) MU E        6   MASKDEG(JA,IA,NOD,MASK,MASKVAL)
+   7    6   5 I        A U E            MASKVAL
+   8    6   3 I        A U E            NOD
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram PERPHN in file dsepart.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             dsepart.f,0000611,0000658
+   1         s     (10)  U              BFS
+     (I4V,I4A,I4A,I4V,I4A,I4A,I4V,I4A,I4A,I4V)
+   2          I         MU E            DEG
+   3   18   3 I    ( 1)A?? E            IA(*)
+   4   18   4 I        AMU E            INIT
+   5          I    ( 1) M? E        1   IPERM(1)
+   6          I         MU E            J
+   7   18   2 I    ( 1)A?? E            JA(*)
+   8   18   9 I    ( 1)A?U E            LEVELS(*)
+   9   18   5 I    ( 1)A?? E            MASK(*)
+  10         fI    ( 5)  U E            MASKDEG
+     (I4A,I4A,I4V,I4A,I4V)
+  11   18   6 I        A?? E            MASKVAL
+  12          I         MU E            MINDEG
+  13   18   1 I        A?U E            N
+  14          I         M? E            NFIRST
+  15   18   7 I        A?U E            NLEV
+  16          I         MU E            NLEVP
+  17          I         MU E            NOD
+  18         S     ( 9) MU         20   PERPHN(N,JA,IA,INIT,MASK,MASKVAL,NLEV,RIORD,LEVELS)
+  19   18   8 I    ( 1)AMU E            RIORD(*)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram MAPPER4 in file dsepart.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             dsepart.f,0000660,0000810
+   1         I?    ( 1)  U I            ABS
+   2         s     ( 8)  U              ADD_LK
+     (I4V,I4V,I4V,I4V,I4A,I4A,I4A,I4A)
+   3          I         MU E            I
+   4   15   3 I    ( 1)A U E            IA(*)
+   5          I         MU E            IDOM
+   6          I         MU E            II
+   7          I         MU E            ILAST
+   8          I         MU E            ISIZ
+   9          I         MU E            J
+  10   15   2 I    ( 1)A U E            JA(*)
+  11          I         MU E            KK
+  12   15   6 I    ( 1)AMU E            LEVST(2*ndom)
+  13   15   8 I    ( 1)AMU E            LINK(*)
+  14          I         MU E            LKEND
+  15         S     ( 8) MU         65   MAPPER4(N,JA,IA,NDOM,NODES,LEVST,MARKER,LINK)
+  16   15   7 I    ( 1)AMU E            MARKER(n)
+  17         fI    ( 3)  U E            MINDOM
+     (I4V,I4V,I4A)
+  18   15   1 I        A?U E         Z  N
+  19   15   4 I        A?U E         Z  NDOM
+  20          I         MU E            NEXT
+  21          I         MU E            NOD
+  22   15   5 I    ( 1)A?U E            NODES(*)
+  23          I         MU E            NODPREV
+  24          I         MU E            NSIZE
+  25          I         MU E            NSTUCK
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram GET_DOMNS2 in file dsepart.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             dsepart.f,0000812,0000847
+   1         S     ( 6) MU         12   GET_DOMNS2(NDOM,NODES,LINK,LEVST,RIORD,IPTR)
+   2          I         MU E            II
+   3    1   6 I    ( 1)AM  E            IPTR(*)
+   4          I         MU E            J
+   5    1   4 I    ( 1)A U E            LEVST(*)
+   6    1   3 I    ( 1)A U E            LINK(*)
+   7    1   1 I        A U E            NDOM
+   8          I         MU E            NEXT
+   9          I         MU E            NOD
+  10    1   2 I    ( 1)A U E            NODES(*)
+  11    1   5 I    ( 1)AM  E            RIORD(*)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram MINDOM in file dsepart.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             dsepart.f,0000849,0000870
+   1          I         MU E            I
+   2          I         MU E            ISIZ
+   3    4   3 I    ( 1)A U E            LINK(n)
+   4         FI    ( 3) MU E       11   MINDOM(N,NDOM,LINK)
+   5    4   1 I        A U E         Z  N
+   6    4   2 I        A U E            NDOM
+   7          I         MU E            NSIZE
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram ADD_LK in file dsepart.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             dsepart.f,0000872,0000905
+   1         S     ( 8) MU          9   ADD_LK(NEW,NOD,IDOM,LKEND,LEVST,LINK,NODES,MARKER)
+   2    1   3 I        A U E            IDOM
+   3          I         MU E            KTOP
+   4    1   5 I    ( 1)AMU E            LEVST(*)
+   5    1   6 I    ( 1)AMU E            LINK(*)
+   6    1   4 I        AMU E            LKEND
+   7    1   8 I    ( 1)AM  E            MARKER(*)
+   8    1   1 I        A U E            NEW
+   9    1   2 I        AMU E            NOD
+  10    1   7 I    ( 1)AM  E            NODES(*)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram FIND_CTR in file dsepart.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             dsepart.f,0000907,0000965
+   1    2  10 I        AM  E            CENTER
+   2         S     (11) MU         24   FIND_CTR(N,NSIZ,JA,IA,INIT,MASK,MASKVAL,RIORD,LEVELS,CENTER,IWK)
+   3    2   4 I    ( 1)A?? E            IA(*)
+   4    2   5 I        A?? E            INIT
+   5          I         M? E            INIT0
+   6    2  11 I    ( 1)A?U E            IWK(*)
+   7    2   3 I    ( 1)A?? E            JA(*)
+   8          I         MU E            K
+   9          I         MU E            KL
+  10          I         MU E            KR
+  11    2   9 I    ( 1)A?U E            LEVELS(*)
+  12    2   6 I    ( 1)AM? E            MASK(*)
+  13    2   7 I        A?U E            MASKVAL
+  14          I         MU E            MIDLEV
+  15    2   1 I        A?U E            N
+  16          I         MU E            NEWMASK
+  17          I         ?? E            NLEV
+  18          I         ?U E            NLEV0
+  19    2   2 I        A U E            NSIZ
+  20         s     ( 9)  U              PERPHN
+     (I4V,I4A,I4A,I4V,I4A,I4V,I4V,I4A,I4A)
+  21    2   8 I    ( 1)A?U E            RIORD(*)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram RVERSP in file dsepart.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           dsepart.f,0000967,0000980
+   1          I         MU E            J
+   2          I         MU E            K
+   3    5   1 I        A U E         Z  N
+   4    5   2 I    ( 1)AMU E            RIORD(n)
+   5         S     ( 2) MU          6   RVERSP(N,RIORD)
+**-- END OF SYMBOL TABLE

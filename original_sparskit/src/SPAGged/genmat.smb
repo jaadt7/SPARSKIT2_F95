@@ -1,0 +1,262 @@
+**++ Symbol table for subprogram GEN57PT in file genmat.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           genmat.f,0000020,0000246
+   1    6   7 R*8  ( 1)AM? E            A(*)*8
+   2    6   4 R*8  ( 1)A?? E            AL(6)*8
+   3         ID    ( 1)  U I            DBLE
+   4         s     (10)  U              FDADDBC
+     (I4V,I4V,I4V,R8A,I4A,I4A,I4A,R8A,R8A,R8V)
+   5         s     (11)  U              FDREDUCE
+     (I4V,I4V,I4V,R8A,I4V,R8A,I4A,I4A,I4A,R8A,R8A)
+   6         S     (11) MU         57   GEN57PT(NX,NY,NZ,AL,MODE,N,A,JA,IA,IAU,RHS)
+   7          L         MU E            GENRHS
+   8         s     ( 9)  U              GETSTEN
+     (I4V,I4V,I4V,I4E,I4E,I4E,R8A,R8V,R8V)
+   9          R*8       M? E            H*8
+  10    6   9 I    ( 1)AM? E            IA(*)
+  11    6  10 I    ( 1)AM? E            IAU(*)
+  12          I         MU E            IEDGE
+  13          I         MU E            IX
+  14          I         MU E            IY
+  15          I         MU E            IZ
+  16    6   8 I    ( 1)AM? E            JA(*)
+  17          I         MU E            KX
+  18          I         MU E            KY
+  19          I         MU E            KZ
+  20    6   5 I        A?U E            MODE
+  21    6   6 I        A?? E            N
+  22          I         MU E            NODE
+  23    6   1 I        A?U E            NX
+  24    6   2 I        A?U E            NY
+  25    6   3 I        A?U E            NZ
+  26         PR*8        U E            ONE*8=1.0D0
+  27          R*8       ?U E            R*8
+  28    6  11 R*8  ( 1)AM? E            RHS(*)*8
+  29          R*8  ( 1) ?U E        7   STENCIL(7)*8
+  30          L         MU E            VALUE
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram GETSTEN in file genmat.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           genmat.f,0000248,0000349
+   1         fR*8  ( 3)  UXE            AFUN*8
+     (R8E,R8V,R8V)
+   2         fR*8  ( 3)  UXE            BFUN*8
+     (R8V,R8E,R8V)
+   3         fR*8  ( 3)  UXE            CFUN*8
+     (R8V,R8V,R8E)
+   4          R*8       MU E            CNTR*8
+   5          R*8       MU E            COEFF*8
+   6         ID    ( 1)  U I            DBLE
+   7         fR*8  ( 3)  UXE            DFUN*8
+     (R8V,R8V,R8V)
+   8         fR*8  ( 3)  UXE            EFUN*8
+     (R8V,R8V,R8V)
+   9         fR*8  ( 3)  UXE            FFUN*8
+     (R8V,R8V,R8V)
+  10         S     ( 9) MU         42   GETSTEN(NY,NZ,MODE,KX,KY,KZ,STENCIL,H,RHS)
+  11         fR*8  ( 3)  UXE            GFUN*8
+     (R8V,R8V,R8V)
+  12   10   8 R*8      A U E            H*8
+  13         PR*8        U E            HALF*8=0.5D0
+  14         fR*8  ( 3)  UXE            HFUN*8
+     (R8V,R8V,R8V)
+  15          R*8       MU E            HHALF*8
+  16          I         MU E            K
+  17   10   4 I        A U E            KX
+  18   10   5 I        A U E            KY
+  19   10   6 I        A U E            KZ
+  20   10   3 I        A U E            MODE
+  21   10   1 I        A U E            NY
+  22   10   2 I        A U E            NZ
+  23   10   9 R*8      AM  E            RHS*8
+  24   10   7 R*8  ( 1)AMU E            STENCIL(*)*8
+  25          R*8       MU E            X*8
+  26          R*8       MU E            Y*8
+  27          R*8       MU E            Z*8
+  28         PR*8        U E            ZERO*8=0.0D0
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram GEN57BL in file genmat.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           genmat.f,0000351,0000534
+   1    4   7 R*8  ( 2)AM  E            A(na,1)*8
+   2         s     ( 8)  U              BSTEN
+     (I4V,I4V,I4E,I4E,I4E,I4V,R8A,R8V)
+   3         ID    ( 1)  U I            DBLE
+   4         S     (11) MU         67   GEN57BL(NX,NY,NZ,NFREE,NA,N,A,JA,IA,IAU,STENCIL)
+   5          R*8       M? E            H*8
+   6    4   9 I    ( 1)AM  E            IA(*)
+   7    4  10 I    ( 1)AM  E            IAU(*)
+   8          I         MU E            IEDGE
+   9          I         MU E            IX
+  10          I         MU E            IY
+  11          I         MU E            IZ
+  12    4   8 I    ( 1)AM  E            JA(*)
+  13          I         MU E            K
+  14          I         MU E            KX
+  15          I         MU E            KY
+  16          I         MU E            KZ
+  17    4   6 I        AM  E            N
+  18    4   5 I        A U E         Z  NA
+  19    4   4 I        A?U E            NFREE
+  20          I         MU E            NFREE2
+  21          I         MU E            NODE
+  22    4   1 I        A U E            NX
+  23    4   2 I        A?U E            NY
+  24    4   3 I        A?U E            NZ
+  25         PR*8        U E            ONE*8=1.0D0
+  26    4  11 R*8  ( 2)A?U E            STENCIL(7,1)*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram BSTEN in file genmat.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           genmat.f,0000536,0000655
+   1         s     ( 5)  U              AFUNBL
+     (I4V,R8E,R8V,R8V,R8A)
+   2         s     ( 5)  U              BFUNBL
+     (I4V,R8V,R8E,R8V,R8A)
+   3         S     ( 8) MU         68   BSTEN(NY,NZ,KX,KY,KZ,NFREE,STENCIL,H)
+   4         s     ( 5)  U              CFUNBL
+     (I4V,R8V,R8V,R8E,R8A)
+   5          R*8  ( 1) MU E      225   CNTR(225)*8
+   6          R*8  ( 1) ?U E      225   COEFF(225)*8
+   7         ID    ( 1)  U I            DBLE
+   8         s     ( 5)  U              DFUNBL
+     (I4V,R8V,R8V,R8V,R8A)
+   9         s     ( 5)  U              EFUNBL
+     (I4V,R8V,R8V,R8V,R8A)
+  10         s     ( 5)  U              FFUNBL
+     (I4V,R8V,R8V,R8V,R8A)
+  11         s     ( 5)  U              GFUNBL
+     (I4V,R8V,R8V,R8V,R8A)
+  12    3   8 R*8      A U E            H*8
+  13          R*8       MU E            H2*8
+  14         PR*8        U E            HALF*8=0.5D0
+  15          R*8       MU E            HHALF*8
+  16          I         MU E            I
+  17          I         MU E            K
+  18    3   3 I        A U E            KX
+  19    3   4 I        A U E            KY
+  20    3   5 I        A U E            KZ
+  21    3   6 I        A?U E            NFREE
+  22          I         MU E            NFREE2
+  23    3   1 I        A U E            NY
+  24    3   2 I        A U E            NZ
+  25    3   7 R*8  ( 2)AMU E            STENCIL(7,*)*8
+  26          R*8       MU E            X*8
+  27          R*8       MU E            Y*8
+  28          R*8       MU E            Z*8
+  29         PR*8        U E            ZERO*8=0.0D0
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram FDREDUCE in file genmat.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             genmat.f,0000656,0000913
+   1    3   6 R*8  ( 1)AMU E            A(*)*8
+   2    3   4 R*8  ( 1)A U E            ALPHA(*)*8
+   3         S     (11) MU        165   FDREDUCE(NX,NY,NZ,ALPHA,N,A,JA,IA,IAU,RHS,STENCIL)
+   4          I         MU E            I
+   5    3   8 I    ( 1)AMU E            IA(*)
+   6    3   9 I    ( 1)AMU E            IAU(*)
+   7          I         MU E            IEDGE
+   8          I         MU E            J
+   9    3   7 I    ( 1)AM? E            JA(*)
+  10          I         MU E            K
+  11          I         MU E            KX
+  12          I         MU E            KY
+  13          I         MU E            KZ
+  14         fI    ( 4)  UXE            LCTCSR
+     (I4V,I4V,I4A,I4A)
+  15          I         MU E            LD
+  16          I         MU E            LK
+  17          I         MU E            LX
+  18          I         MU E            LY
+  19          I         MU E            LZ
+  20    3   5 I        AM  E            N
+  21          I         MU E            NBNODE
+  22          I         MU E            NODE
+  23    3   1 I        A U E            NX
+  24    3   2 I        A U E            NY
+  25    3   3 I        A U E            NZ
+  26    3  10 R*8  ( 1)AMU E            RHS(*)*8
+  27    3  11 R*8  ( 1)AMU E            STENCIL(*)*8
+  28          I         MU E            UX
+  29          I         MU E            UY
+  30          I         MU E            UZ
+  31          R*8       MU E            VAL*8
+  32         PR*8        U E            ZERO*8=0.0D0
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram FDADDBC in file genmat.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           genmat.f,0000916,0001244
+   1   12   4 R*8  ( 1)AMU E            A(7*nx*ny*nz)*8
+   2         fR*8  ( 3)  UXE            AFUN*8
+     (R8E,R8V,R8V)
+   3   12   9 R*8  ( 1)A U E            AL(6)*8
+   4         fR*8  ( 4)  UXE            BETFUN*8
+     (C2V,R8V,R8V,R8V)
+   5         fR*8  ( 3)  UXE            BFUN*8
+     (R8V,R8E,R8V)
+   6         fR*8  ( 3)  UXE            CFUN*8
+     (R8V,R8V,R8E)
+   7         s     ( 3)  U              CLROW
+     (I4V,R8A,I4A)
+   8          R*8       MU E            COEFF*8
+   9          R*8       MU E            CTR*8
+  10         fR*8  ( 3)  UXE            DFUN*8
+     (R8V,R8V,R8V)
+  11         fR*8  ( 3)  UXE            EFUN*8
+     (R8V,R8V,R8V)
+  12         S     (10) MU        165   FDADDBC(NX,NY,NZ,A,JA,IA,IAU,RHS,AL,H)
+  13         fR*8  ( 3)  UXE            FFUN*8
+     (R8V,R8V,R8V)
+  14         fR*8  ( 4)  UXE            GAMFUN*8
+     (C2V,R8V,R8V,R8V)
+  15   12  10 R*8      A U E            H*8
+  16         PR*8        U E            HALF*8=0.5D0
+  17          R*8       MU E            HHALF*8
+  18          I         MU E            I
+  19   12   6 I    ( 1)A?? E            IA(nx*ny*nz)
+  20   12   7 I    ( 1)A U E            IAU(nx*ny*nz)
+  21          I         MU E            J
+  22   12   5 I    ( 1)A?? E            JA(7*nx*ny*nz)
+  23          I         MU E            K
+  24          I         MU E            KX
+  25          I         MU E            KY
+  26          I         MU E            KZ
+  27         fI    ( 4)  UXE            LCTCSR
+     (I4V,I4E,I4A,I4A)
+  28          I         MU E            LX
+  29          I         MU E            LY
+  30          I         MU E            NBR
+  31          I         MU E            NODE
+  32   12   1 I        A U E         Z  NX
+  33   12   2 I        A U E         Z  NY
+  34   12   3 I        A U E         Z  NZ
+  35         PR*8        U E            ONE*8=1.0D0
+  36   12   8 R*8  ( 1)AMU E            RHS(nx*ny*nz)*8
+  37          C*2       M? E            SIDE*2
+  38         PR*8        U E            TWO*8=2.0D0
+  39          I         MU E            UX
+  40          I         MU E            UY
+  41          R*8       MU E            X*8
+  42          R*8       MU E            Y*8
+  43          R*8       MU E            Z*8
+  44         PR*8        U E            ZERO*8=0.0D0
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CLROW in file genmat.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           genmat.f,0001247,0001260
+   1    2   2 R*8  ( 1)AM  E            A(*)*8
+   2         S     ( 3) MU          4   CLROW(I,A,IA)
+   3    2   1 I        A U E            I
+   4    2   3 I    ( 1)A U E            IA(*)
+   5          I         MU E            K
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram LCTCSR in file genmat.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           genmat.f,0001262,0001278
+   1    6   1 I        A U E            I
+   2    6   4 I    ( 1)A U E            IA(*)
+   3    6   2 I        A U E            J
+   4    6   3 I    ( 1)A U E            JA(*)
+   5          I         MU E            K
+   6         FI    ( 4) MU E        8   LCTCSR(I,J,JA,IA)
+**-- END OF SYMBOL TABLE

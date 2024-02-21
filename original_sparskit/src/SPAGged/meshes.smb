@@ -1,0 +1,334 @@
+**++ Symbol table for subprogram INMESH in file meshes.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             meshes.f,0000001,0000120
+   1         s     ( 7)  U              FMESH1
+     (I4V,I4V,I4V,R8A,R8A,I4A,I4A)
+   2         s     ( 7)  U              FMESH2
+     (I4V,I4V,I4V,R8A,R8A,I4A,I4A)
+   3         s     ( 7)  U              FMESH3
+     (I4V,I4V,I4V,R8A,R8A,I4A,I4A)
+   4         s     ( 7)  U              FMESH4
+     (I4V,I4V,I4V,R8A,R8A,I4A,I4A)
+   5         s     ( 7)  U              FMESH5
+     (I4V,I4V,I4V,R8A,R8A,I4A,I4A)
+   6         s     ( 7)  U              FMESH6
+     (I4V,I4V,I4V,R8A,R8A,I4A,I4A)
+   7         s     ( 8)  U              FMESH7
+     (I4V,I4V,I4V,R8A,R8A,I4A,I4A,I4A)
+   8         s     ( 8)  U              FMESH8
+     (I4V,I4V,I4V,R8A,R8A,I4A,I4A,I4A)
+   9         s     ( 8)  U              FMESH9
+     (I4V,I4V,I4V,R8A,R8A,I4A,I4A,I4A)
+  10          I         MU E            I
+  11          I         MU E            II
+  12   14   2 I        A U E            IIN
+  13   14   9 I    ( 2)AM? E            IJK(node,nelx)
+  14         S     (10) MU         39   INMESH(NMESH,IIN,NX,NELX,NODE,X,Y,NODCODE,IJK,IPERM)
+  15   14  10 I    ( 1)A?? E            IPERM(nx)
+  16          I         MU E            J
+  17   14   4 I        AMU E         Z  NELX
+  18   14   1 I        A U E            NMESH
+  19   14   8 I    ( 1)AM? E            NODCODE(nx)
+  20   14   5 I        A?U E         Z  NODE
+  21   14   3 I        AMU E         Z  NX
+  22   14   6 R*8  ( 1)AM? E            X(*)*8
+  23   14   7 R*8  ( 1)AM? E            Y(*)*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram FMESH1 in file meshes.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             meshes.f,0000122,0000187
+   1         S     ( 7) MU         15   FMESH1(NX,NELX,NODE,X,Y,NODCODE,IJK)
+   2    1   7 I    ( 2)AM  I            IJK(node,*)
+   3          I    ( 1)I U E        2   IJK1(2)
+   4          I    ( 1)I U E        2   IJK2(2)
+   5          I    ( 1)I U E        2   IJK3(2)
+   6          I         MU I            K
+   7    1   2 I        AMU I            NELX
+   8    1   6 I    ( 1)AM  I            NODCODE(*)
+   9    1   3 I        A U I         Z  NODE
+  10    1   1 I        AMU I            NX
+  11    1   4 R*8  ( 1)AM  I            X(*)
+  12          R*8  ( 1)I U E        4   X1(4)*8
+  13    1   5 R*8  ( 1)AM  I            Y(*)
+  14          R*8  ( 1)I U E        4   Y1(4)*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram FMESH2 in file meshes.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             meshes.f,0000189,0000262
+   1         S     ( 7) MU         13   FMESH2(NX,NELX,NODE,X,Y,NODCODE,IJK)
+   2    1   7 I    ( 2)AM  I            IJK(node,*)
+   3          I    ( 1)I U E        4   IJK1(4)
+   4          I    ( 1)I U E        4   IJK2(4)
+   5          I    ( 1)I U E        4   IJK3(4)
+   6          I         MU I            K
+   7    1   2 I        AMU I            NELX
+   8    1   6 I    ( 1)AM  I            NODCODE(*)
+   9    1   3 I        A U I         Z  NODE
+  10    1   1 I        AMU I            NX
+  11    1   4 R*8  ( 1)AM  I            X(*)
+  12          R*8  ( 1)I U E        6   X1(6)*8
+  13    1   5 R*8  ( 1)AM  I            Y(*)
+  14          R*8  ( 1)I U E        6   Y1(6)*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram FMESH3 in file meshes.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             meshes.f,0000264,0000344
+   1         S     ( 7) MU         16   FMESH3(NX,NELX,NODE,X,Y,NODCODE,IJK)
+   2    1   7 I    ( 2)AM  I            IJK(node,*)
+   3          I    ( 1)I U E       10   IJK1(10)
+   4          I    ( 1)I U E       10   IJK2(10)
+   5          I    ( 1)I U E       10   IJK3(10)
+   6          I         MU I            K
+   7    1   2 I        AMU I            NELX
+   8    1   6 I    ( 1)AM  I            NODCODE(*)
+   9    1   3 I        A U I         Z  NODE
+  10    1   1 I        AMU I            NX
+  11    1   4 R*8  ( 1)AM  I            X(*)
+  12          R*8  ( 1)I U E       12   X1(12)*8
+  13    1   5 R*8  ( 1)AM  I            Y(*)
+  14          R*8  ( 1)I U E       12   Y1(12)*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram FMESH4 in file meshes.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             meshes.f,0000346,0000422
+   1         S     ( 7) MU         15   FMESH4(NX,NELX,NODE,X,Y,NODCODE,IJK)
+   2    1   7 I    ( 2)AM  I            IJK(node,*)
+   3          I    ( 1)I U E       10   IJK1(10)
+   4          I    ( 1)I U E       10   IJK2(10)
+   5          I    ( 1)I U E       10   IJK3(10)
+   6          I         MU I            K
+   7    1   2 I        AMU I            NELX
+   8    1   6 I    ( 1)AM  I            NODCODE(*)
+   9    1   3 I        A U I         Z  NODE
+  10    1   1 I        AMU I            NX
+  11    1   4 R*8  ( 1)AM  I            X(*)
+  12          R*8  ( 1)I U E       12   X1(12)*8
+  13    1   5 R*8  ( 1)AM  I            Y(*)
+  14          R*8  ( 1)I U E       12   Y1(12)*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram FMESH5 in file meshes.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             meshes.f,0000424,0000499
+   1         S     ( 7) MU         16   FMESH5(NX,NELX,NODE,X,Y,NODCODE,IJK)
+   2    1   7 I    ( 2)AM  I            IJK(node,*)
+   3          I    ( 1)I U E       14   IJK1(14)
+   4          I    ( 1)I U E       14   IJK2(14)
+   5          I    ( 1)I U E       14   IJK3(14)
+   6          I         MU I            K
+   7    1   2 I        AMU I            NELX
+   8    1   6 I    ( 1)AM  I            NODCODE(*)
+   9    1   3 I        A U I         Z  NODE
+  10    1   1 I        AMU I            NX
+  11    1   4 R*8  ( 1)AM  I            X(*)
+  12          R*8  ( 1)I U E       16   X1(16)*8
+  13    1   5 R*8  ( 1)AM  I            Y(*)
+  14          R*8  ( 1)I U E       16   Y1(16)*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram FMESH6 in file meshes.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             meshes.f,0000501,0000563
+   1          R*8       MU I            A
+   2          R*8       MU I            AR
+   3         I?    ( 1)  U I            ATAN
+   4          R*8       MU I            B
+   5          R*8       MU I            BR
+   6         s     ( 5)  U              CHKELMT
+     (R8A,R8A,I4V,I4A,I4V)
+   7         I?    ( 1)  U I            COS
+   8          R*8       MU I            DELR
+   9         s     ( 6)  U              DLAUNY
+     (R8A,R8A,I4V,I4A,I4V,I4V)
+  10         S     ( 7) MU         36   FMESH6(NX,NELX,NODE,X,Y,NODCODE,IJK)
+  11          I         MU I            I
+  12   10   7 I    ( 2)AM? I            IJK(node,*)
+  13          I    ( 2) ?U I      600   IJKTR(200,3)
+  14          I         MU I            J
+  15          I         MU I            K
+  16          I         MU I            ND
+  17          I    ( 1) MU E      200   NEL(200)
+  18   10   2 I        A?U I            NELX
+  19          I         M? I            NEMAX
+  20   10   6 I    ( 1)AM  I            NODCODE(*)
+  21   10   3 I        A?U I         Z  NODE
+  22          I         MU I            NR
+  23   10   1 I        AMU I            NX
+  24          R*8       MU I            PI
+  25         IR    ( 1)  U I            REAL
+  26         I?    ( 1)  U I            SIN
+  27          R*8       MU I            THETA
+  28   10   4 R*8  ( 1)AM? I            X(*)
+  29   10   5 R*8  ( 1)AM? I            Y(*)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram FMESH7 in file meshes.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             meshes.f,0000565,0000689
+   1          R*8       MU E            A*8
+   2          R*8       MU E            ARX*8
+   3          R*8       MU E            ARY*8
+   4         I?    ( 1)  U I            ATAN
+   5          R*8       MU E            B*8
+   6         s     ( 5)  U              CHKELMT
+     (R8A,R8A,I4V,I4A,I4V)
+   7         s     ( 5)  U              CLEANEL
+     (I4V,I4A,I4V,I4A,I4V)
+   8         s     ( 8)  U              CLEANNODS
+     (I4V,R8A,R8A,I4V,I4A,I4V,I4A,I4A)
+   9         s     (11)  U              CLOS2BDR
+     (I4V,R8V,R8V,R8A,R8A,R8V,R8V,R8V,R8V,R8V,I4A)
+  10         IR*8  ( 1)  U E            COS*8
+  11          R*8       MU E            DELR*8
+  12         s     ( 6)  U              DLAUNY
+     (R8A,R8A,I4V,I4A,I4V,I4V)
+  13          R*8       M? E            EXCL*8
+  14         S     ( 8) MU         79   FMESH7(NX,NELX,NODE,X,Y,NODCODE,IJK,IPERM)
+  15          I         MU E            I
+  16   14   7 I    ( 2)AM? E            IJK(node,nelx)
+  17          I    ( 2) ?U E      600   IJKTR(200,3)
+  18   14   8 I    ( 1)A?? E            IPERM(nx)
+  19          I         MU E            J
+  20          I         MU E            K
+  21          I    ( 1) MU E      200   NEL(200)
+  22   14   2 I        A?U E         Z  NELX
+  23          I         M? E            NEMAX
+  24   14   6 I    ( 1)AMU E            NODCODE(nx)
+  25   14   3 I        A?U E         Z  NODE
+  26          I        I?U E            NODEXC
+  27          I         MU E            NR
+  28          I         MU E            NSEC
+  29   14   1 I        AMU E         Z  NX
+  30          R*8       MU E            PI*8
+  31          R*8       MU E            RAD*8
+  32         IR    ( 1)  U I            REAL
+  33         IR*8  ( 1)  U E            SIN*8
+  34          R*8       MU E            THETA*8
+  35   14   4 R*8  ( 1)AMU E            X(*)*8
+  36          R*8      I?U E            X1*8
+  37          R*8      I?U E            X2*8
+  38          R*8       MU E            XCNTR*8
+  39          R*8       MU E            XNEW*8
+  40   14   5 R*8  ( 1)AMU E            Y(*)*8
+  41          R*8      I?U E            Y1*8
+  42          R*8      I?U E            Y2*8
+  43          R*8       MU E            YCNTR*8
+  44          R*8       MU E            YNEW*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram FMESH8 in file meshes.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             meshes.f,0000691,0000826
+   1          R*8       MU E            A*8
+   2          R*8       MU E            ARX*8
+   3          R*8       MU E            ARY*8
+   4         I?    ( 1)  U I            ATAN
+   5          R*8       MU E            B*8
+   6         s     ( 5)  U              CHKELMT
+     (R8A,R8A,I4V,I4A,I4V)
+   7         s     ( 5)  U              CLEANEL
+     (I4V,I4A,I4V,I4A,I4V)
+   8         s     ( 8)  U              CLEANNODS
+     (I4V,R8A,R8A,I4V,I4A,I4V,I4A,I4A)
+   9         s     (11)  U              CLOS2BDR
+     (I4V,R8V,R8V,R8A,R8A,R8V,R8V,R8V,R8V,R8V,I4A)
+  10         IR*8  ( 1)  U E            COS*8
+  11         s     ( 6)  U              DLAUNY
+     (R8A,R8A,I4V,I4A,I4V,I4V)
+  12          R*8       M? E            EXCL*8
+  13         S     ( 8) MU         81   FMESH8(NX,NELX,NODE,X,Y,NODCODE,IJK,IPERM)
+  14          I         MU E            I
+  15   13   7 I    ( 2)AM? E            IJK(node,nelx)
+  16          I    ( 2) ?U E     4500   IJKTR(1500,3)
+  17   13   8 I    ( 1)A?? E            IPERM(nx)
+  18          I         MU E            J
+  19          I         MU E            K
+  20          I    ( 1) MU E     1500   NEL(1500)
+  21   13   2 I        A?U E         Z  NELX
+  22          I         M? E            NEMAX
+  23   13   6 I    ( 1)AMU E            NODCODE(nx)
+  24   13   3 I        A?U E         Z  NODE
+  25          I        I?U E            NODEXC
+  26          I         MU E            NR
+  27          I         MU E            NSEC
+  28   13   1 I        AMU E         Z  NX
+  29          R*8       MU E            PI*8
+  30          R*8       MU E            RAD*8
+  31          R*8       MU E            RADI*8
+  32         IR    ( 1)  U I            REAL
+  33         IR*8  ( 1)  U E            SIN*8
+  34          R*8       MU E            THETA*8
+  35   13   4 R*8  ( 1)AM? E            X(*)*8
+  36          R*8      I?U E            X1*8
+  37          R*8      I?U E            X2*8
+  38          R*8       MU E            XCNTR*8
+  39          R*8       MU E            XNEW*8
+  40   13   5 R*8  ( 1)AM? E            Y(*)*8
+  41          R*8      I?U E            Y1*8
+  42          R*8      I?U E            Y2*8
+  43          R*8       MU E            YCNTR*8
+  44          R*8       MU E            YNEW*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram FMESH9 in file meshes.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             meshes.f,0000828,0000951
+   1          R*8       MU E            ARX*8
+   2          R*8       MU E            ARY*8
+   3         I?    ( 1)  U I            ATAN
+   4         s     ( 5)  U              CHKELMT
+     (R8A,R8A,I4V,I4A,I4V)
+   5         s     ( 5)  U              CLEANEL
+     (I4V,I4A,I4V,I4A,I4V)
+   6         s     ( 8)  U              CLEANNODS
+     (I4V,R8A,R8A,I4V,I4A,I4V,I4A,I4A)
+   7         s     (11)  U              CLOS2BDR
+     (I4V,R8V,R8V,R8A,R8A,R8V,R8V,R8V,R8V,R8V,I4A)
+   8         IR*8  ( 1)  U E            COS*8
+   9          R*8       MU E            DELR*8
+  10         s     ( 6)  U              DLAUNY
+     (R8A,R8A,I4V,I4A,I4V,I4V)
+  11          R*8       MU E            EXCL*8
+  12         S     ( 8) MU         78   FMESH9(NX,NELX,NODE,X,Y,NODCODE,IJK,IPERM)
+  13          I         MU E            I
+  14   12   7 I    ( 2)AM? E            IJK(node,nelx)
+  15          I    ( 2) ?U E     4500   IJKTR(1500,3)
+  16   12   8 I    ( 1)A?? E            IPERM(nx)
+  17          I         MU E            J
+  18          I         MU E            K
+  19          I    ( 1) MU E     1500   NEL(1500)
+  20   12   2 I        A?U E         Z  NELX
+  21          I         M? E            NEMAX
+  22   12   6 I    ( 1)AMU E            NODCODE(nx)
+  23   12   3 I        A?U E         Z  NODE
+  24          I        I?U E            NODEXC
+  25          I         MU E            NR
+  26          I         MU E            NSEC
+  27   12   1 I        AMU E         Z  NX
+  28          R*8       MU E            PI*8
+  29          R*8       MU E            RAD*8
+  30         IR    ( 1)  U I            REAL
+  31         IR*8  ( 1)  U E            SIN*8
+  32          R*8       MU E            THETA*8
+  33   12   4 R*8  ( 1)AMU E            X(*)*8
+  34          R*8      I?U E            X1*8
+  35          R*8      I?U E            X2*8
+  36          R*8       MU E            XCNTR*8
+  37          R*8       MU E            XNEW*8
+  38   12   5 R*8  ( 1)AMU E            Y(*)*8
+  39          R*8      I?U E            Y1*8
+  40          R*8      I?U E            Y2*8
+  41          R*8       MU E            YCNTR*8
+  42          R*8       MU E            YNEW*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram CLOS2BDR in file meshes.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X             K             meshes.f,0000953,0000985
+   1         S     (11) MU         21   CLOS2BDR(NX,XNEW,YNEW,X,Y,X1,X2,Y1,Y2,EXCL,NODCODE)
+   2    1  10 R*8      A U E            EXCL*8
+   3    1  11 I    ( 1)AM  E            NODCODE(nx)
+   4    1   1 I        A U E         Z  NX
+   5    1   4 R*8  ( 1)AMU E            X(nx)*8
+   6    1   6 R*8      A U E            X1*8
+   7    1   7 R*8      A U E            X2*8
+   8    1   2 R*8      A U E            XNEW*8
+   9    1   5 R*8  ( 1)AMU E            Y(nx)*8
+  10    1   8 R*8      A U E            Y1*8
+  11    1   9 R*8      A U E            Y2*8
+  12    1   3 R*8      A U E            YNEW*8
+**-- END OF SYMBOL TABLE

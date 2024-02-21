@@ -1,0 +1,307 @@
+**++ Symbol table for subprogram READMT in file inout.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           inout.f,0000020,0000255
+   1   28   5 R*8  ( 1)AM  E            A(nzmax)*8
+   2   28  10 C*2      AMU E            GUESOL*2
+   3          I         MU I            I
+   4   28   7 I    ( 1)AM  E            IA(nmax+1)
+   5          I         MU I            IEND
+   6   28  17 I        AMU I            IERR
+   7          I         M  E            INDCRD
+   8          C*16      MU E            INDFMT*16
+   9   28   4 I        A U I            IOUNIT
+  10   28   6 I    ( 1)AM  E            JA(nzmax)
+  11   28   3 I        AMU I            JOB
+  12   28  15 C*8      AM  E            KEY*8
+  13          I         MU I            LEN
+  14          I         MU I            LENRHS
+  15          I         MU I            N
+  16   28  12 I        AMU E            NCOL
+  17          I         M  E            NELTVL
+  18          I         MU I            NEXT
+  19   28   1 I        A U E         Z  NMAX
+  20   28  13 I        AMU E            NNZ
+  21   28   9 I        AMU E            NRHS
+  22   28  11 I        AMU E            NROW
+  23          I         M  E            NRWINDX
+  24          I         MU I            NVEC
+  25   28   2 I        A U E         Z  NZMAX
+  26          I         M  E            PTRCRD
+  27          C*16      MU E            PTRFMT*16
+  28         S     (17) MU         50   READMT(NMAX,NZMAX,JOB,IOUNIT,A,JA,IA,RHS,NRHS,GUESOL,NROW,NCOL,NNZ,TITLE,KEY,TYPE,IERR)
+  29   28   8 R*8  ( 1)AM  E            RHS(*)*8
+  30          I         MU E            RHSCRD
+  31          C*20      MU E            RHSFMT*20
+  32          C*3       MU E            RHSTYP*3
+  33   28  14 C*72     AM  E            TITLE*72
+  34          I         M  E            TOTCRD
+  35   28  16 C*3      AM  E            TYPE*3
+  36          I         MU E            VALCRD
+  37          C*20      MU E            VALFMT*20
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram PRTMT in file inout.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           inout.f,0000257,0000480
+   1   26   3 R*8  ( 1)A U E            A(*)*8
+   2         IR    ( 1)  U I            ALOG10
+   3   26   7 C*2      A U E            GUESOL*2
+   4          I         MU I            I
+   5   26   5 I    ( 1)A U E            IA(*)
+   6          I         MU I            IEND
+   7   26  11 I        AMU I            IFMT
+   8          I         MU I            IHEAD
+   9          I         MU E            INDCRD
+  10          C*16      MU E            INDFMT*16
+  11         II    ( 1)  U I            INT
+  12   26  13 I        A U I            IOUNIT
+  13          C*28      MU E            IX*28
+  14   26   4 I    ( 1)A U E            JA(*)
+  15   26  12 I        A U I            JOB
+  16   26   9 C*8      A U E            KEY*8
+  17          I         MU E            LEN
+  18         II    ( 2)  U I            MIN0
+  19   26   2 I        A U E            NCOL
+  20          I         MU I            NEXT
+  21          I         MU E            NNZ
+  22          I         MU E            NPERLI
+  23          I         MU E            NRHS
+  24   26   1 I        A U E            NROW
+  25          I         MU E            NRWINDX
+  26         S     (13) MU         89   PRTMT(NROW,NCOL,A,JA,IA,RHS,GUESOL,TITLE,KEY,TYPE,IFMT,JOB,IOUNIT)
+  27          I         MU E            PTRCRD
+  28          C*16      MU E            PTRFMT*16
+  29         IR    ( 1)  U I            REAL
+  30   26   6 R*8  ( 1)A U E            RHS(*)*8
+  31          I         MU E            RHSCRD
+  32          C*3       MU E            RHSTYP*3
+  33   26   8 C*72     A U E            TITLE*72
+  34          I         MU E            TOTCRD
+  35   26  10 C*3      A U E            TYPE*3
+  36          I         MU E            VALCRD
+  37          C*20      MU E            VALFMT*20
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram DUMP in file inout.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           inout.f,0000482,0000564
+   1    2   4 R*8  ( 1)A U E            A(*)*8
+   2         S     ( 7)  U         29   DUMP(I1,I2,VALUES,A,JA,IA,IOUT)
+   3          I         MU E            I
+   4    2   1 I        A U E            I1
+   5    2   2 I        A U E            I2
+   6    2   6 I    ( 1)A U E            IA(*)
+   7    2   7 I        A U E            IOUT
+   8    2   5 I    ( 1)A U E            JA(*)
+   9          I         MU I            K
+  10          I         MU E            K1
+  11          I         MU E            K2
+  12         II    ( 2)  U I            MAX0
+  13          I         MU E            MAXR
+  14    2   3 L        A U E            VALUES
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram PSPLTM in file inout.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           inout.f,0000566,0000789
+   1          R         MU E            BOTMRGN
+   2          R        I U E            CONV
+   3          R         MU E            DELT
+   4          R         MU E            FNSTIT
+   5          R         MU E            FRLW
+   6          R        I U I            HAF
+   7   32   5 I    ( 1)A U E            IA(*)
+   8          I         MU E            II
+   9          I         MU E            ILAST
+  10          I         MU I            ISEP
+  11          I         MU E            ISTART
+  12   32  12 I        A U E            IUNT
+  13   32   4 I    ( 1)A U E            JA(*)
+  14          I         MU E            K
+  15          I         MU I            KOL
+  16         fI    ( 1)  UXE            LENSTR
+     (C*V)
+  17   32  11 I    ( 1)A U E            LINES(nlines)
+  18          R         MU E            LRMRGN
+  19          I         MU E            LTIT
+  20          I         MU I            M
+  21         I?    ( 2)  U I            MAX
+  22          I         MU E            MAXDIM
+  23   32   3 I        A U E            MODE
+  24   32   9 C*2      A U E            MUNT*2
+  25          I         MU E            N
+  26          I         MU E            NC
+  27   32   2 I        A U E            NCOL
+  28   32  10 I        A U I         Z  NLINES
+  29          I         MU E            NR
+  30   32   1 I        A U E            NROW
+  31          R         MU E            PAPERX
+  32         S     (12) ?U        104   PSPLTM(NROW,NCOL,MODE,JA,IA,TITLE,PTITLE,SIZE,MUNT,NLINES,LINES,IUNT)
+  33   32   7 I        A U E            PTITLE
+  34         IR    ( 1)  U I            REAL
+  35          R         MU E            SCFCT
+  36          R         MU E            SIZ
+  37   32   8 R        A U E            SIZE
+  38          L        I U E            SQUARE
+  39   32   6 C*(*)    A?U E            TITLE**
+  40          R         MU E            U2DOT
+  41          R         MU E            XL
+  42          R         MU E            XR
+  43          R         MU E            XTIT
+  44          R         MU E            XX
+  45          R         MU E            YB
+  46          R         MU E            YT
+  47          R         MU E            YTIT
+  48          R         MU E            YTITOF
+  49          R         MU E            YY
+  50          R        I U I            ZERO
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram LENSTR in file inout.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           inout.f,0000791,0000809
+   1         II    ( 1)  U E            LEN
+   2         FI    ( 1) MU E        8   LENSTR(S)
+   3          I         MU E            N
+   4    2   1 C*(*)    A U E            S**
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram PLTMT in file inout.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           inout.f,0000811,0000968
+   1          R         MU I            HSCALE
+   2   20   5 I    ( 1)A U E            IA(*)
+   3          I         MU I            II
+   4          I         MU I            ILAST
+   5   20  10 I        A U I            IOUNIT
+   6          I         MU I            IPS
+   7          I         MU I            ISTART
+   8   20   4 I    ( 1)A U E            JA(*)
+   9   20   9 I        A U I            JOB
+  10          I         MU I            K
+  11   20   7 C*8      A U E            KEY*8
+  12         II    ( 2)  U I            MAX0
+  13          I         MU I            MAXDIM
+  14         I?    ( 2)  U I            MOD
+  15   20   3 I        A U I            MODE
+  16          I         MU I            N
+  17   20   2 I        A U I            NCOL
+  18          I         MU I            NNZ
+  19   20   1 I        A U I            NROW
+  20         S     (10)  U         51   PLTMT(NROW,NCOL,MODE,JA,IA,TITLE,KEY,TYPE,JOB,IOUNIT)
+  21          R         MU I            PTSIZE
+  22         IR    ( 1)  U I            REAL
+  23          R         MU I            TINY
+  24   20   6 C*72     A U E            TITLE*72
+  25   20   8 C*3      A U E            TYPE*3
+  26          R         MU I            VSCALE
+  27          R         MU E            X
+  28          R         MU I            XHT
+  29          R         MU I            XNROW
+  30          R         MU I            XSHIFT
+  31          R         MU I            XWID
+  32          R         MU E            Y
+  33          R         MU I            YSHIFT
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram SMMS in file inout.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           inout.f,0000970,0001026
+   1   16   5 R*8  ( 1)A U E            A(*)*8
+   2          L         MU E            CSC
+   3   16   2 I        A U E            FIRST
+   4          I         MU I            I
+   5   16   7 I    ( 1)A U E            IA(*)
+   6   16   8 I        A U E            IOUT
+   7   16   6 I    ( 1)A U E            JA(*)
+   8          I         MU I            K
+   9          I         MU I            K1
+  10          I         MU I            K2
+  11   16   3 I        A U E            LAST
+  12         I?    ( 2)  U I            MOD
+  13   16   4 I        A U E            MODE
+  14          L         MU E            MSR
+  15   16   1 I        A U E            N
+  16         S     ( 8)  U         17   SMMS(N,FIRST,LAST,MODE,A,JA,IA,IOUT)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram READSM in file inout.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           inout.f,0001028,0001146
+   1   13   7 R*8  ( 1)AM  E            A(nzmax)*8
+   2          I         MU E            I
+   3   13   5 I    ( 1)AM  E            IA(nmax+1)
+   4   13   9 I        AM  E            IERR
+   5   13   8 I        A U E            IOUT
+   6          I         MU E            J
+   7   13   6 I    ( 1)AM  E            JA(nzmax)
+   8          I         MU E            K
+   9   13   3 I        AMU E            N
+  10   13   1 I        A U E         Z  NMAX
+  11   13   4 I        AMU I            NNZ
+  12   13   2 I        A U E         Z  NZMAX
+  13         S     ( 9) MU         45   READSM(NMAX,NZMAX,N,NNZ,IA,JA,A,IOUT,IERR)
+  14          I         MU E            ROW
+  15          R*8       MU E            X*8
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram READSK in file inout.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           inout.f,0001148,0001240
+   1   11   5 R*8  ( 1)AM  E            A(nzmax)*8
+   2          I         MU E            I
+   3   11   7 I    ( 1)AMU E            IA(nmax+1)
+   4   11   9 I        AM  E            IERR
+   5   11   8 I        A U E            IOUNIT
+   6   11   6 I    ( 1)AM  E            JA(nzmax)
+   7   11   3 I        AMU E            N
+   8   11   1 I        A U E         Z  NMAX
+   9   11   4 I        AMU E            NNZ
+  10   11   2 I        A U E         Z  NZMAX
+  11         S     ( 9) MU         20   READSK(NMAX,NZMAX,N,NNZ,A,JA,IA,IOUNIT,IERR)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram SKIT in file inout.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           inout.f,0001242,0001384
+   1   20   2 R*8  ( 1)A U E            A(*)*8
+   2         IR    ( 1)  U I            ALOG10
+   3          I         MU E            I
+   4   20   4 I    ( 1)A U E            IA(*)
+   5   20   7 I        AM  E            IERR
+   6   20   5 I        AMU E            IFMT
+   7          I         MU E            IHEAD
+   8          C*16      MU E            INDFMT*16
+   9         II    ( 1)  U I            INT
+  10   20   6 I        A U E            IOUNIT
+  11          C*28      MU E            IX*28
+  12   20   3 I    ( 1)A U E            JA(*)
+  13          I         MU E            LEN
+  14         II    ( 2)  U I            MIN0
+  15   20   1 I        A U E            N
+  16          I         MU E            NNZ
+  17          I         MU E            NPERLI
+  18          C*16      MU E            PTRFMT*16
+  19         IR    ( 1)  U I            REAL
+  20         S     ( 7) MU         63   SKIT(N,A,JA,IA,IFMT,IOUNIT,IERR)
+  21          C*20      MU E            VALFMT*20
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram PRTUNF in file inout.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           inout.f,0001386,0001423
+   1    9   2 R*8  ( 1)A U E            A(*)*8
+   2    9   4 I    ( 1)A U E            IA(*)
+   3    9   6 I        AM  E            IERR
+   4    9   5 I        A U E            IOUT
+   5    9   3 I    ( 1)A U E            JA(*)
+   6          I         MU I            K
+   7    9   1 I        A U E            N
+   8          I         MU E            NNZ
+   9         S     ( 6) MU         11   PRTUNF(N,A,JA,IA,IOUT,IERR)
+**-- END OF SYMBOL TABLE
+**++ Symbol table for subprogram READUNF in file inout.f
+     produced by SPAG     8.04RA-40 at 15:47:13 on 21 Feb 2024
+   0         X                           inout.f,0001427,0001488
+   1   11   5 R*8  ( 1)AM  E            A(nzmax)*8
+   2   11   7 I    ( 1)AMU E            IA(nmax+1)
+   3   11   9 I        AM  I            IERR
+   4   11   8 I        A U E            IOUNIT
+   5   11   6 I    ( 1)AM  E            JA(nzmax)
+   6          I         MU E            K
+   7   11   3 I        AMU E            N
+   8   11   1 I        A U E         Z  NMAX
+   9   11   4 I        AMU E            NNZ
+  10   11   2 I        A U E         Z  NZMAX
+  11         S     ( 9) MU         19   READUNF(NMAX,NZMAX,N,NNZ,A,JA,IA,IOUNIT,IERR)
+**-- END OF SYMBOL TABLE
