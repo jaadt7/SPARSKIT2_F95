@@ -4498,3 +4498,160 @@ SUBROUTINE csorted(N,Ia,Ja,Sorted)
    ENDDO
    Sorted = .TRUE.
 END SUBROUTINE csorted
+
+SUBROUTINE csrcsc_int(N,Job,Ipos,A,Ja,Ia,Ao,Jao,Iao)
+   USE ISO_FORTRAN_ENV                 
+   IMPLICIT NONE
+!
+! Dummy argument declarations rewritten by SPAG
+!
+   INTEGER :: N
+   INTEGER :: Job
+   INTEGER :: Ipos
+!   REAL(REAL64) , DIMENSION(*) :: A
+   INTEGER , DIMENSION(*) :: Ja,A
+   INTEGER , DIMENSION(N+1) :: Ia
+   REAL(REAL64) , DIMENSION(*) :: Ao
+   INTEGER , DIMENSION(*) :: Jao
+   INTEGER , DIMENSION(N+1) :: Iao
+   EXTERNAL csrcsc2
+!
+! End of declarations rewritten by SPAG
+!
+!-----------------------------------------------------------------------
+! Compressed Sparse Row     to      Compressed Sparse Column
+!
+! (transposition operation)   Not in place.
+!-----------------------------------------------------------------------
+! -- not in place --
+! this subroutine transposes a matrix stored in a, ja, ia format.
+! ---------------
+! on entry:
+!----------
+! n	= dimension of A.
+! job	= integer to indicate whether to fill the values (job.eq.1) of the
+!         matrix ao or only the pattern., i.e.,ia, and ja (job .ne.1)
+!
+! ipos  = starting position in ao, jao of the transposed matrix.
+!         the iao array takes this into account (thus iao(1) is set to ipos.)
+!         Note: this may be useful if one needs to append the data structure
+!         of the transpose to that of A. In this case use for example
+!                call csrcsc (n,1,ia(n+1),a,ja,ia,a,ja,ia(n+2))
+!	  for any other normal usage, enter ipos=1.
+! a	= real array of length nnz (nnz=number of nonzero elements in input
+!         matrix) containing the nonzero elements.
+! ja	= integer array of length nnz containing the column positions
+! 	  of the corresponding elements in a.
+! ia	= integer of size n+1. ia(k) contains the position in a, ja of
+!	  the beginning of the k-th row.
+!
+! on return:
+! ----------
+! output arguments:
+! ao	= real array of size nzz containing the "a" part of the transpose
+! jao	= integer array of size nnz containing the column indices.
+! iao	= integer array of size n+1 containing the "ia" index array of
+!	  the transpose.
+!
+!-----------------------------------------------------------------------
+   CALL csrcsc2_int(N,N,Job,Ipos,A,Ja,Ia,Ao,Jao,Iao)
+END SUBROUTINE csrcsc_int
+!*==csrcsc2.f90 processed by SPAG 8.04RA 15:47 21 Feb 2024
+!!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
+!-----------------------------------------------------------------------
+SUBROUTINE csrcsc2_int(N,N2,Job,Ipos,A,Ja,Ia,Ao,Jao,Iao)
+   USE ISO_FORTRAN_ENV                 
+   IMPLICIT NONE
+!
+! Dummy argument declarations rewritten by SPAG
+!
+   INTEGER , INTENT(IN) :: N
+   INTEGER , INTENT(IN) :: N2
+   INTEGER , INTENT(IN) :: Job
+   INTEGER , INTENT(IN) :: Ipos
+!   REAL(REAL64) , INTENT(IN) , DIMENSION(*) :: A
+   INTEGER , INTENT(IN) , DIMENSION(*) :: Ja,A
+   INTEGER , INTENT(IN) , DIMENSION(N+1) :: Ia
+   REAL(REAL64) , INTENT(OUT) , DIMENSION(*) :: Ao
+   INTEGER , INTENT(OUT) , DIMENSION(*) :: Jao
+   INTEGER , INTENT(INOUT) , DIMENSION(N2+1) :: Iao
+!
+! Local variable declarations rewritten by SPAG
+!
+   INTEGER :: i , j , k , next
+!
+! End of declarations rewritten by SPAG
+!
+!-----------------------------------------------------------------------
+! Compressed Sparse Row     to      Compressed Sparse Column
+!
+! (transposition operation)   Not in place.
+!-----------------------------------------------------------------------
+! Rectangular version.  n is number of rows of CSR matrix,
+!                       n2 (input) is number of columns of CSC matrix.
+!-----------------------------------------------------------------------
+! -- not in place --
+! this subroutine transposes a matrix stored in a, ja, ia format.
+! ---------------
+! on entry:
+!----------
+! n	= number of rows of CSR matrix.
+! n2    = number of columns of CSC matrix.
+! job	= integer to indicate whether to fill the values (job.eq.1) of the
+!         matrix ao or only the pattern., i.e.,ia, and ja (job .ne.1)
+!
+! ipos  = starting position in ao, jao of the transposed matrix.
+!         the iao array takes this into account (thus iao(1) is set to ipos.)
+!         Note: this may be useful if one needs to append the data structure
+!         of the transpose to that of A. In this case use for example
+!                call csrcsc2 (n,n,1,ia(n+1),a,ja,ia,a,ja,ia(n+2))
+!	  for any other normal usage, enter ipos=1.
+! a	= real array of length nnz (nnz=number of nonzero elements in input
+!         matrix) containing the nonzero elements.
+! ja	= integer array of length nnz containing the column positions
+! 	  of the corresponding elements in a.
+! ia	= integer of size n+1. ia(k) contains the position in a, ja of
+!	  the beginning of the k-th row.
+!
+! on return:
+! ----------
+! output arguments:
+! ao	= real array of size nzz containing the "a" part of the transpose
+! jao	= integer array of size nnz containing the column indices.
+! iao	= integer array of size n+1 containing the "ia" index array of
+!	  the transpose.
+!
+!-----------------------------------------------------------------------
+!----------------- compute lengths of rows of transp(A) ----------------
+   DO i = 1 , N2 + 1
+      Iao(i) = 0
+   ENDDO
+   DO i = 1 , N
+      DO k = Ia(i) , Ia(i+1) - 1
+         j = Ja(k) + 1
+         Iao(j) = Iao(j) + 1
+      ENDDO
+   ENDDO
+!---------- compute pointers from lengths ------------------------------
+   Iao(1) = Ipos
+   DO i = 1 , N2
+      Iao(i+1) = Iao(i) + Iao(i+1)
+   ENDDO
+!--------------- now do the actual copying -----------------------------
+   DO i = 1 , N
+      DO k = Ia(i) , Ia(i+1) - 1
+         j = Ja(k)
+         next = Iao(j)
+         IF ( Job==1 ) Ao(next) = A(k)
+         Jao(next) = i
+         Iao(j) = next + 1
+      ENDDO
+   ENDDO
+!-------------------------- reshift iao and leave ----------------------
+   DO i = N2 , 1 , -1
+      Iao(i+1) = Iao(i)
+   ENDDO
+   Iao(1) = Ipos
+!--------------- end of csrcsc2 ----------------------------------------
+!-----------------------------------------------------------------------
+END SUBROUTINE csrcsc2_int

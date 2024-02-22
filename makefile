@@ -61,7 +61,8 @@ OBJ2 =	src/non-library/itaux.o		\
 
 DIRS =	.				\
 		src/library 	\
-		src/non-library	
+		src/non-library	\
+		test_programs/	\
 
 $(LIB): $(OBJ) 
 	$(AR) $@ $(OBJ) 
