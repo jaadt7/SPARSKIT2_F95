@@ -409,6 +409,8 @@ SUBROUTINE csort(N,A,Ja,Ia,Values)
 ! local variables
    INTEGER :: spag_nextblock_1
    rj = 0.0
+   j = 0
+   i = 0
 !
 ! for each row
 !

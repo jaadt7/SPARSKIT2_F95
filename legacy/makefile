@@ -19,40 +19,43 @@
 #
 # Last Updated:  Nov. 19, 2009 
 
-#This make file has been update by Jaad Tannous of Clemson University
-#on Feb 21st 2024
-
 SHELL = /bin/sh
-F90 = gfortran
+F77 = gfortran
 
-# F90 = F90 
-AR = ar -rv 
-RANLIB = ranlib	
-
+# F77 = f77 
+ AR = ar -rv 
+ RANLIB = ranlib	
+##AR = ar -rcv 
+# OPT = -c 
+# OPT = -c -static -64 -mips4 -O3 -r10000
 OPT = -c -O -Wall 
 LIB = libskit.a
+
+# Cray options
+#F77 = cf77
+#AR = bld rv
+#OPT = -c -Wf"-dp" 
 
 #
 # library objects
 #
-
-OBJ =	src/blassm.o	\
-		src/matvec.o	\
-		src/formats.o	\
-		src/unary.o		\
-		src/infofun.o	\
-		src/inout.o		\
-		src/ilut.o		\
-		src/iters.o		\
-		src/genmat.o	\
-		src/elmtlib2.o	\
-		src/femgen.o	\
-		src/meshes.o	\
-		src/sobel.o		\
-		src/zlatev.o	\
-		src/ccn.o		\
-		src/color.o		\
-		src/dsepart.o
+OBJ =	BLASSM/blassm.o		\
+	BLASSM/matvec.o		\
+	FORMATS/formats.o	\
+	FORMATS/unary.o		\
+	INFO/infofun.o		\
+	INOUT/inout.o		\
+	ITSOL/ilut.o		\
+	ITSOL/iters.o		\
+	MATGEN/FDIF/genmat.o	\
+	MATGEN/FEM/elmtlib2.o	\
+	MATGEN/FEM/femgen.o	\
+	MATGEN/FEM/meshes.o	\
+	MATGEN/MISC/sobel.o	\
+	MATGEN/MISC/zlatev.o	\
+	ORDERINGS/ccn.o		\
+	ORDERINGS/color.o	\
+	ORDERINGS/dsepart.o
 
 #
 # non-library and unsupported objects
@@ -75,8 +78,8 @@ DIRS =	.			\
 	ITSOL			\
 	MATGEN/FDIF		\
 	MATGEN/FEM		\
-	src		\
-	src		\
+	MATGEN/MISC		\
+	ORDERINGS		\
 	UNSUPP/BLAS1		\
 	UNSUPP/MATEXP		\
 	UNSUPP/PLOTS
@@ -99,55 +102,55 @@ tarit:
 
 all: $(OBJ) $(OBJ2) libskit.a
 
-src/blassm.o: src/blassm.f90
-	(cd src ; $(F90)  $(OPT) blassm.f90)
-src/matvec.o: src/matvec.f90
-	(cd src ; $(F90)  $(OPT) matvec.f90)
-src/formats.o: src/formats.f90
-	(cd src ; $(F90)  $(OPT) formats.f90)
-src/unary.o: src/unary.f90
-	(cd src ; $(F90)  $(OPT) unary.f90)
-src/infofun.o: src/infofun.f90
-	(cd src ; $(F90)  $(OPT) infofun.f90)
-src/inout.o: src/inout.f90
-	(cd src; $(F90)  $(OPT) inout.f90)
-src/ilut.o: src/ilut.f90
-	(cd src; $(F90)  $(OPT) ilut.f90)
-src/iters.o: src/iters.f90
-	(cd src; $(F90)  $(OPT) iters.f90)
-src/itaux.o: src/itaux.f90
-	(cd src; $(F90)  $(OPT) itaux.f90)
-src/genmat.o: src/genmat.f90
-	(cd src ; $(F90)  $(OPT) genmat.f90)
-src/functns.o: src/functns.f90
-	(cd src ; $(F90)  $(OPT) functns.f90)
-src/elmtlib2.o: src/elmtlib2.f90
-	(cd src ; $(F90)  $(OPT) elmtlib2.f90)
-src/femgen.o: src/femgen.f90
-	(cd src ; $(F90)  $(OPT) femgen.f90)
-src/functns2.o : src/functns2.f90 
-	(cd src ; $(F90)  $(OPT) functns2.f90)
-src/meshes.o: src/meshes.f90
-	(cd src ; $(F90)  $(OPT) meshes.f90)
-src/sobel.o: src/sobel.f90
-	(cd src ; $(F90)  $(OPT) sobel.f90)
-src/zlatev.o: src/zlatev.f90
-	(cd src ; $(F90)  $(OPT) zlatev.f90)
-src/ccn.o: src/ccn.f90
-	(cd src ; $(F90)  $(OPT) ccn.f90)
-src/color.o: src/color.f90
-	(cd src ; $(F90)  $(OPT) color.f90)
-src/dsepart.o: src/dsepart.f90
-	(cd src ; $(F90)  $(OPT) dsepart.f)
+BLASSM/blassm.o: BLASSM/blassm.f
+	(cd BLASSM ; $(F77)  $(OPT) blassm.f)
+BLASSM/matvec.o: BLASSM/matvec.f
+	(cd BLASSM ; $(F77)  $(OPT) matvec.f)
+FORMATS/formats.o: FORMATS/formats.f
+	(cd FORMATS ; $(F77)  $(OPT) formats.f)
+FORMATS/unary.o: FORMATS/unary.f
+	(cd FORMATS ; $(F77)  $(OPT) unary.f)
+INFO/infofun.o: INFO/infofun.f
+	(cd INFO ; $(F77)  $(OPT) infofun.f)
+INOUT/inout.o: INOUT/inout.f
+	(cd INOUT; $(F77)  $(OPT) inout.f)
+ITSOL/ilut.o: ITSOL/ilut.f
+	(cd ITSOL; $(F77)  $(OPT) ilut.f)
+ITSOL/iters.o: ITSOL/iters.f
+	(cd ITSOL; $(F77)  $(OPT) iters.f)
+ITSOL/itaux.o: ITSOL/itaux.f
+	(cd ITSOL; $(F77)  $(OPT) itaux.f)
+MATGEN/FDIF/genmat.o: MATGEN/FDIF/genmat.f
+	(cd MATGEN/FDIF ; $(F77)  $(OPT) genmat.f)
+MATGEN/FDIF/functns.o: MATGEN/FDIF/functns.f
+	(cd MATGEN/FDIF ; $(F77)  $(OPT) functns.f)
+MATGEN/FEM/elmtlib2.o: MATGEN/FEM/elmtlib2.f
+	(cd MATGEN/FEM ; $(F77)  $(OPT) elmtlib2.f)
+MATGEN/FEM/femgen.o: MATGEN/FEM/femgen.f
+	(cd MATGEN/FEM ; $(F77)  $(OPT) femgen.f)
+MATGEN/FEM/functns2.o : MATGEN/FEM/functns2.f 
+	(cd MATGEN/FEM ; $(F77)  $(OPT) functns2.f)
+MATGEN/FEM/meshes.o: MATGEN/FEM/meshes.f
+	(cd MATGEN/FEM ; $(F77)  $(OPT) meshes.f)
+MATGEN/MISC/sobel.o: MATGEN/MISC/sobel.f
+	(cd MATGEN/MISC ; $(F77)  $(OPT) sobel.f)
+MATGEN/MISC/zlatev.o: MATGEN/MISC/zlatev.f
+	(cd MATGEN/MISC ; $(F77)  $(OPT) zlatev.f)
+ORDERINGS/ccn.o: ORDERINGS/ccn.f
+	(cd ORDERINGS ; $(F77)  $(OPT) ccn.f)
+ORDERINGS/color.o: ORDERINGS/color.f
+	(cd ORDERINGS ; $(F77)  $(OPT) color.f)
+ORDERINGS/dsepart.o: ORDERINGS/dsepart.f
+	(cd ORDERINGS ; $(F77)  $(OPT) dsepart.f)
 UNSUPP/BLAS1/blas1.o: UNSUPP/BLAS1/blas1.f
-	(cd UNSUPP/BLAS1 ; $(F90)  $(OPT) blas1.f)
+	(cd UNSUPP/BLAS1 ; $(F77)  $(OPT) blas1.f)
 UNSUPP/MATEXP/exppro.o: UNSUPP/MATEXP/exppro.f
-	(cd UNSUPP/MATEXP ; $(F90)  $(OPT) exppro.f)
+	(cd UNSUPP/MATEXP ; $(F77)  $(OPT) exppro.f)
 UNSUPP/MATEXP/phipro.o: UNSUPP/MATEXP/phipro.f
-	(cd UNSUPP/MATEXP ; $(F90)  $(OPT) phipro.f)
+	(cd UNSUPP/MATEXP ; $(F77)  $(OPT) phipro.f)
 UNSUPP/PLOTS/psgrd.o : UNSUPP/PLOTS/psgrd.f 
-	(cd UNSUPP/PLOTS ; $(F90) $(OPT) psgrd.f)
+	(cd UNSUPP/PLOTS ; $(F77) $(OPT) psgrd.f)
 UNSUPP/PLOTS/texgrid1.o : UNSUPP/PLOTS/texgrid1.f 
-	(cd UNSUPP/PLOTS ; $(F90) $(OPT) texgrid1.f)
+	(cd UNSUPP/PLOTS ; $(F77) $(OPT) texgrid1.f)
 UNSUPP/PLOTS/texplt1.o : UNSUPP/PLOTS/texplt1.f 
-	(cd UNSUPP/PLOTS ; $(F90) $(OPT) texplt1.f)
+	(cd UNSUPP/PLOTS ; $(F77) $(OPT) texplt1.f)

@@ -1229,7 +1229,8 @@ SUBROUTINE readsm(Nmax,Nzmax,N,Nnz,Ia,Ja,A,Iout,Ierr)
 !     problem with n
 !
             Ierr = 3
-            GOTO 80
+            N = 0
+            EXIT SPAG_DispatchLoop_1
          ELSE
             DO
 !
@@ -1247,7 +1248,8 @@ SUBROUTINE readsm(Nmax,Nzmax,N,Nnz,Ia,Ja,A,Iout,Ierr)
 !     data entries not ordered
 !
                   Ierr = 5
-                  GOTO 80
+                  N = 0
+                  EXIT SPAG_DispatchLoop_1
                ENDIF
  
                Ja(Nnz) = j
@@ -1278,12 +1280,14 @@ SUBROUTINE readsm(Nmax,Nzmax,N,Nnz,Ia,Ja,A,Iout,Ierr)
 !     error in reading data entries
 !
  40      Ierr = 1
-         GOTO 80
+         N = 0
+         EXIT SPAG_DispatchLoop_1
 !
 !     empty file
 !
  60      Ierr = 2
-         GOTO 80
+         N = 0
+         EXIT SPAG_DispatchLoop_1
       CASE (2)
 !
 !     problem with nnz
@@ -1298,9 +1302,9 @@ SUBROUTINE readsm(Nmax,Nzmax,N,Nnz,Ia,Ja,A,Iout,Ierr)
                Nnz = Nnz + 1
             ENDDO
          ENDIF
- 80      N = 0
-         EXIT SPAG_DispatchLoop_1
       END SELECT
+ 80      N = 0
+      EXIT SPAG_DispatchLoop_1     
    ENDDO SPAG_DispatchLoop_1
 !----end-of-readsm------------------------------------------------------
 !-----------------------------------------------------------------------

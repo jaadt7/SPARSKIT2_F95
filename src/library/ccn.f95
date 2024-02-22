@@ -277,6 +277,9 @@ SUBROUTINE cconex(N,Icol0,Mxccnx,Lccnex,Kpw,Ia,Ja,Mark,Iout,Ier)
 !                      July 1992 - Update: March 1994
 !-----------------------------------------------------------------------
    INTEGER :: spag_nextblock_1
+   Ier = 0
+   ipos = Ia(1) - 1
+   impr = Iout>0 .AND. Iout<=99
    spag_nextblock_1 = 1
    SPAG_DispatchLoop_1: DO
       SELECT CASE (spag_nextblock_1)

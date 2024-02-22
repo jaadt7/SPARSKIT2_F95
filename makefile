@@ -23,63 +23,45 @@
 #on Feb 21st 2024
 
 SHELL = /bin/sh
-F90 = gfortran
-
-# F90 = F90 
+F95 = gfortran
 AR = ar -rv 
 RANLIB = ranlib	
 
-OPT = -c -O -Wall 
+OPT = -c -O -Wall -w
 LIB = libskit.a
 
 #
 # library objects
 #
 
-OBJ =	SPAGged/blassm.o	\
-		SPAGged/matvec.o	\
-		SPAGged/formats.o	\
-		SPAGged/unary.o		\
-		SPAGged/infofun.o	\
-		SPAGged/inout.o		\
-		SPAGged/ilut.o		\
-		SPAGged/iters.o		\
-		SPAGged/genmat.o	\
-		SPAGged/elmtlib2.o	\
-		SPAGged/femgen.o	\
-		SPAGged/meshes.o	\
-		SPAGged/sobel.o		\
-		SPAGged/zlatev.o	\
-		SPAGged/ccn.o		\
-		SPAGged/color.o		\
-		SPAGged/dsepart.o
+OBJ =	src/library/blassm.o	\
+		src/library/matvec.o	\
+		src/library/formats.o	\
+		src/library/unary.o		\
+		src/library/infofun.o	\
+		src/library/inout.o		\
+		src/library/ilut.o		\
+		src/library/iters.o		\
+		src/library/genmat.o	\
+		src/library/elmtlib2.o	\
+		src/library/femgen.o	\
+		src/library/meshes.o	\
+		src/library/sobel.o		\
+		src/library/zlatev.o	\
+		src/library/ccn.o		\
+		src/library/color.o		\
+		src/library/dsepart.o
 
 #
-# non-library and unsupported objects
+# non-library
 #
-OBJ2 =	ITSOL/itaux.o		\
-	MATGEN/FDIF/functns.o	\
-	MATGEN/FEM/functns2.o	\
-	UNSUPP/BLAS1/blas1.o	\
-	UNSUPP/MATEXP/exppro.o	\
-	UNSUPP/MATEXP/phipro.o	\
-	UNSUPP/PLOTS/psgrd.o	\
-	UNSUPP/PLOTS/texgrid1.o	\
-	UNSUPP/PLOTS/texplt1.o
+OBJ2 =	src/non-library/itaux.o		\
+		src/non-library/functns.o	\
+		src/non-library/functns2.o	\
 
-DIRS =	.			\
-	BLASSM			\
-	FORMATS			\
-	INFO			\
-	INOUT			\
-	ITSOL			\
-	MATGEN/FDIF		\
-	MATGEN/FEM		\
-	SPAGged		\
-	SPAGged		\
-	UNSUPP/BLAS1		\
-	UNSUPP/MATEXP		\
-	UNSUPP/PLOTS
+DIRS =	.				\
+		src/library 	\
+		src/non-library	
 
 $(LIB): $(OBJ) 
 	$(AR) $@ $(OBJ) 
@@ -93,61 +75,55 @@ clean:
           echo cleaning $$dir ;\
           (cd $$dir; rm -f *~ *.o *.ex .,* fort.* ftn?? *.mat core, *.a) ;\
           done
+clean_obj:
+	@for dir in $(DIRS) ;\
+          do \
+          echo cleaning $$dir ;\
+          (cd $$dir; rm -f *.o) ;\
+          done
 
 tarit: 
-	(cd ..; tar cvf - SPARSKIT2 | gzip -c > SPARSKIT2.tar.gz) 
+	(cd ..; tar cvf - SPARSKIT2_F95 | gzip -c > SPARSKIT2_F95.tar.gz) 
 
-all: $(OBJ) $(OBJ2) libskit.a
+all: $(OBJ) $(OBJ2) $(LIB)
 
-SPAGged/blassm.o: SPAGged/blassm.f90
-	(cd SPAGged ; $(F90)  $(OPT) blassm.f90)
-SPAGged/matvec.o: SPAGged/matvec.f90
-	(cd SPAGged ; $(F90)  $(OPT) matvec.f90)
-SPAGged/formats.o: SPAGged/formats.f90
-	(cd SPAGged ; $(F90)  $(OPT) formats.f90)
-SPAGged/unary.o: SPAGged/unary.f90
-	(cd SPAGged ; $(F90)  $(OPT) unary.f90)
-SPAGged/infofun.o: SPAGged/infofun.f90
-	(cd SPAGged ; $(F90)  $(OPT) infofun.f90)
-SPAGged/inout.o: SPAGged/inout.f90
-	(cd SPAGged; $(F90)  $(OPT) inout.f90)
-SPAGged/ilut.o: SPAGged/ilut.f90
-	(cd SPAGged; $(F90)  $(OPT) ilut.f90)
-SPAGged/iters.o: SPAGged/iters.f90
-	(cd SPAGged; $(F90)  $(OPT) iters.f90)
-SPAGged/itaux.o: SPAGged/itaux.f90
-	(cd SPAGged; $(F90)  $(OPT) itaux.f90)
-SPAGged/genmat.o: SPAGged/genmat.f90
-	(cd SPAGged ; $(F90)  $(OPT) genmat.f90)
-SPAGged/functns.o: SPAGged/functns.f90
-	(cd SPAGged ; $(F90)  $(OPT) functns.f90)
-SPAGged/elmtlib2.o: SPAGged/elmtlib2.f90
-	(cd SPAGged ; $(F90)  $(OPT) elmtlib2.f90)
-SPAGged/femgen.o: SPAGged/femgen.f90
-	(cd SPAGged ; $(F90)  $(OPT) femgen.f90)
-SPAGged/functns2.o : SPAGged/functns2.f90 
-	(cd SPAGged ; $(F90)  $(OPT) functns2.f90)
-SPAGged/meshes.o: SPAGged/meshes.f90
-	(cd SPAGged ; $(F90)  $(OPT) meshes.f90)
-SPAGged/sobel.o: SPAGged/sobel.f90
-	(cd SPAGged ; $(F90)  $(OPT) sobel.f90)
-SPAGged/zlatev.o: SPAGged/zlatev.f90
-	(cd SPAGged ; $(F90)  $(OPT) zlatev.f90)
-SPAGged/ccn.o: SPAGged/ccn.f90
-	(cd SPAGged ; $(F90)  $(OPT) ccn.f90)
-SPAGged/color.o: SPAGged/color.f90
-	(cd SPAGged ; $(F90)  $(OPT) color.f90)
-SPAGged/dsepart.o: SPAGged/dsepart.f90
-	(cd SPAGged ; $(F90)  $(OPT) dsepart.f90)
-UNSUPP/BLAS1/blas1.o: UNSUPP/BLAS1/blas1.f
-	(cd UNSUPP/BLAS1 ; $(F90)  $(OPT) blas1.f)
-UNSUPP/MATEXP/exppro.o: UNSUPP/MATEXP/exppro.f
-	(cd UNSUPP/MATEXP ; $(F90)  $(OPT) exppro.f)
-UNSUPP/MATEXP/phipro.o: UNSUPP/MATEXP/phipro.f
-	(cd UNSUPP/MATEXP ; $(F90)  $(OPT) phipro.f)
-UNSUPP/PLOTS/psgrd.o : UNSUPP/PLOTS/psgrd.f 
-	(cd UNSUPP/PLOTS ; $(F90) $(OPT) psgrd.f)
-UNSUPP/PLOTS/texgrid1.o : UNSUPP/PLOTS/texgrid1.f 
-	(cd UNSUPP/PLOTS ; $(F90) $(OPT) texgrid1.f)
-UNSUPP/PLOTS/texplt1.o : UNSUPP/PLOTS/texplt1.f 
-	(cd UNSUPP/PLOTS ; $(F90) $(OPT) texplt1.f)
+src/library/blassm.o: src/library/blassm.f95
+	(cd src/library ; $(F95)  $(OPT) blassm.f95)
+src/library/matvec.o: src/library/matvec.f95
+	(cd src/library ; $(F95)  $(OPT) matvec.f95)
+src/library/formats.o: src/library/formats.f95
+	(cd src/library ; $(F95)  $(OPT) formats.f95)
+src/library/unary.o: src/library/unary.f95
+	(cd src/library ; $(F95)  $(OPT) unary.f95)
+src/library/infofun.o: src/library/infofun.f95
+	(cd src/library ; $(F95)  $(OPT) infofun.f95)
+src/library/inout.o: src/library/inout.f95
+	(cd src/library; $(F95)  $(OPT) inout.f95)
+src/library/ilut.o: src/library/ilut.f95
+	(cd src/library; $(F95)  $(OPT) ilut.f95)
+src/library/iters.o: src/library/iters.f95
+	(cd src/library; $(F95)  $(OPT) iters.f95)
+src/non-library/itaux.o: src/non-library/itaux.f95
+	(cd src/non-library; $(F95)  $(OPT) itaux.f95)
+src/library/genmat.o: src/library/genmat.f95
+	(cd src/library ; $(F95)  $(OPT) genmat.f95)
+src/non-library/functns.o: src/non-library/functns.f95
+	(cd src/non-library ; $(F95)  $(OPT) functns.f95)
+src/library/elmtlib2.o: src/library/elmtlib2.f95
+	(cd src/library ; $(F95)  $(OPT) elmtlib2.f95)
+src/library/femgen.o: src/library/femgen.f95
+	(cd src/library ; $(F95)  $(OPT) femgen.f95)
+src/non-library/functns2.o : src/non-library/functns2.f95 
+	(cd src/non-library ; $(F95)  $(OPT) functns2.f95)
+src/library/meshes.o: src/library/meshes.f95
+	(cd src/library ; $(F95)  $(OPT) meshes.f95)
+src/library/sobel.o: src/library/sobel.f95
+	(cd src/library ; $(F95)  $(OPT) sobel.f95)
+src/library/zlatev.o: src/library/zlatev.f95
+	(cd src/library ; $(F95)  $(OPT) zlatev.f95)
+src/library/ccn.o: src/library/ccn.f95
+	(cd src/library ; $(F95)  $(OPT) ccn.f95)
+src/library/color.o: src/library/color.f95
+	(cd src/library ; $(F95)  $(OPT) color.f95)
+src/library/dsepart.o: src/library/dsepart.f95
+	(cd src/library ; $(F95)  $(OPT) dsepart.f95)

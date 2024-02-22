@@ -903,6 +903,11 @@ SUBROUTINE mapper4(N,Ja,Ia,Ndom,Nodes,Levst,Marker,Link)
 !-----------------------------------------------------------------------
 !     local variables
    INTEGER :: spag_nextblock_1
+   ii = 0
+!
+   lkend = Ndom
+   nod = Ndom
+   nstuck = 0
    spag_nextblock_1 = 1
    SPAG_DispatchLoop_1: DO
       SELECT CASE (spag_nextblock_1)
@@ -923,12 +928,7 @@ SUBROUTINE mapper4(N,Ja,Ia,Ndom,Nodes,Levst,Marker,Link)
 !
 !     ii = next untouched node for restarting new connected component.
 !
-         ii = 0
-!
-         lkend = Ndom
-         nod = Ndom
-         nstuck = 0
-         spag_nextblock_1 = 2
+         
       CASE (2)
 !-----------------------------------------------------------------------
          idom = mindom(N,Ndom,Link)
