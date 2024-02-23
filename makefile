@@ -71,7 +71,7 @@ clean:
 	@for dir in $(DIRS) ;\
           do \
           echo cleaning $$dir ;\
-          (cd $$dir; rm -f *~ *.o *.ex *.fort *.mat *.a *.ps *.pic fort.*) ;\
+          (cd $$dir; rm -f *~ *.o *.ex *.fort *.mat *.a *.ps *.pic fort.* *. *.hb) ;\
           done
 clean_obj:
 	@for dir in $(DIRS) ;\

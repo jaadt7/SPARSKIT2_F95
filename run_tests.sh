@@ -131,3 +131,59 @@ echo Running convection test
 2
 EOF
 cat mat.hb
+
+echo Compiling Sobel test
+
+gfortran -o sobel_test.ex sobel_test.f95 -L ../. -lskit -Wl,--unresolved-symbols=ignore-all
+
+echo Running Sobel test
+
+./sobel_test.ex << \EOF
+10
+EOF
+
+echo Compiling Zlatev test
+
+gfortran -o zlatev_test.ex zlatev_test.f95 -L ../. -lskit -Wl,--unresolved-symbols=ignore-all
+
+echo Running Zlatev test
+
+./zlatev.ex
+cat zlatev1.mat
+cat zlatev2.mat
+cat zlatev3.mat
+
+echo Compiling markov test
+
+gfortran -o markov_test.ex markov_test.f95 -L ../. -lskit -Wl,--unresolved-symbols=ignore-all
+
+echo Running markov tests
+
+./markov.ex << \EOF
+10
+EOF
+cat markov.mat
+
+echo Compiling exponential propagator test
+
+gfortran -o prop_test.ex exp_prop_test.f95 ../src/non-library/exppro.f95
+
+echo Running exponential propagator test
+
+./prop_test.ex << \EOF
+0.1
+0.00001
+10
+EOF
+
+echo Compiling phi approximation
+
+gfortran -o phi_approx.ex phi_approx.f95 ../src/non-library/phipro.f95
+
+echo Running Phi Approximation
+
+./phi_approx.ex << \EOF
+0.1
+0.00001
+10
+EOF
