@@ -84,11 +84,13 @@ SUBROUTINE bandwidth(N,Ja,Ia,Ml,Mu,Iband,Bndav)
 !-----------------------------------------------------------------------
 !     locals
 !-----------------------------------------------------------------------
+
    Ml = -N
    Mu = -N
    Bndav = 0.0D0
    Iband = 0
    DO i = 1 , N
+ 
       j0 = Ia(i)
       j1 = Ia(i+1) - 1
       jminc = Ja(j0)
@@ -98,7 +100,9 @@ SUBROUTINE bandwidth(N,Ja,Ia,Ml,Mu,Iband,Bndav)
       Iband = max(Iband,jmaxc-jminc+1)
       Bndav = Bndav + real(jmaxc-jminc+1)
    ENDDO
+
    Bndav = Bndav/real(N)
+   return
 !-----end-of-bandwidth--------------------------------------------------
 !-----------------------------------------------------------------------
 END SUBROUTINE bandwidth

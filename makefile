@@ -55,9 +55,6 @@ OBJ =	src/library/blassm.o	\
 #
 # non-library
 #
-OBJ2 =	src/non-library/itaux.o		\
-		src/non-library/functns.o	\
-		src/non-library/functns2.o	\
 
 DIRS =	.				\
 		src/library 	\
@@ -74,7 +71,7 @@ clean:
 	@for dir in $(DIRS) ;\
           do \
           echo cleaning $$dir ;\
-          (cd $$dir; rm -f *~ *.o *.ex .,* fort.* ftn?? *.mat core, *.a) ;\
+          (cd $$dir; rm -f *~ *.o *.ex *.fort *.mat *.a *.ps *.pic fort.*) ;\
           done
 clean_obj:
 	@for dir in $(DIRS) ;\
@@ -86,7 +83,6 @@ clean_obj:
 tarit: 
 	(cd ..; tar cvf - SPARSKIT2_F95 | gzip -c > SPARSKIT2_F95.tar.gz) 
 
-all: $(OBJ) $(OBJ2) $(LIB)
 
 src/library/blassm.o: src/library/blassm.f95
 	(cd src/library ; $(F95)  $(OPT) blassm.f95)
@@ -104,18 +100,12 @@ src/library/ilut.o: src/library/ilut.f95
 	(cd src/library; $(F95)  $(OPT) ilut.f95)
 src/library/iters.o: src/library/iters.f95
 	(cd src/library; $(F95)  $(OPT) iters.f95)
-src/non-library/itaux.o: src/non-library/itaux.f95
-	(cd src/non-library; $(F95)  $(OPT) itaux.f95)
 src/library/genmat.o: src/library/genmat.f95
 	(cd src/library ; $(F95)  $(OPT) genmat.f95)
-src/non-library/functns.o: src/non-library/functns.f95
-	(cd src/non-library ; $(F95)  $(OPT) functns.f95)
 src/library/elmtlib2.o: src/library/elmtlib2.f95
 	(cd src/library ; $(F95)  $(OPT) elmtlib2.f95)
 src/library/femgen.o: src/library/femgen.f95
 	(cd src/library ; $(F95)  $(OPT) femgen.f95)
-src/non-library/functns2.o : src/non-library/functns2.f95 
-	(cd src/non-library ; $(F95)  $(OPT) functns2.f95)
 src/library/meshes.o: src/library/meshes.f95
 	(cd src/library ; $(F95)  $(OPT) meshes.f95)
 src/library/sobel.o: src/library/sobel.f95
