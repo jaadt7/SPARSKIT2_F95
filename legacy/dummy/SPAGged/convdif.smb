@@ -1,0 +1,67 @@
+**++ Symbol table for subprogram CONVDIF in file convdif.f
+     produced by SPAG     8.04RA-40 at 10:54:21 on 23 Feb 2024
+   0         X             K             convdif.f,0000001,0000130
+   1          R*8  ( 1) ?? E    56000   A(7*maxnx)*8
+   2         s     (18)  U              ASSMBO
+     (I4V,I4V,I4V,I4A,I4A,R8A,R8A,R8A,I4A,I4A,R8A,I4A,I4A,I4V,?*V,?*V,?*V,?*V
+     )
+   3         s     ( 6)  U              CHECKREF
+     (I4V,I4V,I4A,I4V,I4V,I4V)
+   4         M                     49   CONVDIF
+   5          R*8  ( 1) ?? E    24000   F(3*maxnx)*8
+   6          ?         ??X             FUNB
+   7          ?         ??X             FUNC
+   8          ?         ??X             FUNG
+   9          I    ( 1) ?? E     8000   IA(maxnx)
+  10          I    ( 2) ?? E   180000   ICHILD(12,maxnel)
+  11          I         ?U E            IERR
+  12          I         M? E            IFMT
+  13          I         MU E            II
+  14          I        I?? E            IIN
+  15          I    ( 2) ?? E    45000   IJK(3,maxnel)
+  16         s     (10)  U              INMESH
+     (I4V,I4V,I4V,I4V,I4V,R8A,R8A,I4A,I4A,I4A)
+  17          I        IM  E            IOUT
+  18          I    ( 2) ?? E    16000   IPARNTS(2,maxnx)
+  19          I    ( 1) ?? E     8000   IPERM(maxnx)
+  20          I    ( 1) ?? E     8000   IWK(maxnx)
+  21          I    ( 1) ?? E    56000   JA(7*maxnx)
+  22          I         M? E            JOB
+  23          I    ( 1) ?? E     8000   JWK(maxnx)
+  24          C*8       M? E            KEY*8
+  25          C*20      MU E            MATFILE*20
+  26         PI          U E    15000   MAXNEL=15000
+  27         PI          U E     8000   MAXNX=8000
+  28          I         M? E            MODE
+  29          C*2       M? E            MUNT*2
+  30          I         M? E            N
+  31          I        I   E            NA
+  32          I         M? E            NB
+  33          I         M? E            NCOL
+  34          I        I?? E            NDEG
+  35          I         MU E            NELMAX
+  36          I        I?? E            NELX
+  37          I         ?U E            NELXNEW
+  38          I         MU E            NMESH
+  39          I    ( 1) ?? E     8000   NODCODE(maxnx)
+  40          I        I?? E            NODE
+  41          I         MU E            NREF
+  42          I        I?U E            NX
+  43          I         MU E            NXMAX
+  44          I         ?U E            NXNEW
+  45         s     (13)  U              PRTMT
+     (I4V,I4V,R8A,I4A,I4A,R8A,C*E,C+V,C8V,C3V,I4V,I4V,I4E)
+  46         s     (10)  U              PSGRID
+     (I4V,I4A,I4A,R8A,R8A,C+V,I4V,R4V,C2V,I4E)
+  47         s     (12)  U              PSPLTM
+     (I4V,I4V,I4V,I4A,I4A,C+V,I4V,R4V,C2V,I4V,I4A,I4E)
+  48          I         M? E            PTITLE
+  49         s     (13)  U              REFALL
+     (I4V,I4V,I4A,I4V,I4V,R8A,R8A,I4A,I4A,I4A,I4V,I4V,I4V)
+  50          R         M? E            SIZE
+  51          C*72      M? E            TITLE*72
+  52          C*3       M? E            TYPE*3
+  53          R*8  ( 1) ?? E     8000   X(maxnx)*8
+  54          ?         ??X             XYK
+  55          R*8  ( 1) ?? E     8000   Y(maxnx)*8
+**-- END OF SYMBOL TABLE

@@ -100,3 +100,34 @@ gfortran -o harwell_boeing_iter_test.ex harwell_boeing_iter_tester.f95 ../src/no
 echo Iterative solver with Harwell-Boeing matrix Test
 
 ./harwell_boeing_iter_test.ex < test_supp_files/saylr1
+
+echo Compiling 5 and 7 point test in Harwell-Boeing format
+
+gfortran -o 5_pt_harwell_boeing_test.ex 5_pt_harwell_boeing_tester.f95 ../src/non-library/functns.f95 -L ../. -lskit -Wl,--unresolved-symbols=ignore-all
+
+echo Running 5 and 7 point test
+
+./5_pt_harwell_boeing_test.ex << \EOF
+10 10 1
+test_pt.mat
+EOF
+
+echo Compiling Block Matrix Harwell Boeing test
+gfortran -o block_mat_test.ex block_mat_test.f95 ../src/non-library/functns.f95 -L ../. -lskit -Wl,--unresolved-symbols=ignore-all
+
+echo Running Block Matrix Harwell Boeing test
+./block_mat_test.ex << \EOF
+10 10 1
+4
+test_bl.mat
+EOF
+
+echo Compiling convective-diffusive test
+gfortran -o conv_test.ex conv_diff_test.f95 ../src/non-library/functns2.f95 ../src/non-library/psgrd.f95 -L ../. -lskit -Wl,--unresolved-symbols=ignore-all
+
+echo Running convection test
+./conv_test.ex << \EOF
+2
+2
+EOF
+cat mat.hb

@@ -1,0 +1,51 @@
+SPAG - Version 8.04RA executing at 10:54 on 23 Feb 2024
+Copyright (C) Polyhedron Solutions - 1987-2024 - All rights reserved
+ 
+Licensee : Open source Personal, Educational or Academic User Clemson University
+         : + NON-COMMERCIAL USE - Not for use on proprietary or closed source code
+ 
+Licence data             read from /opt/plusfort_x64Linux_804/plusFORT.fig
+This version dated       Feb 2024
+Maintenance Expiry Date  Dec 2029
+KIND information         read from /opt/plusfort_x64Linux_804/iso_fortran_env.f90
+INTRINSIC function names read from /opt/plusfort_x64Linux_804/f2008func.txt
+Output files will be written in directory /home/jaadt7/my_projects/SPARSKIT2_F95/legacy/dummy/SPAGged/
+Configuration data       read from /opt/plusfort_x64Linux_804/spag.fig
+Source Code Pre-scan
+--------------------------------------------------------------------
+<>I VAX Source form found (tabs/>72 chars)   convdif.f
+    detected at line      1 of convdif.f
+PROGRAM convdif
+Finished reading CONVDIF from file convdif.f
+<>I Variable assigned a value but not used   IOUT
+<>I Variable declared but not used           NA
+<>I INTRINSIC functn name used for variable  SIZE
+Re-structuring..
+  1 internal subroutines created
+Writing CONVDIF
+Rewriting declarations
+--------------------------------------------------------------------
+Finished reading PSGRID from file psgrd.f
+<>I Variable declared but not used           HAF
+<>I Variable declared but not used           ZERO
+<>I INTRINSIC functn name used for variable  SIZE
+Re-structuring..
+  1 relocations -   2 GOTOs rationalised
+Writing PSGRID
+Rewriting declarations
+--------------------------------------------------------------------
+ 
+End of input after 2 sub-programs (321 lines)
+ 
+     2 were re-structured
+     2 were re-labelled
+     2 were beautified
+ 
+     7 diagnostics generated
+ 
+     1 occurrences of VAX Source form found (tabs/>72 chars)   (INFORMATION)
+     3 occurrences of Variable declared but not used           (INFORMATION)
+     1 occurrences of Variable assigned a value but not used   (INFORMATION)
+     2 occurrences of INTRINSIC functn name used for variable  (INFORMATION)
+ 
+SPAG finished with informational messages
