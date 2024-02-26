@@ -110,7 +110,7 @@ SUBROUTINE phipro(N,M,Eps,Tn,W,R,U,X,Y,Indic,Ierr)
    LOGICAL , SAVE :: verboz
    COMPLEX(REAL64) , DIMENSION(MMAX+1) , SAVE :: wkc
    REAL(REAL64) , DIMENSION(MMAX+1) , SAVE :: z
-   EXTERNAL phihes , project
+   EXTERNAL phihes , phipro_project
 !
 ! End of declarations rewritten by SPAG
 !
@@ -278,7 +278,7 @@ SUBROUTINE phipro(N,M,Eps,Tn,W,R,U,X,Y,Indic,Ierr)
             IF ( (errst<=Eps) .AND. ((errst>Eps/100.0) .OR. (tcur==Tn)) ) THEN
 !-------
 !
-               CALL project(N,M,W,dtl,U,z)
+               CALL phipro_project(N,M,W,dtl,U,z)
 ! never go beyond tcur
                job = 0
                dtl = dmin1(dtl,Tn-tcur)
@@ -343,7 +343,7 @@ SUBROUTINE phihes(N,M,Dt,Eps,U,Job,Z,Wkc,Beta,Errst,Hh,Ih,X,Y,Indic,Ierr)
    REAL(REAL64) , EXTERNAL :: ddot
    INTEGER , SAVE :: i , i0 , i1 , j , k , ldg , m1
    LOGICAL , SAVE :: verboz
-   EXTERNAL hes , mgsr
+   EXTERNAL hes , phipro_mgsr
 !
 ! End of declarations rewritten by SPAG
 !
@@ -424,7 +424,7 @@ SUBROUTINE phihes(N,M,Dt,Eps,U,Job,Z,Wkc,Beta,Errst,Hh,Ih,X,Y,Indic,Ierr)
       i0 = 1
 ! switch  for Lanczos version
 !     i0 = max0(1, i-1)
-      CALL mgsr(N,i0,i1,U,Hh(1,i))
+      CALL phipro_mgsr(N,i0,i1,U,Hh(1,i))
       fnorm = fnorm + ddot(i1,Hh(1,i),1,Hh(1,i),1)
       IF ( Hh(i1,i)==0.0 ) M = i
       IF ( i>=M ) THEN
@@ -540,7 +540,7 @@ CONTAINS
          Z(k) = 0.0D0
       ENDDO
 !-------get  : phi(H) * beta*e1
-      CALL hes(ldg,m1,Hh,Ih,Dt,Z,rd,alp,alp0,Wkc)
+      CALL hes1(ldg,m1,Hh,Ih,Dt,Z,rd,alp,alp0,Wkc)
 !-------error estimate
       Errst = dabs(Z(m1))
       IF ( verboz ) PRINT * , ' error estimate =' , Errst
@@ -551,7 +551,7 @@ END SUBROUTINE phihes
 !*==mgsr.f90 processed by SPAG 8.04RA 12:07 23 Feb 2024
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
 !-----------------------------------------------------------------------
-SUBROUTINE mgsr(N,I0,I1,Ss,R)
+SUBROUTINE phipro_mgsr(N,I0,I1,Ss,R)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -617,12 +617,12 @@ SUBROUTINE mgsr(N,I0,I1,Ss,R)
          EXIT SPAG_Loop_1_1
       ENDIF
    ENDDO SPAG_Loop_1_1
-END SUBROUTINE mgsr
+END SUBROUTINE phipro_mgsr
 !*==project.f90 processed by SPAG 8.04RA 12:07 23 Feb 2024
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
 !----------end-of-mgsr--------------------------------------------------
 !-----------------------------------------------------------------------
-SUBROUTINE project(N,M,W,T,U,V)
+SUBROUTINE phipro_project(N,M,W,T,U,V)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -654,11 +654,12 @@ SUBROUTINE project(N,M,W,T,U,V)
          W(k) = W(k) + scal*U(k,j)
       ENDDO
    ENDDO
-END SUBROUTINE project
+END SUBROUTINE phipro_project
+
 !*==hes.f90 processed by SPAG 8.04RA 12:07 23 Feb 2024
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
 !-----------------------------------------------------------------------
-SUBROUTINE hes(Ndg,M1,Hh,Ih,Dt,Y,Root,Coef,Coef0,W2)
+SUBROUTINE hes1(Ndg,M1,Hh,Ih,Dt,Y,Root,Coef,Coef0,W2)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -763,71 +764,4 @@ SUBROUTINE hes(Ndg,M1,Hh,Ih,Dt,Y,Root,Coef,Coef0,W2)
          Y(i) = Y(i) + dble(Coef(ii)*W2(i))
       ENDDO
    ENDDO
-END SUBROUTINE hes
-!*==daxpy.f90 processed by SPAG 8.04RA 12:07 23 Feb 2024
-!!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
-!----------end-of-hes---------------------------------------------------
-!-----------------------------------------------------------------------
-SUBROUTINE daxpy(N,T,X,Indx,Y,Indy)
-   USE ISO_FORTRAN_ENV                 
-   IMPLICIT NONE
-!
-! Dummy argument declarations rewritten by SPAG
-!
-   INTEGER , INTENT(IN) :: N
-   REAL(REAL64) , INTENT(IN) :: T
-   REAL(REAL64) , INTENT(IN) , DIMENSION(N) :: X
-   INTEGER :: Indx
-   REAL(REAL64) , INTENT(INOUT) , DIMENSION(N) :: Y
-   INTEGER :: Indy
-!
-! Local variable declarations rewritten by SPAG
-!
-   INTEGER :: k
-!
-! End of declarations rewritten by SPAG
-!
-!-------------------------------------------------------------------
-! does the following operation
-! y <--- y + t * x ,   (replace by the blas routine daxpy )
-! indx and indy are supposed to be one here
-!-------------------------------------------------------------------
- 
-   DO k = 1 , N
-      Y(k) = Y(k) + X(k)*T
-   ENDDO
-END SUBROUTINE daxpy
-!*==ddot.f90 processed by SPAG 8.04RA 12:07 23 Feb 2024
-!!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
-!----------end-of-daxpy-------------------------------------------------
-!-----------------------------------------------------------------------
-FUNCTION ddot(N,X,Ix,Y,Iy)
-   USE ISO_FORTRAN_ENV                 
-   IMPLICIT NONE
-!
-! Function and Dummy argument declarations rewritten by SPAG
-!
-   INTEGER , INTENT(IN) :: N
-   REAL(REAL64) :: ddot
-   REAL(REAL64) , INTENT(IN) , DIMENSION(N) :: X
-   INTEGER :: Ix
-   REAL(REAL64) , INTENT(IN) , DIMENSION(N) :: Y
-   INTEGER :: Iy
-!
-! Local variable declarations rewritten by SPAG
-!
-   INTEGER :: j
-   REAL(REAL64) :: t
-!
-! End of declarations rewritten by SPAG
-!
-!-------------------------------------------------------------------
-! computes the inner product t=(x,y) -- replace by blas routine ddot
-!-------------------------------------------------------------------
- 
-   t = 0.0D0
-   DO j = 1 , N
-      t = t + X(j)*Y(j)
-   ENDDO
-   ddot = t
-END FUNCTION ddot
+END SUBROUTINE hes1

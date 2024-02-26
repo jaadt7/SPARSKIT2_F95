@@ -148,7 +148,7 @@ gfortran -o zlatev_test.ex zlatev_test.f95 -L ../. -lskit -Wl,--unresolved-symbo
 
 echo Running Zlatev test
 
-./zlatev.ex
+./zlatev_test.ex
 cat zlatev1.mat
 cat zlatev2.mat
 cat zlatev3.mat
@@ -159,14 +159,14 @@ gfortran -o markov_test.ex markov_test.f95 -L ../. -lskit -Wl,--unresolved-symbo
 
 echo Running markov tests
 
-./markov.ex << \EOF
+./markov_test.ex << \EOF
 10
 EOF
 cat markov.mat
 
 echo Compiling exponential propagator test
 
-gfortran -o prop_test.ex exp_prop_test.f95 ../src/non-library/exppro.f95
+gfortran -o prop_test.ex exp_prop_test.f95 ../src/non-library/exppro.f95 ../src/non-library/blas1.f95
 
 echo Running exponential propagator test
 
@@ -178,7 +178,7 @@ EOF
 
 echo Compiling phi approximation
 
-gfortran -o phi_approx.ex phi_approx.f95 ../src/non-library/phipro.f95
+gfortran -o phi_approx.ex phi_approx.f95 ../src/non-library/phipro.f95 ../src/non-library/blas1.f95
 
 echo Running Phi Approximation
 
