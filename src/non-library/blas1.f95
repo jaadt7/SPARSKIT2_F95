@@ -286,7 +286,7 @@ FUNCTION dnrm2(N,Dx,Incx)
 !
    REAL(REAL64) , SAVE :: cuthi , cutlo , one , zero
    REAL(REAL64) :: hitest , sum , xmax
-   INTEGER :: i , j , next , nn
+   INTEGER :: i , j , nn
 !
 ! End of declarations rewritten by SPAG
 !
