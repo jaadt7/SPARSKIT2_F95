@@ -338,7 +338,7 @@ FUNCTION dnrm2(N,Dx,Incx)
 !
          IF ( N>0 ) THEN
 !
-            ASSIGN 20 TO next
+       
             sum = zero
             nn = N*Incx
 !                                                 begin main loop
@@ -349,17 +349,17 @@ FUNCTION dnrm2(N,Dx,Incx)
          ENDIF
          spag_nextblock_1 = 2
       CASE (2)
-         GOTO next
- 20      IF ( dabs(Dx(i))>cutlo ) THEN
+         
+         IF ( dabs(Dx(i))>cutlo ) THEN
             spag_nextblock_1 = 5
             CYCLE SPAG_DispatchLoop_1
          ENDIF
-         ASSIGN 40 TO next
+         
          xmax = zero
 !
 !                        phase 1.  sum is zero
 !
- 40      IF ( Dx(i)==zero ) THEN
+         IF ( Dx(i)==zero ) THEN
             spag_nextblock_1 = 6
             CYCLE SPAG_DispatchLoop_1
          ENDIF
@@ -369,7 +369,7 @@ FUNCTION dnrm2(N,Dx,Incx)
          ENDIF
 !
 !                                prepare for phase 2.
-         ASSIGN 60 TO next
+      
          spag_nextblock_1 = 4
          CYCLE SPAG_DispatchLoop_1
       CASE (3)
@@ -377,7 +377,7 @@ FUNCTION dnrm2(N,Dx,Incx)
 !                                prepare for phase 4.
 !
          i = j
-         ASSIGN 80 TO next
+         
          sum = (sum/Dx(i))/Dx(i)
          spag_nextblock_1 = 4
       CASE (4)
@@ -390,7 +390,7 @@ FUNCTION dnrm2(N,Dx,Incx)
 !                   phase 2.  sum is small.
 !                             scale to avoid destructive underflow.
 !
- 60      IF ( dabs(Dx(i))>cutlo ) THEN
+         IF ( dabs(Dx(i))>cutlo ) THEN
 !
 !
 !                  prepare for phase 3.
@@ -403,7 +403,7 @@ FUNCTION dnrm2(N,Dx,Incx)
 !                     common code for phases 2 and 4.
 !                     in phase 4 sum is large.  scale to avoid overflow.
 !
- 80      IF ( dabs(Dx(i))<=xmax ) THEN
+         IF ( dabs(Dx(i))<=xmax ) THEN
             sum = sum + (Dx(i)/xmax)**2
          ELSE
             sum = one + sum*(xmax/Dx(i))**2
