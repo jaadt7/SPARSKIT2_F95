@@ -27,4 +27,4 @@ Contribute
 License
 -------
 
-The project is licensed under the GNU Public License v3 (or later).
+The project is licensed under the GNU Lesser General Public License v2.1 (or later).
