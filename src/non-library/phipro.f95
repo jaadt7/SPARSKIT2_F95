@@ -65,10 +65,11 @@ SUBROUTINE phiprod(N,M,Eps,Tn,U,W,R,X,Y,A,Ioff,Ndiag)
 !-----------------------------------------------------------------------
 ! local variables
 !
- 
+   logical :: verboz
+   verboz = .true.
    indic = 0
    SPAG_Loop_1_1: DO
-      CALL phipro(N,M,Eps,Tn,W,R,U,X,Y,indic,ierr)
+      CALL phipro(N,M,Eps,Tn,W,R,U,X,Y,indic,ierr,verboz)
       IF ( indic==1 ) EXIT SPAG_Loop_1_1
 !
 !     matrix vector-product for diagonal storage --
@@ -80,7 +81,7 @@ END SUBROUTINE phiprod
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
 !----------end-of-phiprod-----------------------------------------------
 !-----------------------------------------------------------------------
-SUBROUTINE phipro(N,M,Eps,Tn,W,R,U,X,Y,Indic,Ierr)
+SUBROUTINE phipro(N,M,Eps,Tn,W,R,U,X,Y,Indic,Ierr,verboz)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -107,7 +108,7 @@ SUBROUTINE phipro(N,M,Eps,Tn,W,R,U,X,Y,Indic,Ierr)
    REAL(REAL64) , SAVE :: beta , dtl , errst , red , tcur , told
    REAL(REAL64) , DIMENSION(MMAX+2,MMAX+1) , SAVE :: hh
    INTEGER , SAVE :: ih , job , k
-   LOGICAL , SAVE :: verboz
+   LOGICAL , intent(in) :: verboz
    COMPLEX(REAL64) , DIMENSION(MMAX+1) , SAVE :: wkc
    REAL(REAL64) , DIMENSION(MMAX+1) , SAVE :: z
    EXTERNAL phihes , phipro_project
@@ -209,7 +210,7 @@ SUBROUTINE phipro(N,M,Eps,Tn,W,R,U,X,Y,Indic,Ierr)
 !-----------------------------------------------------------------------
 ! local variables
 !
-   DATA verboz/.TRUE./
+   
    INTEGER :: spag_nextblock_1
    spag_nextblock_1 = 1
    SPAG_DispatchLoop_1: DO
@@ -264,7 +265,7 @@ SUBROUTINE phipro(N,M,Eps,Tn,W,R,U,X,Y,Indic,Ierr)
       CASE (3)
          DO
 !
-            CALL phihes(N,M,dtl,Eps,U,job,z,wkc,beta,errst,hh,ih,X,Y,Indic,Ierr)
+            CALL phihes(N,M,dtl,Eps,U,job,z,wkc,beta,errst,hh,ih,X,Y,Indic,Ierr,verboz)
 !-----------------------------------------------------------------------
             IF ( Ierr/=0 ) RETURN
             IF ( Indic==3 ) RETURN
@@ -309,7 +310,7 @@ END SUBROUTINE phipro
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
 !----------end-of-phipro------------------------------------------------
 !-----------------------------------------------------------------------
-SUBROUTINE phihes(N,M,Dt,Eps,U,Job,Z,Wkc,Beta,Errst,Hh,Ih,X,Y,Indic,Ierr)
+SUBROUTINE phihes(N,M,Dt,Eps,U,Job,Z,Wkc,Beta,Errst,Hh,Ih,X,Y,Indic,Ierr,verboz)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -342,7 +343,7 @@ SUBROUTINE phihes(N,M,Dt,Eps,U,Job,Z,Wkc,Beta,Errst,Hh,Ih,X,Y,Indic,Ierr)
    REAL(REAL64) , SAVE :: alp0 , fnorm , rm , t
    REAL(REAL64) , EXTERNAL :: ddot
    INTEGER , SAVE :: i , i0 , i1 , j , k , ldg , m1
-   LOGICAL , SAVE :: verboz
+   LOGICAL , intent(in) :: verboz
    EXTERNAL hes , phipro_mgsr
 !
 ! End of declarations rewritten by SPAG
@@ -413,9 +414,7 @@ SUBROUTINE phihes(N,M,Dt,Eps,U,Job,Z,Wkc,Beta,Errst,Hh,Ih,X,Y,Indic,Ierr)
 ! hh	= work array of dimension at least (m+2) x (m+1)
 !
 !-----------------------------------------------------------------------
-! local variables
-!
-   DATA verboz/.TRUE./
+
 !------use degree 14 chebyshev all the time --------------------------
    IF ( Indic==3 ) THEN
       DO k = 1 , N

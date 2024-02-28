@@ -53,10 +53,12 @@ SUBROUTINE expprod(N,M,Eps,Tn,U,W,X,Y,A,Ioff,Ndiag)
 !-----------------------------------------------------------------------
 ! local variables
 !
+   logical :: verboz
+   verboz = .true.
  
    indic = 0
    SPAG_Loop_1_1: DO
-      CALL exppro(N,M,Eps,Tn,U,W,X,Y,indic,ierr)
+      CALL exppro(N,M,Eps,Tn,U,W,X,Y,indic,ierr,verboz)
       IF ( indic==1 ) EXIT SPAG_Loop_1_1
 !
 !     matrix vector-product for diagonal storage --
@@ -68,7 +70,7 @@ END SUBROUTINE expprod
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
 !----------end-of-expprod-----------------------------------------------
 !-----------------------------------------------------------------------
-SUBROUTINE exppro(N,M,Eps,Tn,U,W,X,Y,Indic,Ierr)
+SUBROUTINE exppro(N,M,Eps,Tn,U,W,X,Y,Indic,Ierr,verboz)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -94,7 +96,7 @@ SUBROUTINE exppro(N,M,Eps,Tn,U,W,X,Y,Indic,Ierr)
    REAL(REAL64) , SAVE :: beta , dtl , errst , red , tcur , told
    REAL(REAL64) , DIMENSION(MMAX+2,MMAX+1) , SAVE :: hh
    INTEGER , SAVE :: ih , job
-   LOGICAL , SAVE :: verboz
+   LOGICAL , intent(in) :: verboz
    COMPLEX(REAL64) , DIMENSION(MMAX+1) , SAVE :: wkc
    REAL(REAL64) , DIMENSION(MMAX+1) , SAVE :: z
    EXTERNAL exphes , exppro_project
@@ -189,9 +191,7 @@ SUBROUTINE exppro(N,M,Eps,Tn,U,W,X,Y,Indic,Ierr)
 ! (2) Y.Saad: Analysis of some Krylov subspace approximations to the
 !     matrix exponential operator. RIACS Tech report. 90-14
 !-----------------------------------------------------------------------
-! local variables
-!
-   DATA verboz/.TRUE./
+
    INTEGER :: spag_nextblock_1
    spag_nextblock_1 = 1
    SPAG_DispatchLoop_1: DO
@@ -229,7 +229,7 @@ SUBROUTINE exppro(N,M,Eps,Tn,U,W,X,Y,Indic,Ierr)
       CASE (3)
          DO
 !     if (told + dtl .gt. tn) dtl = tn-told
-            CALL exphes(N,M,dtl,Eps,U,W,job,z,wkc,beta,errst,hh,ih,X,Y,Indic,Ierr)
+            CALL exphes(N,M,dtl,Eps,U,W,job,z,wkc,beta,errst,hh,ih,X,Y,Indic,Ierr,verboz)
 !-----------------------------------------------------------------------
             IF ( Ierr/=0 ) RETURN
             IF ( Indic>=3 ) RETURN
@@ -275,7 +275,7 @@ END SUBROUTINE exppro
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
 !----------end-of-expro-------------------------------------------------
 !-----------------------------------------------------------------------
-SUBROUTINE exphes(N,M,Dt,Eps,U,W,Job,Z,Wkc,Beta,Errst,Hh,Ih,X,Y,Indic,Ierr)
+SUBROUTINE exphes(N,M,Dt,Eps,U,W,Job,Z,Wkc,Beta,Errst,Hh,Ih,X,Y,Indic,Ierr,verboz)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -309,7 +309,7 @@ SUBROUTINE exphes(N,M,Dt,Eps,U,W,Job,Z,Wkc,Beta,Errst,Hh,Ih,X,Y,Indic,Ierr)
    REAL(REAL64) , SAVE :: alp0 , fnorm , rm , t
    REAL(REAL64) , EXTERNAL :: ddot
    INTEGER , SAVE :: i , i0 , i1 , j , k , ldg , m1
-   LOGICAL , SAVE :: verboz
+   LOGICAL , intent(in):: verboz
    EXTERNAL hes , exppro_mgsr
 !
 ! End of declarations rewritten by SPAG
@@ -377,9 +377,7 @@ SUBROUTINE exphes(N,M,Dt,Eps,U,W,Job,Z,Wkc,Beta,Errst,Hh,Ih,X,Y,Indic,Ierr)
 ! hh	= work array of dimension at least (m+2) x (m+1)
 !
 !-----------------------------------------------------------------------
-! local variables
-!
-   DATA verboz/.TRUE./
+
 !------use degree 14 chebyshev all the time --------------------------
    IF ( Indic>=3 ) THEN
       DO k = 1 , N
