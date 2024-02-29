@@ -1,6 +1,6 @@
 !*==expprod.f90 processed by SPAG 8.04RA 12:07 23 Feb 2024
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
-SUBROUTINE expprod(N,M,Eps,Tn,U,W,X,Y,A,Ioff,Ndiag)
+SUBROUTINE expprod(N,M,Eps,Tn,U,W,X,Y,A,Ioff,Ndiag,verboz)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -17,6 +17,7 @@ SUBROUTINE expprod(N,M,Eps,Tn,U,W,X,Y,A,Ioff,Ndiag)
    REAL(REAL64) , DIMENSION(N) :: Y
    REAL(REAL64) , DIMENSION(N,Ndiag) :: A
    INTEGER , DIMENSION(Ndiag) :: Ioff
+   logical verboz
 !
 ! Local variable declarations rewritten by SPAG
 !
@@ -49,13 +50,11 @@ SUBROUTINE expprod(N,M,Eps,Tn,U,W,X,Y,A,Ioff,Ndiag)
 !
 ! ioff	     = integer array containing the offsets  of the ndiag diagonals
 ! ndiag      = integer. the number of diagonals.
+! verboz     = logical. flag to print out diagnostics or not
 !
 !-----------------------------------------------------------------------
 ! local variables
 !
-   logical :: verboz
-   verboz = .true.
- 
    indic = 0
    SPAG_Loop_1_1: DO
       CALL exppro(N,M,Eps,Tn,U,W,X,Y,indic,ierr,verboz)
@@ -156,6 +155,8 @@ SUBROUTINE exppro(N,M,Eps,Tn,U,W,X,Y,Indic,Ierr,verboz)
 !
 ! indic = integer used as indicator for the reverse communication.
 !         in the first call enter indic = 0. See below for more.
+!
+! verboz = logical. flag to print out diagnostics or not
 !
 ! on return:
 !-----------

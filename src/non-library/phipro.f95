@@ -4,7 +4,7 @@
 !-----------------------------------------------------------------------
  
  
-SUBROUTINE phiprod(N,M,Eps,Tn,U,W,R,X,Y,A,Ioff,Ndiag)
+SUBROUTINE phiprod(N,M,Eps,Tn,U,W,R,X,Y,A,Ioff,Ndiag,verboz)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -22,6 +22,7 @@ SUBROUTINE phiprod(N,M,Eps,Tn,U,W,R,X,Y,A,Ioff,Ndiag)
    REAL(REAL64) , DIMENSION(N) :: Y
    REAL(REAL64) , DIMENSION(N,Ndiag) :: A
    INTEGER , DIMENSION(Ndiag) :: Ioff
+   logical :: verboz
 !
 ! Local variable declarations rewritten by SPAG
 !
@@ -61,12 +62,11 @@ SUBROUTINE phiprod(N,M,Eps,Tn,U,W,R,X,Y,A,Ioff,Ndiag)
 !
 ! ioff	     = integer array containing the offsets  of the ndiag diagonals
 ! ndiag      = integer. the number of diagonals.
+! verboz     = logical. flag to print out diagnostics or not
 !
 !-----------------------------------------------------------------------
 ! local variables
 !
-   logical :: verboz
-   verboz = .true.
    indic = 0
    SPAG_Loop_1_1: DO
       CALL phipro(N,M,Eps,Tn,W,R,U,X,Y,indic,ierr,verboz)
@@ -187,6 +187,8 @@ SUBROUTINE phipro(N,M,Eps,Tn,W,R,U,X,Y,Indic,Ierr,verboz)
 !         ierr = 1 means phipro was called with indic=1 (not allowed)
 !         ierr = -1 means that the input is zero the solution has been
 !         unchanged.
+!
+! verboz     = logical. flag to print out diagnostics or not
 !
 ! on return:
 !-----------
