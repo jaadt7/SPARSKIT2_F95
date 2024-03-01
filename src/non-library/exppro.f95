@@ -1,6 +1,6 @@
 !*==expprod.f90 processed by SPAG 8.04RA 12:07 23 Feb 2024
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
-SUBROUTINE expprod(N,M,Eps,Tn,U,W,X,Y,A,Ioff,Ndiag,verboz)
+SUBROUTINE expprod(N,M,Eps,Tn,U,W,X,Y,A,Ioff,Ndiag)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -17,7 +17,6 @@ SUBROUTINE expprod(N,M,Eps,Tn,U,W,X,Y,A,Ioff,Ndiag,verboz)
    REAL(REAL64) , DIMENSION(N) :: Y
    REAL(REAL64) , DIMENSION(N,Ndiag) :: A
    INTEGER , DIMENSION(Ndiag) :: Ioff
-   logical verboz
 !
 ! Local variable declarations rewritten by SPAG
 !
@@ -50,14 +49,13 @@ SUBROUTINE expprod(N,M,Eps,Tn,U,W,X,Y,A,Ioff,Ndiag,verboz)
 !
 ! ioff	     = integer array containing the offsets  of the ndiag diagonals
 ! ndiag      = integer. the number of diagonals.
-! verboz     = logical. flag to print out diagnostics or not
 !
 !-----------------------------------------------------------------------
 ! local variables
 !
    indic = 0
    SPAG_Loop_1_1: DO
-      CALL exppro(N,M,Eps,Tn,U,W,X,Y,indic,ierr,verboz)
+      CALL exppro(N,M,Eps,Tn,U,W,X,Y,indic,ierr,1)
       IF ( indic==1 ) EXIT SPAG_Loop_1_1
 !
 !     matrix vector-product for diagonal storage --
@@ -69,7 +67,7 @@ END SUBROUTINE expprod
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
 !----------end-of-expprod-----------------------------------------------
 !-----------------------------------------------------------------------
-SUBROUTINE exppro(N,M,Eps,Tn,U,W,X,Y,Indic,Ierr,verboz)
+SUBROUTINE exppro(N,M,Eps,Tn,U,W,X,Y,Indic,Ierr,Iverboz)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -89,13 +87,14 @@ SUBROUTINE exppro(N,M,Eps,Tn,U,W,X,Y,Indic,Ierr,verboz)
    REAL(REAL64) , DIMENSION(N) :: Y
    INTEGER , INTENT(INOUT) :: Indic
    INTEGER , INTENT(INOUT) :: Ierr
+   INTEGER , INTENT(IN) :: Iverboz
 !
 ! Local variable declarations rewritten by SPAG
 !
    REAL(REAL64) , SAVE :: beta , dtl , errst , red , tcur , told
    REAL(REAL64) , DIMENSION(MMAX+2,MMAX+1) , SAVE :: hh
    INTEGER , SAVE :: ih , job
-   LOGICAL , intent(in) :: verboz
+   LOGICAL :: verboz
    COMPLEX(REAL64) , DIMENSION(MMAX+1) , SAVE :: wkc
    REAL(REAL64) , DIMENSION(MMAX+1) , SAVE :: z
    EXTERNAL exphes , exppro_project
@@ -153,10 +152,10 @@ SUBROUTINE exppro(N,M,Eps,Tn,U,W,X,Y,Indic,Ierr,verboz)
 ! x, y  = two real work vectors of length at least  n each.
 !         see indic for usage.
 !
-! indic = integer used as indicator for the reverse communication.
+! Indic = integer used as indicator for the reverse communication.
 !         in the first call enter indic = 0. See below for more.
 !
-! verboz = logical. flag to print out diagnostics or not
+! Iverboz = integer flag to print out diagnostics (1) or not (0)
 !
 ! on return:
 !-----------
@@ -195,6 +194,13 @@ SUBROUTINE exppro(N,M,Eps,Tn,U,W,X,Y,Indic,Ierr,verboz)
 
    INTEGER :: spag_nextblock_1
    spag_nextblock_1 = 1
+
+   if (Iverboz .eq. 0) then
+      verboz = .false.
+   else
+      verboz = .true.
+   endif
+
    SPAG_DispatchLoop_1: DO
       SELECT CASE (spag_nextblock_1)
       CASE (1)

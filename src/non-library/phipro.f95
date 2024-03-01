@@ -4,7 +4,7 @@
 !-----------------------------------------------------------------------
  
  
-SUBROUTINE phiprod(N,M,Eps,Tn,U,W,R,X,Y,A,Ioff,Ndiag,verboz)
+SUBROUTINE phiprod(N,M,Eps,Tn,U,W,R,X,Y,A,Ioff,Ndiag)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -22,7 +22,6 @@ SUBROUTINE phiprod(N,M,Eps,Tn,U,W,R,X,Y,A,Ioff,Ndiag,verboz)
    REAL(REAL64) , DIMENSION(N) :: Y
    REAL(REAL64) , DIMENSION(N,Ndiag) :: A
    INTEGER , DIMENSION(Ndiag) :: Ioff
-   logical :: verboz
 !
 ! Local variable declarations rewritten by SPAG
 !
@@ -62,14 +61,13 @@ SUBROUTINE phiprod(N,M,Eps,Tn,U,W,R,X,Y,A,Ioff,Ndiag,verboz)
 !
 ! ioff	     = integer array containing the offsets  of the ndiag diagonals
 ! ndiag      = integer. the number of diagonals.
-! verboz     = logical. flag to print out diagnostics or not
 !
 !-----------------------------------------------------------------------
 ! local variables
 !
    indic = 0
    SPAG_Loop_1_1: DO
-      CALL phipro(N,M,Eps,Tn,W,R,U,X,Y,indic,ierr,verboz)
+      CALL phipro(N,M,Eps,Tn,W,R,U,X,Y,indic,ierr,1)
       IF ( indic==1 ) EXIT SPAG_Loop_1_1
 !
 !     matrix vector-product for diagonal storage --
@@ -81,7 +79,7 @@ END SUBROUTINE phiprod
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
 !----------end-of-phiprod-----------------------------------------------
 !-----------------------------------------------------------------------
-SUBROUTINE phipro(N,M,Eps,Tn,W,R,U,X,Y,Indic,Ierr,verboz)
+SUBROUTINE phipro(N,M,Eps,Tn,W,R,U,X,Y,Indic,Ierr,Iverboz)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -102,14 +100,15 @@ SUBROUTINE phipro(N,M,Eps,Tn,W,R,U,X,Y,Indic,Ierr,verboz)
    REAL(REAL64) , DIMENSION(N) :: Y
    INTEGER , INTENT(INOUT) :: Indic
    INTEGER , INTENT(INOUT) :: Ierr
+   INTEGER, INTENT(IN) :: Iverboz
 !
 ! Local variable declarations rewritten by SPAG
 !
    REAL(REAL64) , SAVE :: beta , dtl , errst , red , tcur , told
    REAL(REAL64) , DIMENSION(MMAX+2,MMAX+1) , SAVE :: hh
    INTEGER , SAVE :: ih , job , k
-   LOGICAL , intent(in) :: verboz
    COMPLEX(REAL64) , DIMENSION(MMAX+1) , SAVE :: wkc
+   LOGICAL :: verboz
    REAL(REAL64) , DIMENSION(MMAX+1) , SAVE :: z
    EXTERNAL phihes , phipro_project
 !
@@ -180,15 +179,15 @@ SUBROUTINE phipro(N,M,Eps,Tn,W,R,U,X,Y,Indic,Ierr,verboz)
 !         products y=Ax in the reverse communication protocole.
 !         see argument indic (return) below for details on their usage.
 !
-! indic = integer used as indicator for the reverse communication.
+! Indic = integer used as indicator for the reverse communication.
 !         in the first call enter indic = 0.
 !
-! ierr  = error indicator.
+! Ierr  = error indicator.
 !         ierr = 1 means phipro was called with indic=1 (not allowed)
 !         ierr = -1 means that the input is zero the solution has been
 !         unchanged.
 !
-! verboz     = logical. flag to print out diagnostics or not
+! Iverboz  = integer flag to print out diagnostics (1) or not (0)
 !
 ! on return:
 !-----------
@@ -212,9 +211,17 @@ SUBROUTINE phipro(N,M,Eps,Tn,W,R,U,X,Y,Indic,Ierr,verboz)
 !-----------------------------------------------------------------------
 ! local variables
 !
+
    
    INTEGER :: spag_nextblock_1
    spag_nextblock_1 = 1
+
+   if (Iverboz .eq. 0) then
+       verboz = .false.
+   else
+       verboz = .true.
+   endif
+
    SPAG_DispatchLoop_1: DO
       SELECT CASE (spag_nextblock_1)
       CASE (1)
