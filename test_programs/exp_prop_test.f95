@@ -31,7 +31,6 @@ PROGRAM exptest
    INTEGER :: j , k , m , n , ndiag
    REAL(REAL64) , DIMENSION(IH0*NMAX) :: u
    REAL(REAL64) , DIMENSION(NMAX) :: w , w1 , x , y
-   logical verboz
    EXTERNAL expprod
 
 !
@@ -71,8 +70,7 @@ PROGRAM exptest
       w1(j) = w(j)
    ENDDO
 !
-   verboz = .true.
-   CALL expprod(n,m,eps,tn,u,w,x,y,a,ioff,ndiag,verboz)
+   CALL expprod(n,m,eps,tn,u,w,x,y,a,ioff,ndiag,1)
 !
    PRINT * , ' final answer '
    PRINT * , (w(k),k=1,20)

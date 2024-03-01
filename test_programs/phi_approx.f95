@@ -41,7 +41,6 @@ PROGRAM phitest
    INTEGER :: j , k , m , n , ndiag
    REAL(REAL64) , DIMENSION(NMAX) :: r , w , w1 , x , y
    REAL(REAL64) , DIMENSION(IH0*NMAX) :: u
-   LOGICAL verboz
    EXTERNAL phiprod
 !
 ! End of declarations rewritten by SPAG
@@ -88,8 +87,7 @@ PROGRAM phitest
 !     MARCHING LOOP
 !     do jj =1, nsteps
 !     call phiprod (n, m, eps, tnh, u, w, r, x, y, a, ioff, ndiag)
-   verboz = .true.
-   CALL phiprod(n,m,eps,tn,u,w,r,x,y,a,ioff,ndiag,verboz)
+   CALL phiprod(n,m,eps,tn,u,w,r,x,y,a,ioff,ndiag,1)
 !     enddo
    PRINT * , ' final answer '
    PRINT * , (w(k),k=1,20)

@@ -4,7 +4,7 @@
 !-----------------------------------------------------------------------
  
  
-SUBROUTINE phiprod(N,M,Eps,Tn,U,W,R,X,Y,A,Ioff,Ndiag)
+SUBROUTINE phiprod(N,M,Eps,Tn,U,W,R,X,Y,A,Ioff,Ndiag,Iverboz)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -22,6 +22,7 @@ SUBROUTINE phiprod(N,M,Eps,Tn,U,W,R,X,Y,A,Ioff,Ndiag)
    REAL(REAL64) , DIMENSION(N) :: Y
    REAL(REAL64) , DIMENSION(N,Ndiag) :: A
    INTEGER , DIMENSION(Ndiag) :: Ioff
+   INTEGER , INTENT(IN) :: Iverboz
 !
 ! Local variable declarations rewritten by SPAG
 !
@@ -61,13 +62,14 @@ SUBROUTINE phiprod(N,M,Eps,Tn,U,W,R,X,Y,A,Ioff,Ndiag)
 !
 ! ioff	     = integer array containing the offsets  of the ndiag diagonals
 ! ndiag      = integer. the number of diagonals.
+! Iverboz    = integer. flag to print out diagnositics (1) or not (0)
 !
 !-----------------------------------------------------------------------
 ! local variables
 !
    indic = 0
    SPAG_Loop_1_1: DO
-      CALL phipro(N,M,Eps,Tn,W,R,U,X,Y,indic,ierr,1)
+      CALL phipro(N,M,Eps,Tn,W,R,U,X,Y,indic,ierr,Iverboz)
       IF ( indic==1 ) EXIT SPAG_Loop_1_1
 !
 !     matrix vector-product for diagonal storage --
