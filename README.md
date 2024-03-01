@@ -12,6 +12,9 @@ a static library, or ./dotests to run the developed tests
 To use the fully refactored version, simply type in make in you CLI and the static library will be compiled. To run the tests, you can simply type ./run_tests.sh . You might need to chage
 the executable permissions for the bash script after cloning the repository so it would run.
 
+# Available routines
+The README found in src/libary contains the list of routines and functionality coded in each source file
+
 Authors
 -------
 
