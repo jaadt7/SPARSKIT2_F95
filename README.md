@@ -1,6 +1,8 @@
 # SPARSKIT2_F95
 A fully refactored version of SPARSKIT2, developed by Prof. Youssef Saad, from Fortran77 to Fortran95. The refactoring was done using an academic license from plusFORT.
 
+![GitHub License](https://img.shields.io/github/license/jaadt7/SPARSKIT2_F95) ![GitHub Release](https://img.shields.io/github/v/release/jaadt7/SPARSKIT2_F95)
+
 # Package Dependencies
 This package requires only make and gfortran as a compiler.
 
@@ -31,3 +33,6 @@ License
 -------
 
 The project is licensed under the GNU Lesser General Public License v2.1 (or later).
+
+.. |license| image:: https://img.shields.io/github/license/jaadt7/SPARSKIT2_F95
+    :alt: GitHub
