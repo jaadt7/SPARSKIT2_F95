@@ -33,6 +33,3 @@ License
 -------
 
 The project is licensed under the GNU Lesser General Public License v2.1 (or later).
-
-.. |license| image:: https://img.shields.io/github/license/jaadt7/SPARSKIT2_F95
-    :alt: GitHub
