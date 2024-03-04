@@ -1,6 +1,8 @@
 # SPARSKIT2_F95
 A fully refactored version of SPARSKIT2, developed by Prof. Youssef Saad, from Fortran77 to Fortran95. The refactoring was done using an academic license from plusFORT.
 
+![GitHub License](https://img.shields.io/github/license/jaadt7/SPARSKIT2_F95) ![GitHub Release](https://img.shields.io/github/v/release/jaadt7/SPARSKIT2_F95)
+
 # Package Dependencies
 This package requires only make and gfortran as a compiler.
 
@@ -11,6 +13,9 @@ a static library, or ./dotests to run the developed tests
 # Using the Refactored Version
 To use the fully refactored version, simply type in make in you CLI and the static library will be compiled. To run the tests, you can simply type ./run_tests.sh . You might need to chage
 the executable permissions for the bash script after cloning the repository so it would run.
+
+# Available routines
+The README found in src/libary contains the list of routines and functionality coded in each source file
 
 Authors
 -------
@@ -27,4 +32,4 @@ Contribute
 License
 -------
 
-The project is licensed under the GNU Public License v3 (or later).
+The project is licensed under the GNU Lesser General Public License v2.1 (or later).

@@ -87,7 +87,7 @@ PROGRAM phitest
 !     MARCHING LOOP
 !     do jj =1, nsteps
 !     call phiprod (n, m, eps, tnh, u, w, r, x, y, a, ioff, ndiag)
-   CALL phiprod(n,m,eps,tn,u,w,r,x,y,a,ioff,ndiag)
+   CALL phiprod(n,m,eps,tn,u,w,r,x,y,a,ioff,ndiag,1)
 !     enddo
    PRINT * , ' final answer '
    PRINT * , (w(k),k=1,20)

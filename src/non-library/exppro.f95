@@ -1,6 +1,6 @@
 !*==expprod.f90 processed by SPAG 8.04RA 12:07 23 Feb 2024
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
-SUBROUTINE expprod(N,M,Eps,Tn,U,W,X,Y,A,Ioff,Ndiag)
+SUBROUTINE expprod(N,M,Eps,Tn,U,W,X,Y,A,Ioff,Ndiag,Iverboz)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -17,6 +17,7 @@ SUBROUTINE expprod(N,M,Eps,Tn,U,W,X,Y,A,Ioff,Ndiag)
    REAL(REAL64) , DIMENSION(N) :: Y
    REAL(REAL64) , DIMENSION(N,Ndiag) :: A
    INTEGER , DIMENSION(Ndiag) :: Ioff
+   INTEGER , INTENT(IN) :: Iverboz
 !
 ! Local variable declarations rewritten by SPAG
 !
@@ -49,14 +50,14 @@ SUBROUTINE expprod(N,M,Eps,Tn,U,W,X,Y,A,Ioff,Ndiag)
 !
 ! ioff	     = integer array containing the offsets  of the ndiag diagonals
 ! ndiag      = integer. the number of diagonals.
+! Iverboz    = integer. flag to print out diagnositics (1) or not (0)
 !
 !-----------------------------------------------------------------------
 ! local variables
 !
- 
    indic = 0
    SPAG_Loop_1_1: DO
-      CALL exppro(N,M,Eps,Tn,U,W,X,Y,indic,ierr)
+      CALL exppro(N,M,Eps,Tn,U,W,X,Y,indic,ierr,Iverboz)
       IF ( indic==1 ) EXIT SPAG_Loop_1_1
 !
 !     matrix vector-product for diagonal storage --
@@ -68,7 +69,7 @@ END SUBROUTINE expprod
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
 !----------end-of-expprod-----------------------------------------------
 !-----------------------------------------------------------------------
-SUBROUTINE exppro(N,M,Eps,Tn,U,W,X,Y,Indic,Ierr)
+SUBROUTINE exppro(N,M,Eps,Tn,U,W,X,Y,Indic,Ierr,Iverboz)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -88,16 +89,17 @@ SUBROUTINE exppro(N,M,Eps,Tn,U,W,X,Y,Indic,Ierr)
    REAL(REAL64) , DIMENSION(N) :: Y
    INTEGER , INTENT(INOUT) :: Indic
    INTEGER , INTENT(INOUT) :: Ierr
+   INTEGER , INTENT(IN) :: Iverboz
 !
 ! Local variable declarations rewritten by SPAG
 !
    REAL(REAL64) , SAVE :: beta , dtl , errst , red , tcur , told
    REAL(REAL64) , DIMENSION(MMAX+2,MMAX+1) , SAVE :: hh
    INTEGER , SAVE :: ih , job
-   LOGICAL , SAVE :: verboz
+   LOGICAL :: verboz
    COMPLEX(REAL64) , DIMENSION(MMAX+1) , SAVE :: wkc
    REAL(REAL64) , DIMENSION(MMAX+1) , SAVE :: z
-   EXTERNAL exphes , project
+   EXTERNAL exphes , exppro_project
 !
 ! End of declarations rewritten by SPAG
 !
@@ -152,8 +154,10 @@ SUBROUTINE exppro(N,M,Eps,Tn,U,W,X,Y,Indic,Ierr)
 ! x, y  = two real work vectors of length at least  n each.
 !         see indic for usage.
 !
-! indic = integer used as indicator for the reverse communication.
+! Indic = integer used as indicator for the reverse communication.
 !         in the first call enter indic = 0. See below for more.
+!
+! Iverboz = integer flag to print out diagnostics (1) or not (0)
 !
 ! on return:
 !-----------
@@ -189,11 +193,16 @@ SUBROUTINE exppro(N,M,Eps,Tn,U,W,X,Y,Indic,Ierr)
 ! (2) Y.Saad: Analysis of some Krylov subspace approximations to the
 !     matrix exponential operator. RIACS Tech report. 90-14
 !-----------------------------------------------------------------------
-! local variables
-!
-   DATA verboz/.TRUE./
+
    INTEGER :: spag_nextblock_1
    spag_nextblock_1 = 1
+
+   if (Iverboz .eq. 0) then
+      verboz = .false.
+   else
+      verboz = .true.
+   endif
+
    SPAG_DispatchLoop_1: DO
       SELECT CASE (spag_nextblock_1)
       CASE (1)
@@ -229,7 +238,7 @@ SUBROUTINE exppro(N,M,Eps,Tn,U,W,X,Y,Indic,Ierr)
       CASE (3)
          DO
 !     if (told + dtl .gt. tn) dtl = tn-told
-            CALL exphes(N,M,dtl,Eps,U,W,job,z,wkc,beta,errst,hh,ih,X,Y,Indic,Ierr)
+            CALL exphes(N,M,dtl,Eps,U,W,job,z,wkc,beta,errst,hh,ih,X,Y,Indic,Ierr,verboz)
 !-----------------------------------------------------------------------
             IF ( Ierr/=0 ) RETURN
             IF ( Indic>=3 ) RETURN
@@ -243,7 +252,7 @@ SUBROUTINE exppro(N,M,Eps,Tn,U,W,X,Y,Indic,Ierr)
             IF ( (errst<=Eps) .AND. ((errst>Eps/100.0) .OR. (tcur==Tn)) ) THEN
 !-------
 !
-               CALL project(N,M,U,z,W)
+               CALL exppro_project(N,M,U,z,W)
 ! never go beyond tcur
                job = 0
                dtl = dmin1(dtl,Tn-tcur)
@@ -275,7 +284,7 @@ END SUBROUTINE exppro
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
 !----------end-of-expro-------------------------------------------------
 !-----------------------------------------------------------------------
-SUBROUTINE exphes(N,M,Dt,Eps,U,W,Job,Z,Wkc,Beta,Errst,Hh,Ih,X,Y,Indic,Ierr)
+SUBROUTINE exphes(N,M,Dt,Eps,U,W,Job,Z,Wkc,Beta,Errst,Hh,Ih,X,Y,Indic,Ierr,verboz)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -309,8 +318,8 @@ SUBROUTINE exphes(N,M,Dt,Eps,U,W,Job,Z,Wkc,Beta,Errst,Hh,Ih,X,Y,Indic,Ierr)
    REAL(REAL64) , SAVE :: alp0 , fnorm , rm , t
    REAL(REAL64) , EXTERNAL :: ddot
    INTEGER , SAVE :: i , i0 , i1 , j , k , ldg , m1
-   LOGICAL , SAVE :: verboz
-   EXTERNAL hes , mgsr
+   LOGICAL , intent(in):: verboz
+   EXTERNAL hes , exppro_mgsr
 !
 ! End of declarations rewritten by SPAG
 !
@@ -377,9 +386,7 @@ SUBROUTINE exphes(N,M,Dt,Eps,U,W,Job,Z,Wkc,Beta,Errst,Hh,Ih,X,Y,Indic,Ierr)
 ! hh	= work array of dimension at least (m+2) x (m+1)
 !
 !-----------------------------------------------------------------------
-! local variables
-!
-   DATA verboz/.TRUE./
+
 !------use degree 14 chebyshev all the time --------------------------
    IF ( Indic>=3 ) THEN
       DO k = 1 , N
@@ -389,7 +396,7 @@ SUBROUTINE exphes(N,M,Dt,Eps,U,W,Job,Z,Wkc,Beta,Errst,Hh,Ih,X,Y,Indic,Ierr)
 !
 ! switch  for Lanczos version
 !     i0 = max0(1, i-1)
-      CALL mgsr(N,i0,i1,U,Hh(1,i))
+      CALL exppro_mgsr(N,i0,i1,U,Hh(1,i))
       fnorm = fnorm + ddot(i1,Hh(1,i),1,Hh(1,i),1)
       IF ( Hh(i1,i)==0.0 ) M = i
       IF ( i>=M ) THEN
@@ -482,7 +489,7 @@ CONTAINS
          Z(k) = 0.0D0
       ENDDO
 !-------get  : exp(H) * beta*e1
-      CALL hes(ldg,m1,Hh,Ih,Dt,Z,rd,alp,alp0,Wkc)
+      CALL hes0(ldg,m1,Hh,Ih,Dt,Z,rd,alp,alp0,Wkc)
 !-------error estimate
       Errst = dabs(Z(m1))
       IF ( verboz ) PRINT * , ' error estimate =' , Errst
@@ -493,7 +500,7 @@ END SUBROUTINE exphes
 !*==mgsr.f90 processed by SPAG 8.04RA 12:07 23 Feb 2024
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
 !-----------------------------------------------------------------------
-SUBROUTINE mgsr(N,I0,I1,Ss,R)
+SUBROUTINE exppro_mgsr(N,I0,I1,Ss,R)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -559,12 +566,12 @@ SUBROUTINE mgsr(N,I0,I1,Ss,R)
          EXIT SPAG_Loop_1_1
       ENDIF
    ENDDO SPAG_Loop_1_1
-END SUBROUTINE mgsr
+END SUBROUTINE exppro_mgsr
 !*==project.f90 processed by SPAG 8.04RA 12:07 23 Feb 2024
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
 !----------end-of-mgsr--------------------------------------------------
 !-----------------------------------------------------------------------
-SUBROUTINE project(N,M,U,V,W)
+SUBROUTINE exppro_project(N,M,U,V,W)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -597,11 +604,12 @@ SUBROUTINE project(N,M,U,V,W)
          W(k) = W(k) + V(j)*U(k,j)
       ENDDO
    ENDDO
-END SUBROUTINE project
+END SUBROUTINE exppro_project
+
 !*==hes.f90 processed by SPAG 8.04RA 12:07 23 Feb 2024
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
 !-----------------------------------------------------------------------
-SUBROUTINE hes(Ndg,M1,Hh,Ih,Dt,Y,Root,Coef,Coef0,W2)
+SUBROUTINE hes0(Ndg,M1,Hh,Ih,Dt,Y,Root,Coef,Coef0,W2)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -706,71 +714,4 @@ SUBROUTINE hes(Ndg,M1,Hh,Ih,Dt,Y,Root,Coef,Coef0,W2)
          Y(i) = Y(i) + dble(Coef(ii)*W2(i))
       ENDDO
    ENDDO
-END SUBROUTINE hes
-!*==daxpy.f90 processed by SPAG 8.04RA 12:07 23 Feb 2024
-!!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
-!----------end-of-hes---------------------------------------------------
-!-----------------------------------------------------------------------
-SUBROUTINE daxpy(N,T,X,Indx,Y,Indy)
-   USE ISO_FORTRAN_ENV                 
-   IMPLICIT NONE
-!
-! Dummy argument declarations rewritten by SPAG
-!
-   INTEGER , INTENT(IN) :: N
-   REAL(REAL64) , INTENT(IN) :: T
-   REAL(REAL64) , INTENT(IN) , DIMENSION(N) :: X
-   INTEGER :: Indx
-   REAL(REAL64) , INTENT(INOUT) , DIMENSION(N) :: Y
-   INTEGER :: Indy
-!
-! Local variable declarations rewritten by SPAG
-!
-   INTEGER :: k
-!
-! End of declarations rewritten by SPAG
-!
-!-------------------------------------------------------------------
-! does the following operation
-! y <--- y + t * x ,   (replace by the blas routine daxpy )
-! indx and indy are supposed to be one here
-!-------------------------------------------------------------------
- 
-   DO k = 1 , N
-      Y(k) = Y(k) + X(k)*T
-   ENDDO
-END SUBROUTINE daxpy
-!*==ddot.f90 processed by SPAG 8.04RA 12:07 23 Feb 2024
-!!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
-!----------end-of-daxpy-------------------------------------------------
-!-----------------------------------------------------------------------
-FUNCTION ddot(N,X,Ix,Y,Iy)
-   USE ISO_FORTRAN_ENV                 
-   IMPLICIT NONE
-!
-! Function and Dummy argument declarations rewritten by SPAG
-!
-   INTEGER , INTENT(IN) :: N
-   REAL(REAL64) :: ddot
-   REAL(REAL64) , INTENT(IN) , DIMENSION(N) :: X
-   INTEGER :: Ix
-   REAL(REAL64) , INTENT(IN) , DIMENSION(N) :: Y
-   INTEGER :: Iy
-!
-! Local variable declarations rewritten by SPAG
-!
-   INTEGER :: j
-   REAL(REAL64) :: t
-!
-! End of declarations rewritten by SPAG
-!
-!-------------------------------------------------------------------
-! computes the inner product t=(x,y) -- replace by blas routine ddot
-!-------------------------------------------------------------------
- 
-   t = 0.0D0
-   DO j = 1 , N
-      t = t + X(j)*Y(j)
-   ENDDO
-   ddot = t
-END FUNCTION ddot
+END SUBROUTINE hes0

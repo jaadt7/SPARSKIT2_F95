@@ -149,16 +149,13 @@ END FUNCTION distdot
 !-----end-of-distdot
 !-----------------------------------------------------------------------
 !
-FUNCTION afun(X,Y,Z)
+FUNCTION afun()
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
 ! Function and Dummy argument declarations rewritten by SPAG
 !
    REAL(REAL64) :: afun
-   REAL(REAL64) :: X
-   REAL(REAL64) :: Y
-   REAL(REAL64) :: Z
 !
 ! End of declarations rewritten by SPAG
 !
@@ -167,16 +164,13 @@ END FUNCTION afun
 !*==bfun.f90 processed by SPAG 8.04RA 14:49 22 Feb 2024
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
  
-FUNCTION bfun(X,Y,Z)
+FUNCTION bfun()
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
 ! Function and Dummy argument declarations rewritten by SPAG
 !
    REAL(REAL64) :: bfun
-   REAL(REAL64) :: X
-   REAL(REAL64) :: Y
-   REAL(REAL64) :: Z
 !
 ! End of declarations rewritten by SPAG
 !
@@ -185,16 +179,13 @@ END FUNCTION bfun
 !*==cfun.f90 processed by SPAG 8.04RA 14:49 22 Feb 2024
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
  
-FUNCTION cfun(X,Y,Z)
+FUNCTION cfun()
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
 ! Function and Dummy argument declarations rewritten by SPAG
 !
    REAL(REAL64) :: cfun
-   REAL(REAL64) :: X
-   REAL(REAL64) :: Y
-   REAL(REAL64) :: Z
 !
 ! End of declarations rewritten by SPAG
 !
@@ -203,7 +194,7 @@ END FUNCTION cfun
 !*==dfun.f90 processed by SPAG 8.04RA 14:49 22 Feb 2024
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
  
-FUNCTION dfun(X,Y,Z)
+FUNCTION dfun(X,Y)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -217,7 +208,7 @@ FUNCTION dfun(X,Y,Z)
    REAL(REAL64) :: dfun
    REAL(REAL64) , INTENT(IN) :: X
    REAL(REAL64) , INTENT(IN) :: Y
-   REAL(REAL64) :: Z
+ 
 !
 ! End of declarations rewritten by SPAG
 !
@@ -226,7 +217,7 @@ END FUNCTION dfun
 !*==efun.f90 processed by SPAG 8.04RA 14:49 22 Feb 2024
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
  
-FUNCTION efun(X,Y,Z)
+FUNCTION efun(X,Y)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -240,7 +231,6 @@ FUNCTION efun(X,Y,Z)
    REAL(REAL64) :: efun
    REAL(REAL64) , INTENT(IN) :: X
    REAL(REAL64) , INTENT(IN) :: Y
-   REAL(REAL64) :: Z
 !
 ! End of declarations rewritten by SPAG
 !
@@ -249,16 +239,13 @@ END FUNCTION efun
 !*==ffun.f90 processed by SPAG 8.04RA 14:49 22 Feb 2024
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
  
-FUNCTION ffun(X,Y,Z)
+FUNCTION ffun()
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
 ! Function and Dummy argument declarations rewritten by SPAG
 !
    REAL(REAL64) :: ffun
-   REAL(REAL64) :: X
-   REAL(REAL64) :: Y
-   REAL(REAL64) :: Z
 !
 ! End of declarations rewritten by SPAG
 !
@@ -267,7 +254,7 @@ END FUNCTION ffun
 !*==gfun.f90 processed by SPAG 8.04RA 14:49 22 Feb 2024
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
  
-FUNCTION gfun(X,Y,Z)
+FUNCTION gfun()
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -279,9 +266,6 @@ FUNCTION gfun(X,Y,Z)
 ! Function and Dummy argument declarations rewritten by SPAG
 !
    REAL(REAL64) :: gfun
-   REAL(REAL64) :: X
-   REAL(REAL64) :: Y
-   REAL(REAL64) :: Z
 !
 ! End of declarations rewritten by SPAG
 !
@@ -314,17 +298,14 @@ END FUNCTION hfun
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
  
  
-FUNCTION betfun(Side,X,Y,Z)
+FUNCTION betfun()
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
 ! Function and Dummy argument declarations rewritten by SPAG
 !
    REAL(REAL64) :: betfun
-   CHARACTER(2) :: Side
-   REAL(REAL64) :: X
-   REAL(REAL64) :: Y
-   REAL(REAL64) :: Z
+
 !
 ! End of declarations rewritten by SPAG
 !
@@ -333,7 +314,7 @@ END FUNCTION betfun
 !*==gamfun.f90 processed by SPAG 8.04RA 14:49 22 Feb 2024
 !!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
  
-FUNCTION gamfun(Side,X,Y,Z)
+FUNCTION gamfun(Side)
    USE ISO_FORTRAN_ENV                 
    IMPLICIT NONE
 !
@@ -341,9 +322,6 @@ FUNCTION gamfun(Side,X,Y,Z)
 !
    REAL(REAL64) :: gamfun
    CHARACTER(2) , INTENT(IN) :: Side
-   REAL(REAL64) :: X
-   REAL(REAL64) :: Y
-   REAL(REAL64) :: Z
 !
 ! End of declarations rewritten by SPAG
 !
@@ -357,127 +335,3 @@ FUNCTION gamfun(Side,X,Y,Z)
       gamfun = 0.0
    ENDIF
 END FUNCTION gamfun
-!*==afunbl.f90 processed by SPAG 8.04RA 14:49 22 Feb 2024
-!!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
-!-----------------------------------------------------------------------
-!     functions for the block PDE's
-!-----------------------------------------------------------------------
-SUBROUTINE afunbl(Nfree,X,Y,Z,Coeff)
-   IMPLICIT NONE
-!
-! Dummy argument declarations rewritten by SPAG
-!
-   INTEGER :: Nfree
-   REAL :: X
-   REAL :: Y
-   REAL :: Z
-   REAL :: Coeff
-!
-! End of declarations rewritten by SPAG
-!
-END SUBROUTINE afunbl
-!*==bfunbl.f90 processed by SPAG 8.04RA 14:49 22 Feb 2024
-!!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
-!
-SUBROUTINE bfunbl(Nfree,X,Y,Z,Coeff)
-   IMPLICIT NONE
-!
-! Dummy argument declarations rewritten by SPAG
-!
-   INTEGER :: Nfree
-   REAL :: X
-   REAL :: Y
-   REAL :: Z
-   REAL :: Coeff
-!
-! End of declarations rewritten by SPAG
-!
-END SUBROUTINE bfunbl
-!*==cfunbl.f90 processed by SPAG 8.04RA 14:49 22 Feb 2024
-!!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
- 
-SUBROUTINE cfunbl(Nfree,X,Y,Z,Coeff)
-   IMPLICIT NONE
-!
-! Dummy argument declarations rewritten by SPAG
-!
-   INTEGER :: Nfree
-   REAL :: X
-   REAL :: Y
-   REAL :: Z
-   REAL :: Coeff
-!
-! End of declarations rewritten by SPAG
-!
-!
-END SUBROUTINE cfunbl
-!*==dfunbl.f90 processed by SPAG 8.04RA 14:49 22 Feb 2024
-!!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
- 
-SUBROUTINE dfunbl(Nfree,X,Y,Z,Coeff)
-   IMPLICIT NONE
-!
-! Dummy argument declarations rewritten by SPAG
-!
-   INTEGER :: Nfree
-   REAL :: X
-   REAL :: Y
-   REAL :: Z
-   REAL :: Coeff
-!
-! End of declarations rewritten by SPAG
-!
- 
-END SUBROUTINE dfunbl
-!*==efunbl.f90 processed by SPAG 8.04RA 14:49 22 Feb 2024
-!!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
-!
-SUBROUTINE efunbl(Nfree,X,Y,Z,Coeff)
-   IMPLICIT NONE
-!
-! Dummy argument declarations rewritten by SPAG
-!
-   INTEGER :: Nfree
-   REAL :: X
-   REAL :: Y
-   REAL :: Z
-   REAL :: Coeff
-!
-! End of declarations rewritten by SPAG
-!
-END SUBROUTINE efunbl
-!*==ffunbl.f90 processed by SPAG 8.04RA 14:49 22 Feb 2024
-!!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
-!
-SUBROUTINE ffunbl(Nfree,X,Y,Z,Coeff)
-   IMPLICIT NONE
-!
-! Dummy argument declarations rewritten by SPAG
-!
-   INTEGER :: Nfree
-   REAL :: X
-   REAL :: Y
-   REAL :: Z
-   REAL :: Coeff
-!
-! End of declarations rewritten by SPAG
-!
-END SUBROUTINE ffunbl
-!*==gfunbl.f90 processed by SPAG 8.04RA 14:49 22 Feb 2024
-!!SPAG Open source Personal, Educational or Academic User Clemson University  NON-COMMERCIAL USE - Not for use on proprietary or closed source code
-!
-SUBROUTINE gfunbl(Nfree,X,Y,Z,Coeff)
-   IMPLICIT NONE
-!
-! Dummy argument declarations rewritten by SPAG
-!
-   INTEGER :: Nfree
-   REAL :: X
-   REAL :: Y
-   REAL :: Z
-   REAL :: Coeff
-!
-! End of declarations rewritten by SPAG
-!
-END SUBROUTINE gfunbl
- 
