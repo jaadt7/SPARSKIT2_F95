@@ -60,4 +60,4 @@ clean_all: clean
 	(cd test_programs/; rm -f *~ *.o *.ex *.fort *.mat *.a *.ps *.pic fort.* *. *.hb)
 
 tarball:
-	(cd ..; tar cvf - SPARSKIT2_F95 | gzip -c > SPARSKIT2_F95.tar.gz)
+	(cd ..; tar cvf - SPARSKIT2_F95 | gzip -c > SPARSKIT2_F95.tar.gz | mv SPARSKIT2_F95.tar.gz SPARSKIT2_F95/SPARSKIT2_F95.tar.gz)
