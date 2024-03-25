@@ -166,7 +166,7 @@ cat markov.mat
 
 echo Compiling exponential propagator test
 
-gfortran -o prop_test.ex exp_prop_test.f95 ../src/non-library/exppro.f95 ../src/non-library/blas1.f95
+gfortran -o prop_test.ex exp_prop_test.f95 ../src/non-library/exppro.f95 ../src/non-library/oped.f95 ../src/non-library/blas1.f95
 
 echo Running exponential propagator test
 
@@ -178,7 +178,7 @@ EOF
 
 echo Compiling phi approximation
 
-gfortran -o phi_approx.ex phi_approx.f95 ../src/non-library/phipro.f95 ../src/non-library/blas1.f95
+gfortran -o phi_approx.ex phi_approx.f95 ../src/non-library/phipro.f95 ../src/non-library/oped.f95 ../src/non-library/blas1.f95
 
 echo Running Phi Approximation
 
